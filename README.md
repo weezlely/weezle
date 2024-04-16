@@ -45,3 +45,7 @@ npm run watch
 npm run exam
 
 ```
+
+## Trouble Shooting
+
+- [보러가기](https://tkolab.tistory.com/search/rollup)
