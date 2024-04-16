@@ -1,0 +1,61 @@
+{
+  "name": "taeo-ui",
+  "version": "1.0.0",
+  "description": "taeo's ui library for react",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run exam & npm run watch",
+    "build": "tsc --emitDeclarationOnly & rollup -c",
+    "watch": "rollup -cw",
+    "exam": "cd example && npm start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taetaeo/taeo-ui.git"
+  },
+  "keywords": [
+    "React",
+    "ui"
+  ],
+  "author": "taetaeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taetaeo/taeo-ui/issues"
+  },
+  "homepage": "https://github.com/taetaeo/taeo-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "babel-preset-react-app": "^10.0.1",
+    "eslint": "^9.0.0",
+    "framer-motion": "^11.0.25",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-prefixer": "^3.0.0",
+    "rollup": "^3.0.0-7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.4.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.2"
+  }
+}
