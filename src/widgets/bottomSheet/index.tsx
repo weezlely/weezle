@@ -1,17 +1,16 @@
 import { motion as Motion } from "framer-motion";
-import { useContext, type FC } from "react";
+import { type FC } from "react";
+
+import { useBottomSheetContext } from "./context";
+import { BottomSheetProvider } from "./provider";
 
 import { BottomSheetContentsProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "./index.type";
-import { BottomSheetContext, BottomSheetProvider } from "./provider";
-
 import * as styled from "./index.style";
 
 /**
  * 바텀시트 Headless 안에서 context를 사용하는 훅
  * @returns
  */
-
-export const useBottomSheetContext = () => useContext(BottomSheetContext);
 
 const BottomSheetWrapper: FC<BottomSheetWrapperProps> = ({ dragDirection = "y", initial = "visible", style, children, ...rest }): JSX.Element => {
   const { onDragEnd, controls, setIsOpen, isOpen } = useBottomSheetContext();
