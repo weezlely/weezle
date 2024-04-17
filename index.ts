@@ -1,9 +1,16 @@
 /**
- * UI Components
+ * Provider
  */
-export { default as BottomSheet } from "./src/widgets/bottomSheet";
-export { default as Hello } from "./src/widgets/hello";
-export { default as Button } from "./src/atoms/buttons/button";
+export { ThemeProvider } from "providers/theme-provider";
+/**
+ * UI Components - atoms
+ */
+export { Button } from "atoms";
+
+/**
+ * UI Components - widgets
+ */
+export { BottomSheet } from "widgets";
 /**
  * Types
  */
@@ -14,8 +21,20 @@ export {
   BottomSheetHeaderProps,
   BottomSheetWrapperProps,
 } from "./src/widgets/bottomSheet/index.type";
+
 /**
  * Hooks
  */
+export { useTheme } from "hooks";
+export { useBottomSheet, usePreviousValue } from "widgets";
 
-export { useBottomSheet, usePreviousValue } from "./src/widgets/bottomSheet/hooks";
+/**
+ * utils
+ */
+export { createTheme } from "utils";
+
+/**
+ * style
+ */
+
+export { colors } from "styles";
