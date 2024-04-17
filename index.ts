@@ -5,7 +5,7 @@ export { ThemeProvider } from "providers/theme-provider";
 /**
  * UI Components - atoms
  */
-export { Button } from "atoms";
+export { Button, Flex, Typography } from "atoms";
 
 /**
  * UI Components - widgets
