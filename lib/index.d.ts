@@ -8,3 +8,7 @@ export { default as Button } from "./src/atoms/buttons/button";
  * Types
  */
 export { ContextProps, BottomSheetContentsProps, BottomSheetContextProps, BottomSheetHeaderProps, BottomSheetWrapperProps, } from "./src/widgets/bottomSheet/index.type";
+/**
+ * Hooks
+ */
+export { useBottomSheet, usePreviousValue } from "./src/widgets/bottomSheet/hooks";

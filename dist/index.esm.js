@@ -10494,12 +10494,13 @@ function useAnimationControls() {
 }
 var useAnimation = useAnimationControls;
 
-createContext({
+var BottomSheetContext$1 = createContext({
     onDragEnd: function () { },
     controls: undefined,
     setIsOpen: function () { },
     isOpen: true,
 });
+var useBottomSheetContext = function () { return useContext(BottomSheetContext$1); };
 
 /**
  * 이전의 값을 보여주는 훅
@@ -10519,7 +10520,6 @@ function usePreviousValue(isOpen) {
     }, [isOpen]);
     return previousValueRef.current;
 }
-
 /**
  * @description 바텀시트 관리 훅
  * @returns
@@ -10604,7 +10604,6 @@ var contents = {
  * 바텀시트 Headless 안에서 context를 사용하는 훅
  * @returns
  */
-var useBottomSheetContext = function () { return useContext(BottomSheetContext); };
 var BottomSheetWrapper = function (_a) {
     var _b = _a.dragDirection, dragDirection = _b === void 0 ? "y" : _b, _c = _a.initial, initial = _c === void 0 ? "visible" : _c, style = _a.style, children = _a.children, rest = __rest(_a, ["dragDirection", "initial", "style", "children"]);
     var _d = useBottomSheetContext(), onDragEnd = _d.onDragEnd, controls = _d.controls; _d.setIsOpen; _d.isOpen;
@@ -10651,5 +10650,5 @@ var Button = function () {
     return jsx("div", { children: "Button" });
 };
 
-export { BottomSheet, Button, Hello };
+export { BottomSheet, Button, Hello, useBottomSheet, usePreviousValue };
 //# sourceMappingURL=index.esm.js.map

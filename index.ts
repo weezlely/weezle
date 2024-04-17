@@ -14,3 +14,8 @@ export {
   BottomSheetHeaderProps,
   BottomSheetWrapperProps,
 } from "./src/widgets/bottomSheet/index.type";
+/**
+ * Hooks
+ */
+
+export { useBottomSheet, usePreviousValue } from "./src/widgets/bottomSheet/hooks";
