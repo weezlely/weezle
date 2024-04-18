@@ -1,5 +1,38 @@
 # Taeo-ui Library for React
 
+## 사용 가이드
+
+### 패키지 설치
+
+```bash
+# 패키지 설치
+$ npm i taeo-ui
+
+# or
+
+
+$ yarn add taeo-ui
+
+```
+
+### 라이브러리 사용법
+
+```tsx
+import { ThemeProvider } from 'taeo-ui
+
+const theme = createTheme();
+
+const App = () => (
+  <div>
+    <ThemeProvider theme={theme}>
+      <Components />
+    </ThemeProvider>
+  </div>
+);
+```
+
+현재까지는 준비되어있는 UI 컴포넌트는 `button`, `typography`, `flex`, `bottomSheet` 가 준비되어있습니다. 추후 버전을 업데이트하며 만들어나갈 예정입니다.
+
 ## Rollup 실행
 
 ```bash
