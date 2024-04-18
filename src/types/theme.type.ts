@@ -3,5 +3,6 @@
  */
 
 export type Theme = {
-  colors: { [key in string]: string }[];
+  colors: Colors;
+  sizes: Size;
 };
