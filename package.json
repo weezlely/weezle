@@ -12,7 +12,8 @@
     "build": "tsc --emitDeclarationOnly & rollup -c",
     "watch": "rollup -cw",
     "exam": "cd example && npm start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rm -rf node_modules & rm -rf package-lock.json & rm -rf lib & rm -rf dist "
   },
   "repository": {
     "type": "git",

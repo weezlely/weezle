@@ -13,6 +13,15 @@ npm run watch
 
 example 폴더는 라이브러리가 잘 작동하는지 확인하기 위한 폴더입니다. 초기에는 확인하기 위해 cra로 구성하였으나, 로컬에서 React가 중복이 발생하여 이슈들이 생겨 간단하게 프로젝트를 열 수 있도록 `webpack` 을 통해 구성하였습니다.
 
+#### 패키지 설치
+
+```bash
+# npm
+
+$ npm i --dev @types/react @types/react-dom html-loader html-webpack-plugin react react-dom ts-loader typescript webpack webpack-cli webpack-dev-server
+
+```
+
 #### 1) package.json
 
 ```json
