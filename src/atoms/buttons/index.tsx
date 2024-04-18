@@ -2,13 +2,13 @@ import { motion as Motion } from "framer-motion";
 import React, { type CSSProperties, type Ref } from "react";
 
 import { IButton } from "interfaces/button.interface";
-import eventHandler from "utils/eventHandler";
+import { eventHandler } from "utils";
 
 const buttonStyle: CSSProperties = {
   position: "relative",
   border: "none",
   padding: 10,
-  borderRadius: "24px",
+  borderRadius: "8px",
   cursor: "pointer",
   fontWeight: "bold",
   fontFamily: "Helvetica",
