@@ -1,4 +1,5 @@
 const colors = {
+  black: "#000",
   primary_5: "#EFF5FF",
   primary_10: "#D3E1FB",
   primary_20: "#A7C4F7",
@@ -31,6 +32,6 @@ const colors = {
   grayscale_70: "#555555",
   grayscale_80: "#2D2D2D",
   grayscale_90: "#1D1D1D",
-};
+} as Colors;
 
 export default colors;
