@@ -7,9 +7,9 @@
   "browser": "./dist/index.umd.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "rm -rf lib & rm -rf dist",
     "start": "npm run exam & npm run watch",
+    "prepare:git": "cp README.md README-git.md",
+    "prepare:npm": "rm -rf lib & rm -rf dist & cp README.md README-npm.md",
     "build": "npm run prepare & rollup -c",
     "watch": "npm run prepare & rollup -cw",
     "exam": "cd example && npm start",
