@@ -8,8 +8,8 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "start": "npm run exam & npm run watch",
-    "prepare:git": "cp README.md README-git.md",
-    "prepare:npm": "rm -rf lib & rm -rf dist & cp README.md README-npm.md",
+    "prepare:git": "cp README-git.md README.md",
+    "prepare:npm": "rm -rf lib & rm -rf dist & cp README-npm.md README.md",
     "build": "npm run prepare & rollup -c",
     "watch": "npm run prepare & rollup -cw",
     "exam": "cd example && npm start",
