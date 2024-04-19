@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import { colors } from "../..";
+import { colors } from "../../lib";
 
 declare global {
   export type Variant = "primary" | "secondary" | "default";

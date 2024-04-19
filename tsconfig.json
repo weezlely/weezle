@@ -17,5 +17,5 @@
     "baseUrl": "./src/"
   },
   "include": ["**/*.tsx", "**/*.ts", "@types", "index.ts", "rollup.config.mjs"],
-  "exclude": ["node_modules", "build", "dist", "lib", "example", "rollup.config.mjs"]
+  "exclude": ["node_modules", "./build/**/*", "./dist/**/*", "./lib/**/*", "./example/**/*", "rollup.config.mjs"]
 }

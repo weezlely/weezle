@@ -2,7 +2,7 @@
  * Rollup 설정 모듈
  *
  * @author TAETAEO
- * @since 2022.06.06 Mon 17:44:31
+ * @since 2024.04.15 Mon 17:44:31
  */
 
 import pkg from "./package.json" assert { type: "json" };
@@ -10,7 +10,6 @@ import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import postcssPrefixer from "postcss-prefixer";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import babel from "@rollup/plugin-babel";

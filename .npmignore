@@ -5,3 +5,4 @@ rollup.config.mjs
 tsconfig.json
 yarn.lock
 node_modules/
+README-git.md
