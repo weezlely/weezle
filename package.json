@@ -8,12 +8,14 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "rm -rf lib & rm -rf dist",
     "start": "npm run exam & npm run watch",
-    "build": "tsc --emitDeclarationOnly & rollup -c",
-    "watch": "rollup -cw",
+    "build": "npm run prepare & rollup -c",
+    "watch": "npm run prepare & rollup -cw",
     "exam": "cd example && npm start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "clean": "rm -rf node_modules & rm -rf package-lock.json & rm -rf lib & rm -rf dist "
+    "clean": "rm -rf node_modules & rm -rf package-lock.json & rm -rf lib & rm -rf dist",
+    "release": "npm run build & npm publish"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   },
   "keywords": [
     "React",
+    "rollup",
     "ui"
   ],
   "author": "taetaeo",
