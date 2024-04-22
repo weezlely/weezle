@@ -1,5 +1,6 @@
-import { Switch, useTheme } from "taeo-ui";
+/// <reference types="react" />
 import React from "react";
+import { Switch, useTheme } from "taeo-ui";
 
 const TestSwitch = () => {
   const { theme } = useTheme();
