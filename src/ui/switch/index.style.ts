@@ -1,11 +1,12 @@
 import type { CSSProperties } from "react";
+import { colors } from "../../..";
 
 export const containerStyle: CSSProperties = {
   position: "relative",
   cursor: "pointer",
   width: "60px",
   height: "30px",
-  borderRadius: "15px",
+  borderRadius: "20px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -18,7 +19,9 @@ export const toggleStyle: CSSProperties = {
   height: "25px",
   borderRadius: "50%",
   position: "absolute",
-  top: "4px",
+  display: "flex",
+  alignItems: "center",
+  backgroundColor: colors.white,
 };
 
 export const titleStyle: CSSProperties = {};

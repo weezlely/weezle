@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { motion as Motion, LazyMotion, domAnimation } from "framer-motion";
 import { type FC } from "react";
 
 import { useBottomSheetContext } from "./context";

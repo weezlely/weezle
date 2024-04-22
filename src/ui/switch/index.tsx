@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { useEffect, type CSSProperties } from "react";
 import { useSwitchContext } from "./context";
 import { SwitchProvider } from "./provider";
 
@@ -7,7 +7,7 @@ import * as styled from "./index.style";
 
 import { colors, fontWeights } from "styles";
 
-const SwitchButtonContainer = ({
+const SwitchContainer = ({
   primary = colors.primary_50,
   secondary = colors.secondary_50,
   fontWeight = "bold",
@@ -29,26 +29,22 @@ const SwitchButtonContainer = ({
   );
 };
 
-const SwitchButtonToggle = ({ style, children, ...rest }: SwitchToggleProps) => {
+const SwitchToggle = ({ style, children, ...rest }: SwitchToggleProps) => {
   const { isOn } = useSwitchContext();
 
-  const propsStyle = (isOn: boolean): CSSProperties => {
-    return {
-      left: isOn ? "calc(100%-27.5px)" : "2.5px",
-      transition: "left 0.3s ease-in-out",
-    };
+  const propsStyle: CSSProperties = {
+    left: isOn ? "calc(100% - 27.5px)" : "2.5px",
+    transition: "left 0.3s ease-in-out",
   };
 
   return (
-    isOn && (
-      <div style={{ ...styled.toggleStyle, ...propsStyle(isOn), ...style }} {...rest}>
-        {children}
-      </div>
-    )
+    <div style={{ ...styled.toggleStyle, ...propsStyle, ...style }} {...rest}>
+      {children}
+    </div>
   );
 };
 
-const SwitchButtonLabel = ({ style, children, ...rest }: SwitchLabelProps) => {
+const SwitchLabel = ({ style, children, ...rest }: SwitchLabelProps) => {
   return (
     <span style={{ ...styled.titleStyle, ...style }} {...rest}>
       {children}
@@ -56,10 +52,10 @@ const SwitchButtonLabel = ({ style, children, ...rest }: SwitchLabelProps) => {
   );
 };
 
-const SwitchButton = Object.assign(SwitchProvider, {
-  Container: SwitchButtonContainer,
-  Toggle: SwitchButtonToggle,
-  Label: SwitchButtonLabel,
+const Switch = Object.assign(SwitchProvider, {
+  Container: SwitchContainer,
+  Toggle: SwitchToggle,
+  Label: SwitchLabel,
 });
 
-export default SwitchButton;
+export default Switch;

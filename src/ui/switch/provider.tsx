@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SwitchContext } from "./context";
 import { SwitchProviderProps } from "./index.type";
 
