@@ -1,8 +1,8 @@
 # Taeo-ui Library for React
 
-## 사용 가이드
+## Use Guide
 
-### 패키지 설치
+### Package
 
 ```bash
 # 패키지 설치
@@ -13,7 +13,7 @@ $ npm i taeo-ui
 $ yarn add taeo-ui
 ```
 
-### 라이브러리 사용법
+### Library
 
 ```tsx
 import { ThemeProvider } from 'taeo-ui
@@ -31,7 +31,7 @@ const App = () => (
 
 현재까지는 준비되어있는 UI 컴포넌트는 `button`, `typography`, `flex`, `bottomSheet` 가 준비되어있습니다. 추후 버전을 업데이트하며 만들어나갈 예정입니다.
 
-## Rollup 실행
+## Run Rollup.js
 
 ```bash
 
@@ -44,7 +44,7 @@ npm run watch
 
 example 폴더는 라이브러리가 잘 작동하는지 확인하기 위한 폴더입니다. 초기에는 확인하기 위해 cra로 구성하였으나, 로컬에서 React가 중복이 발생하여 이슈들이 생겨 간단하게 프로젝트를 열 수 있도록 `webpack` 을 통해 구성하였습니다.
 
-#### 패키지 설치
+#### Setting Packages
 
 ```bash
 # npm
@@ -119,13 +119,21 @@ module.exports = {
 };
 ```
 
-## 테스트 실행
+## Run Example
 
 ```bash
 
 npm run exam
 
 ```
+
+## UI Components
+
+1. Button
+2. Typography
+3. Flex
+4. BottomSheet
+5. Switch
 
 ## Trouble Shooting
 
