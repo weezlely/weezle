@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, useTheme } from "taeo-ui";
 
-const TypographyComponents = () => {
+const TestTypography = () => {
   const { theme } = useTheme();
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -27,4 +27,4 @@ const TypographyComponents = () => {
   );
 };
 
-export default TypographyComponents;
+export default TestTypography;

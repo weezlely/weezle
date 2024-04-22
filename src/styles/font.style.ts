@@ -9,7 +9,7 @@ const fonts = {
   ft48: 48,
 } as const;
 
-const fontSizes = {
+export const fontSizes = {
   xs: fonts.ft10,
   sm: fonts.ft12,
   md: fonts.ft14,
@@ -19,4 +19,9 @@ const fontSizes = {
   xxxl: fonts.ft48,
 } as const;
 
-export default fontSizes;
+export const fontWeights = {
+  bold: 700,
+  semiBold: 600,
+  medium: 500,
+  regular: 400,
+} as const;

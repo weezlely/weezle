@@ -1,6 +1,6 @@
 export type ButtonProps = {
-  color?: string;
-  backgroundColor?: string;
+  color?: Color;
+  backgroundColor?: Color;
   display?: boolean;
   isAnimated?: boolean;
 };

@@ -1,14 +1,7 @@
-import { type PropsWithChildren, type FC, createContext } from "react";
+import type { PropsWithChildren, FC } from "react";
 
-import { ContextProps } from "./index.type";
+import { BottomSheetContext } from "./context";
 import { useBottomSheet } from "./hooks";
-
-export const BottomSheetContext = createContext<ContextProps>({
-  onDragEnd: () => {},
-  controls: undefined,
-  setIsOpen: () => {},
-  isOpen: true,
-});
 
 /**
  *

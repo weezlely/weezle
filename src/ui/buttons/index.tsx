@@ -31,7 +31,7 @@ const Button = React.forwardRef(function button(
   }: IButton,
   forwardRef: Ref<HTMLButtonElement>
 ) {
-  const propsStyle = {
+  const propsStyle: CSSProperties = {
     backgroundColor: backgroundColor || "black",
     color: color || "white",
     display: display ? "inline-block" : "none",

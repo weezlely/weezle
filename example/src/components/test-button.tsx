@@ -2,10 +2,9 @@
 import React from "react";
 import { Button, useTheme } from "taeo-ui";
 
-const TestComponents = () => {
+const TestButton = () => {
   const { theme } = useTheme();
 
-  console.log("테마", theme);
   return (
     <Button color={theme.colors.primary_60} backgroundColor={theme.colors.primary_5} isAnimated>
       버튼
@@ -13,4 +12,4 @@ const TestComponents = () => {
   );
 };
 
-export default TestComponents;
+export default TestButton;

@@ -1,17 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import TestComponents from "./components/bottomSheet-component";
-import TestComponents from "./components/button-component";
+import TestButton from "./components/test-button";
 import { ThemeProvider, createTheme } from "taeo-ui";
-import TypographyComponents from "./components/typography-components";
+import TestTypography from "./components/test-typography";
+import TestSwitch from "./components/test-switch";
 
 const theme = createTheme();
 
 const App = () => (
   <div>
     <ThemeProvider theme={theme}>
-      <TestComponents />
-      <TypographyComponents />
+      <TestButton />
+      <TestTypography />
+      <TestSwitch />
     </ThemeProvider>
   </div>
 );

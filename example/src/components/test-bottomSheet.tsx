@@ -2,7 +2,7 @@
 import React from "react";
 import { BottomSheet } from "taeo-ui";
 
-const TestComponents = () => {
+const TestBottomSheet = () => {
   return (
     <>
       <BottomSheet>
@@ -18,4 +18,4 @@ const TestComponents = () => {
   );
 };
 
-export default TestComponents;
+export default TestBottomSheet;

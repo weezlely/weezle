@@ -3,30 +3,19 @@
  */
 export { ThemeProvider } from "providers/theme-provider";
 /**
- * UI Components - atoms
+ * UI Components
  */
-export { Button, Flex, Typography } from "atoms";
+export { Button, Flex, Typography, Switch, BottomSheet, useBottomSheet, usePreviousValue } from "ui";
 
-/**
- * UI Components - widgets
- */
-export { BottomSheet } from "widgets";
 /**
  * Types
  */
-export {
-  ContextProps,
-  BottomSheetContentsProps,
-  BottomSheetContextProps,
-  BottomSheetHeaderProps,
-  BottomSheetWrapperProps,
-} from "./src/widgets/bottomSheet/index.type";
-
+export type { BottomSheetContextProps, BottomSheetContentsProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "ui";
+export type { ButtonProps, FlexProps, TypographyProps, Theme } from "types";
 /**
  * Hooks
  */
 export { useTheme } from "hooks";
-export { useBottomSheet, usePreviousValue } from "widgets";
 
 /**
  * utils
