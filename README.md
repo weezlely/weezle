@@ -134,6 +134,7 @@ npm run exam
 3. Flex
 4. BottomSheet
 5. Switch
+6. Checkbox
 
 ## Trouble Shooting
 

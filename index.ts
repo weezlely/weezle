@@ -5,13 +5,25 @@ export { ThemeProvider } from "providers/theme-provider";
 /**
  * UI Components
  */
-export { Button, Flex, Typography, Switch, BottomSheet, useBottomSheet, usePreviousValue } from "ui";
+export { Button, Flex, Typography, Switch, BottomSheet, CheckBox, useBottomSheet, usePreviousValue } from "ui";
 
 /**
  * Types
  */
-export type { BottomSheetContextProps, BottomSheetContentsProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "ui";
 export type { ButtonProps, FlexProps, TypographyProps, Theme } from "types";
+export type {
+  /** Bottom Sheet Types */
+  BottomSheetContextProps,
+  BottomSheetContentsProps,
+  BottomSheetHeaderProps,
+  BottomSheetWrapperProps,
+
+  /** Checkbox Types */
+  CheckBoxContextProps,
+  CheckBoxWrapperProps,
+  CheckBoxInputProps,
+  CheckBoxTextProps,
+} from "ui";
 /**
  * Hooks
  */
