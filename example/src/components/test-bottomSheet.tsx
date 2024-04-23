@@ -1,16 +1,30 @@
 /// <reference types="react" />
 import React from "react";
-import { BottomSheet } from "taeo-ui";
+import { BottomSheet, Typography, Flex, useTheme } from "taeo-ui";
 
 const TestBottomSheet = () => {
+  const { theme } = useTheme();
+
   return (
     <>
       <BottomSheet>
         <BottomSheet.Wrapper>
+          {/* 손잡이 */}
           <BottomSheet.Header />
+          {/* 손잡이 */}
           <BottomSheet.Contents>
-            <div style={{ height: "20%" }}>컨텐츠 헤더</div>
-            <div style={{ height: "80%" }}>컨텐츠 바디</div>
+            <Flex display="flex" direction="column">
+              <div style={{ height: "10%", borderBottom: "1px solid #000" }}>
+                <Typography size="xxl" color={theme.colors.primary_60}>
+                  Contents Title
+                </Typography>
+              </div>
+              <div style={{ height: "90%" }}>
+                <Typography size="xl" color={theme.colors.primary_60}>
+                  Contents Body
+                </Typography>
+              </div>
+            </Flex>
           </BottomSheet.Contents>
         </BottomSheet.Wrapper>
       </BottomSheet>
