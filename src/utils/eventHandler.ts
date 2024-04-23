@@ -3,10 +3,14 @@
  * @param handler
  * @param event
  */
-const handleButton = (handler: Function | undefined, event: ButtonEvent) => {
+const handleClick = (handler: Function | undefined, event: ButtonEvent, callback?: () => void) => {
   if (handler && typeof handler === "function") {
     handler(event);
   }
+  // callback이 주어진 경우에만 실행
+  if (callback && typeof callback === "function") {
+    callback();
+  }
 };
 
-export default { handleButton };
+export default { handleClick };

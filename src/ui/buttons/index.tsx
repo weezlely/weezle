@@ -46,9 +46,9 @@ const Button = React.forwardRef(function button(
         ref={forwardRef}
         style={{ ...buttonStyle, ...propsStyle, ...style }}
         whileHover={isAnimated ? { scale: 1.04 } : undefined}
-        onMouseOver={(e) => eventHandler.handleButton(onMouseOver, e)}
-        onMouseOut={(e) => eventHandler.handleButton(onMouseOut, e)}
-        onClick={(e) => eventHandler.handleButton(onClick, e)}
+        onMouseOver={(e) => eventHandler.handleClick(onMouseOver, e)}
+        onMouseOut={(e) => eventHandler.handleClick(onMouseOut, e)}
+        onClick={(e) => eventHandler.handleClick(onClick, e)}
       >
         {children}
       </Motion.button>
