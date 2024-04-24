@@ -1,25 +1,32 @@
-import type { Dispatch, HTMLAttributes } from "react";
+import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
-export interface FlyoutContextProps {
+type ContextProps = {
   isOpen: boolean;
-  toggle: Dispatch<React.SetStateAction<boolean>>;
-}
-interface OverLayProps {}
-interface ToggleProps {}
-interface HeaderProps {}
-interface ListProps {
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "default";
-  variant?: "default" | "primary" | "secondary" | "translucent";
-  isBorder?: boolean;
-}
+  toggle: Dispatch<SetStateAction<boolean>>;
+};
+type OverLayProps = {};
+type ToggleProps = {};
+type HeaderProps = {};
+type ListProps = {
+  backgroundColor?: CSSProperties["backgroundColor"];
+};
+type ItemProps = {
+  color?: Color;
+};
 
-interface ItemProps {
-  to?: string;
-}
-
-export type FlyoutProviderProps = React.PropsWithChildren<FlyoutContextProps>;
-export type FlyoutOverLayProps = React.PropsWithChildren<OverLayProps> & HTMLAttributes<HTMLElement>;
-export type FlyoutToggleProps = React.PropsWithChildren<ToggleProps> & HTMLAttributes<HTMLElement>;
-export type FlyoutHeaderProps = React.PropsWithChildren<HeaderProps> & HTMLAttributes<HTMLElement>;
-export type FlyoutListProps = React.PropsWithChildren<ListProps> & Omit<HTMLAttributes<HTMLDivElement>, "color">;
-export type FlyoutItemProps = React.PropsWithChildren<ItemProps> & HTMLAttributes<HTMLElement>;
+/** Flyout's Context Props */
+export type FlyoutContextProps = PropsWithChildren<ContextProps>;
+/** Flyout's Provider Props */
+export type FlyoutProviderProps = PropsWithChildren<ContextProps>;
+/** Flyout's Container Props */
+export type FlyoutContainerProps = PropsWithChildren<ContextProps> & HTMLAttributes<HTMLDivElement>;
+/** Flyout's Overlay Props */
+export type FlyoutOverLayProps = PropsWithChildren<OverLayProps> & HTMLAttributes<HTMLElement>;
+/** Flyout's Toggle Props */
+export type FlyoutToggleProps = PropsWithChildren<ToggleProps> & HTMLAttributes<HTMLElement>;
+/** Flyout's Header Props */
+export type FlyoutHeaderProps = PropsWithChildren<HeaderProps> & HTMLAttributes<HTMLElement>;
+/** Flyout's List Props */
+export type FlyoutListProps = PropsWithChildren<ListProps> & HTMLAttributes<HTMLDivElement>;
+/** Flyout's Item Props */
+export type FlyoutItemProps = PropsWithChildren<ItemProps> & HTMLAttributes<HTMLElement>;
