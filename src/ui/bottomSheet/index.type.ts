@@ -13,7 +13,7 @@ export type ContextProps = {
 };
 
 /** BottomSheet Context */
-export type BottomSheetContextProps = PropsWithChildren<{}>;
+export type BottomSheetContextProps = PropsWithChildren<ContextProps>;
 
 /** BottomSheet Wrapper */
 export type BottomSheetWrapperProps = PropsWithChildren<{

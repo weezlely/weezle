@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
-import { ContextProps } from "./index.type";
+import { CheckBoxContextProps } from "./index.type";
 
-export const CheckBoxContext = createContext<ContextProps>({
+export const CheckBoxContext = createContext<CheckBoxContextProps>({
   isChecked: false,
   setIsChecked: () => {},
 });

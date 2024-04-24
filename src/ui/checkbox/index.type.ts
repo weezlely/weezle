@@ -1,18 +1,22 @@
-import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren } from "react";
+import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
-export type ContextProps = {
+type ContextProps = {
   isChecked: boolean;
-  setIsChecked: Dispatch<React.SetStateAction<boolean>>;
+  setIsChecked: Dispatch<SetStateAction<boolean>>;
 };
+type WrapperProps = {};
+type InputProps = {
+  checkColor: "white" | "black" | "blue" | "red";
+};
+type TextProps = {};
 
-export type CheckBoxContextProps = PropsWithChildren<ContextProps>;
+/** Checkbox's Context Props */
+export type CheckBoxContextProps = ContextProps;
+/** Checkbox's Provider Props */
 export type CheckBoxProviderProps = PropsWithChildren<ContextProps>;
-
-export type CheckBoxWrapperProps = PropsWithChildren<{}> & HTMLAttributes<HTMLLabelElement>;
-
-export type CheckBoxInputProps = PropsWithChildren<{
-  checkColor: CSSProperties["color"];
-}> &
-  HTMLAttributes<HTMLInputElement>;
-
-export type CheckBoxTextProps = PropsWithChildren<{}> & HTMLAttributes<HTMLParagraphElement>;
+/** Checkbox's Wrapper Props */
+export type CheckBoxWrapperProps = PropsWithChildren<WrapperProps> & HTMLAttributes<HTMLLabelElement>;
+/** Checkbox's Input Props */
+export type CheckBoxInputProps = PropsWithChildren<InputProps> & HTMLAttributes<HTMLInputElement>;
+/** Checkbox's Text Props */
+export type CheckBoxTextProps = PropsWithChildren<TextProps> & HTMLAttributes<HTMLParagraphElement>;
