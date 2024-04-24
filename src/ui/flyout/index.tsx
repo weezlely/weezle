@@ -1,13 +1,17 @@
-import React, { CSSProperties } from "react";
-import { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type";
-import { FlyoutProvider } from "./provider";
-
-import * as styled from "./index.style";
+import { type CSSProperties, useState } from "react";
+/** Context */
 import { useFlyoutContext } from "./context";
+/** Provider */
+import { FlyoutProvider } from "./provider";
+/** Types */
+import { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type";
+/** Styles */
+import * as styled from "./index.style";
+import { eventHandler } from "utils";
 
-const FlyoutContainer = ({ isOpen, toggle, style, children, ...rest }: FlyoutContainerProps) => {
+const FlyoutContainer = ({ style, children, ...rest }: FlyoutContainerProps) => {
   return (
-    <FlyoutProvider isOpen={isOpen} toggle={toggle}>
+    <FlyoutProvider>
       <div className="flyout__wrapper" style={{ ...styled.containerStyle, ...style }} {...rest}>
         {children}
       </div>
@@ -44,12 +48,26 @@ const FlyoutHeader = ({ style, children, ...rest }: FlyoutHeaderProps) => {
 
 const FlyoutList = ({ backgroundColor = "#fff", style, children, ...rest }: FlyoutListProps) => {
   const { isOpen } = useFlyoutContext();
-  if (!isOpen) return null;
 
-  const propsStyle: CSSProperties = { backgroundColor };
+  if (!isOpen) return null; // Early return
+
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+
+  const mouseEvent = { over: () => setIsHovering(true), out: () => setIsHovering(false) };
+
+  const propsStyle: CSSProperties = {
+    backgroundColor,
+    boxShadow: isHovering ? "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" : "none",
+  };
 
   return (
-    <div className="flyout__list" style={{ ...styled.listStyle, ...propsStyle, ...style }} {...rest}>
+    <div
+      className="flyout__list"
+      style={{ ...styled.listStyle, ...propsStyle, ...style }}
+      onMouseOver={(e) => eventHandler.handleHover(mouseEvent.over, e)}
+      onMouseOut={(e) => eventHandler.handleHover(mouseEvent.out, e)}
+      {...rest}
+    >
       {children}
     </div>
   );

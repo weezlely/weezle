@@ -17,9 +17,9 @@ type ItemProps = {
 /** Flyout's Context Props */
 export type FlyoutContextProps = PropsWithChildren<ContextProps>;
 /** Flyout's Provider Props */
-export type FlyoutProviderProps = PropsWithChildren<ContextProps>;
+export type FlyoutProviderProps = PropsWithChildren<{}>;
 /** Flyout's Container Props */
-export type FlyoutContainerProps = PropsWithChildren<ContextProps> & HTMLAttributes<HTMLDivElement>;
+export type FlyoutContainerProps = PropsWithChildren<{}> & HTMLAttributes<HTMLDivElement>;
 /** Flyout's Overlay Props */
 export type FlyoutOverLayProps = PropsWithChildren<OverLayProps> & HTMLAttributes<HTMLElement>;
 /** Flyout's Toggle Props */
