@@ -1,6 +1,6 @@
 {
   "name": "taeo-ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "taeo's ui library for react",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
