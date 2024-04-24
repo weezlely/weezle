@@ -9,16 +9,18 @@ import TestBottomSheet from "./components/test-bottomSheet";
 import TestCheckbox from "./components/test-checkbox";
 
 import "./checkbox.css";
+import TestFlyout from "./components/test-flyout";
 const theme = createTheme();
 
 const App = () => (
-  <div>
+  <div style={{ width: "100vw", height: "100vh", zIndex: -1 }}>
     <ThemeProvider theme={theme}>
-      <TestButton />
-      <TestTypography />
-      <TestSwitch />
-      <TestBottomSheet />
-      <TestCheckbox />
+      {/* <TestButton /> */}
+      {/* <TestTypography /> */}
+      {/* <TestSwitch /> */}
+      {/* <TestBottomSheet /> */}
+      {/* <TestCheckbox /> */}
+      <TestFlyout />
     </ThemeProvider>
   </div>
 );
