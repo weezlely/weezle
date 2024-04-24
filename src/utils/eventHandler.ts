@@ -1,3 +1,5 @@
+import type { MouseEvent } from "react";
+
 /**
  * 이벤트 핸들러
  * @param handler
@@ -13,4 +15,13 @@ const handleClick = (handler: Function | undefined, event: ButtonEvent, callback
   }
 };
 
-export default { handleClick };
+const handleHover = (handler: Function | undefined, event: MouseEvent, callback?: () => void) => {
+  if (handler && typeof handler === "function") {
+    handler(event);
+  }
+  if (callback && typeof callback === "function") {
+    callback();
+  }
+};
+
+export default { handleClick, handleHover };
