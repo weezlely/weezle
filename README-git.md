@@ -135,6 +135,7 @@ npm run exam
 4. BottomSheet
 5. Switch
 6. Checkbox
+7. Flyout
 
 ## Trouble Shooting
 
