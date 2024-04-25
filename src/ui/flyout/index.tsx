@@ -1,4 +1,4 @@
-import { type CSSProperties, useState } from "react";
+import type { CSSProperties } from "react";
 /** Context */
 import { useFlyoutContext } from "./context";
 /** Provider */
@@ -7,7 +7,8 @@ import { FlyoutProvider } from "./provider";
 import { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type";
 /** Styles */
 import * as styled from "./index.style";
-import { eventHandler } from "utils";
+/** Hooks */
+import { useHover } from "hooks";
 
 const FlyoutContainer = ({ style, children, ...rest }: FlyoutContainerProps) => {
   return (
@@ -51,9 +52,7 @@ const FlyoutList = ({ backgroundColor = "#fff", style, children, ...rest }: Flyo
 
   if (!isOpen) return null; // Early return
 
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-
-  const mouseEvent = { over: () => setIsHovering(true), out: () => setIsHovering(false) };
+  const [targetRef, isHovering] = useHover();
 
   const propsStyle: CSSProperties = {
     backgroundColor,
@@ -61,13 +60,7 @@ const FlyoutList = ({ backgroundColor = "#fff", style, children, ...rest }: Flyo
   };
 
   return (
-    <div
-      className="flyout__list"
-      style={{ ...styled.listStyle, ...propsStyle, ...style }}
-      onMouseOver={(e) => eventHandler.handleHover(mouseEvent.over, e)}
-      onMouseOut={(e) => eventHandler.handleHover(mouseEvent.out, e)}
-      {...rest}
-    >
+    <div ref={targetRef as React.MutableRefObject<null>} className="flyout__list" style={{ ...styled.listStyle, ...propsStyle, ...style }} {...rest}>
       {children}
     </div>
   );
