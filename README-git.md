@@ -136,6 +136,7 @@ npm run exam
 5. Switch
 6. Checkbox
 7. Flyout
+8. Modal
 
 ## Trouble Shooting
 
