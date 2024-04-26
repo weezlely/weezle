@@ -2,7 +2,7 @@
  * Rollup 설정 모듈
  *
  * @author TAETAEO
- * @since 2024.04.15 Mon 17:44:31
+ * @since 2024.04.26 Fri 17:44:31
  */
 
 import pkg from "./package.json" assert { type: "json" };
@@ -65,11 +65,7 @@ export default {
       modules: true,
       sourceMap: true,
       use: ["sass"],
-      plugins: [
-        postcssPrefixer({
-          prefix: `${pkg.name}__`,
-        }),
-      ],
+      plugins: [postcssPrefixer({ prefix: `${pkg.name}__` })],
     }),
   ],
   external: [...Object.keys(pkg.peerDependencies || {})],

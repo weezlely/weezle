@@ -7,3 +7,4 @@ yarn.lock
 node_modules/
 README-git.md
 README.md
+.storybook
