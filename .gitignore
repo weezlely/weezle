@@ -4,3 +4,4 @@
 /example/node_modules
 /example/package-lock.json
 README-npm.md
+*storybook.log
