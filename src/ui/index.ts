@@ -6,6 +6,7 @@ export { default as Typography } from "./typography";
 export { default as Switch } from "./switch";
 export { default as CheckBox } from "./checkbox";
 export { default as Flyout } from "./flyout";
+export { default as Modal } from "./modal";
 
 export { useBottomSheet, usePreviousValue } from "./bottomSheet/hooks";
 
@@ -35,3 +36,15 @@ export type {
   FlyoutListProps,
   FlyoutItemProps,
 } from "./flyout/index.type";
+
+export type {
+  ModalContextType,
+  ModalContextProps,
+  ModalProviderProps,
+  ModalPortalProps,
+  ModalLayoutProps,
+  ModalTriggerProps,
+  ModalHeaderProps,
+  ModalBodyProps,
+  ModalFooterProps,
+} from "./modal/index.type";

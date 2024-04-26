@@ -5,7 +5,7 @@ export { ThemeProvider } from "providers/theme-provider";
 /**
  * UI Components
  */
-export { Button, Flex, Typography, Switch, BottomSheet, CheckBox, Flyout } from "ui";
+export { Button, Flex, Typography, Switch, BottomSheet, CheckBox, Flyout, Modal } from "ui";
 /**
  * Hooks
  */
@@ -37,11 +37,22 @@ export type {
   FlyoutToggleProps,
   FlyoutListProps,
   FlyoutItemProps,
+
+  /** Modal Types */
+  ModalContextType,
+  ModalContextProps,
+  ModalProviderProps,
+  ModalPortalProps,
+  ModalLayoutProps,
+  ModalTriggerProps,
+  ModalHeaderProps,
+  ModalBodyProps,
+  ModalFooterProps,
 } from "ui";
 /**
  * Hooks
  */
-export { useTheme } from "hooks";
+export { useTheme, useToggle, useHover } from "hooks";
 
 /**
  * utils
