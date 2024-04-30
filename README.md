@@ -21,8 +21,8 @@ $ yarn add taeo-ui
 | 24.04.17 | 초기 버전 <br/> `button`, `typography`, `bottomSheet` 구현 | 1.0.0 - 1.0.1 |
 | 24.04.18 | UI 컴포넌트 추가 <br/> `Flex`,`Switch` 구현                | 1.0.2         |
 | 24.04.23 | UI 컴포넌트 추가 <br/> `Checkbox` 구현                     | 1.0.3         |
-| 24.04.24 | UI 컴포넌트 추가 <br/> `Flyout` 구현                       | 1.0.4         |
-| 24.04.26 | UI 컴포넌트 추가 <br/> `Modal` 구현                        | 1.0.5         |
+| 24.04.24 | UI 컴포넌트 추가 <br/> `Flyout` 구현                       | 1.0.4 - 1.0.5 |
+| 24.04.26 | UI 컴포넌트 추가 <br/> `Modal` 구현                        | 1.0.6 - 1.0.7 |
 
 ### Community
 
