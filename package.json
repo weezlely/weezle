@@ -17,7 +17,7 @@
     "clean": "rm -rf node_modules & rm -rf package-lock.json & rm -rf lib & rm -rf dist",
     "release": "npm run build & npm publish",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build"
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,9 @@
     "rollup",
     "ui"
   ],
-  "author": "taetaeo",
+  "author": {
+    "name": "taetaeo"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/taetaeo/taeo-ui/issues"
