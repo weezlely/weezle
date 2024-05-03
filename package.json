@@ -9,7 +9,8 @@
   "scripts": {
     "prepare:git": "cp README-git.md README.md",
     "prepare:npm": "rm -rf lib & rm -rf dist & cp README-npm.md README.md",
-    "prepare:sb": "cd sb && npm i",
+    "prepare:sb": "cd _sb && npm i",
+    "prepare:exam": "cd _example && npm i",
     "build": "npm run prepare:npm & rollup -c",
     "exam": "cd _example && npm start",
     "watch": "npm run prepare:npm & rollup -cw",
