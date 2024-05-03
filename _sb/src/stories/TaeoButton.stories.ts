@@ -1,10 +1,6 @@
-// src/components/Button/Button.stories.tsx
-
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../ui/";
-
-type ButtonProps = React.ComponentProps<typeof Button>;
+import type { ButtonProps } from "taeo-ui";
+import { Button } from "taeo-ui";
 
 const meta: Meta<ButtonProps> = {
   component: Button,
