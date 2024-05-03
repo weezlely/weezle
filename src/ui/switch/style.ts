@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { colors } from "../../..";
+import { colors } from "../../../lib";
 
 export const containerStyle: CSSProperties = {
   position: "relative",

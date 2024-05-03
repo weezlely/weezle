@@ -1,10 +1,9 @@
-import { useEffect, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
+
 import { useSwitchContext } from "./context";
 import { SwitchProvider } from "./provider";
-
-import { SwitchContainerProps, SwitchLabelProps, SwitchToggleProps } from "./index.type";
-import * as styled from "./index.style";
-
+import type { SwitchContainerProps, SwitchLabelProps, SwitchToggleProps } from "./type";
+import * as styled from "./style";
 import { colors, fontWeights } from "styles";
 
 const SwitchContainer = ({

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { CheckBoxContextProps } from "./index.type";
+import { CheckBoxContextProps } from "./type";
 
 /**
  * @description this is CheckboxContext made bt createContext
@@ -19,7 +19,7 @@ export const useCheckBoxContext = () => {
   const context = useContext(CheckBoxContext);
 
   if (!context) {
-    throw "value is not provied";
+    throw "value is not provided";
   }
 
   return context;

@@ -1,6 +1,6 @@
 import React from "react";
 import { FlyoutContext } from "./context";
-import { FlyoutProviderProps } from "./index.type";
+import type { FlyoutProviderProps } from "./type";
 
 export const FlyoutProvider = ({ children }: FlyoutProviderProps) => {
   const [isOpen, toggle] = React.useState<boolean>(false);

@@ -4,8 +4,8 @@ import { type FC } from "react";
 import { useBottomSheetContext } from "./context";
 import { BottomSheetProvider } from "./provider";
 
-import { BottomSheetContentsProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "./index.type";
-import * as styled from "./index.style";
+import type { BottomSheetContentsProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "./type";
+import * as styled from "./style";
 
 /**
  * 바텀시트 Headless 안에서 context를 사용하는 훅

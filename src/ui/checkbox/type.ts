@@ -1,4 +1,4 @@
-import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
+import type { Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
 type ContextProps = {
   isChecked: boolean;

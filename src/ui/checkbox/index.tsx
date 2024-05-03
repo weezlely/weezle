@@ -4,8 +4,8 @@ import { useCheckBoxContext } from "./context";
 import { CheckBoxProvider } from "./provider";
 import { eventHandler } from "utils";
 
-import { CheckBoxInputProps, CheckBoxTextProps, CheckBoxWrapperProps } from "./index.type";
-import * as styled from "./index.style";
+import { CheckBoxInputProps, CheckBoxTextProps, CheckBoxWrapperProps } from "./type";
+import * as styled from "./style";
 
 /** 체크 박스 - Label */
 const CheckBoxWrapper = ({ style, children, ...rest }: CheckBoxWrapperProps) => {

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { ModalContextProps } from "./index.type";
+import type { ModalContextProps } from "./type";
 
 /**
  * @description this is ModalContext made bt createContext

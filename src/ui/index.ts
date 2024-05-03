@@ -7,15 +7,17 @@ export { default as Switch } from "./switch";
 export { default as CheckBox } from "./checkbox";
 export { default as Flyout } from "./flyout";
 export { default as Modal } from "./modal";
+export { default as Radio } from "./radio";
 
 export { useBottomSheet, usePreviousValue } from "./bottomSheet/hooks";
 
 export type {
+  /** Bottom Sheet Types */
   ContextProps as BottomSheetContextProps,
   BottomSheetWrapperProps,
   BottomSheetHeaderProps,
   BottomSheetContentsProps,
-} from "./bottomSheet/index.type";
+} from "./bottomSheet/type";
 
 export type {
   /** CheckBox Types */
@@ -23,7 +25,7 @@ export type {
   CheckBoxWrapperProps,
   CheckBoxInputProps,
   CheckBoxTextProps,
-} from "./checkbox/index.type";
+} from "./checkbox/type";
 
 export type {
   /** Flyout Types */
@@ -35,9 +37,10 @@ export type {
   FlyoutToggleProps,
   FlyoutListProps,
   FlyoutItemProps,
-} from "./flyout/index.type";
+} from "./flyout/type";
 
 export type {
+  /** Modal Types */
   ModalContextType,
   ModalContextProps,
   ModalProviderProps,
@@ -47,4 +50,22 @@ export type {
   ModalHeaderProps,
   ModalBodyProps,
   ModalFooterProps,
-} from "./modal/index.type";
+} from "./modal/type";
+
+export type {
+  /** Switch Types */
+  SwitchContextProps,
+  SwitchProviderProps,
+  SwitchContainerProps,
+  SwitchToggleProps,
+  SwitchLabelProps,
+} from "./switch/type";
+
+export type {
+  /**Radio Types */
+  RadioContextProps,
+  RadioProviderProps,
+  RadioGroupProps,
+  RadioInputProps,
+  RadioLabelProps,
+} from "./radio/type";

@@ -4,9 +4,9 @@ import { useFlyoutContext } from "./context";
 /** Provider */
 import { FlyoutProvider } from "./provider";
 /** Types */
-import { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type";
+import type { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./type";
 /** Styles */
-import * as styled from "./index.style";
+import * as styled from "./style";
 /** Hooks */
 import { useHover } from "hooks";
 

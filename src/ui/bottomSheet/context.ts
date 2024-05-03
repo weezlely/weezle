@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { ContextProps } from "./index.type";
+import type { ContextProps } from "./type";
 
 /**
  * @description this is Bottom-Sheet Context made bt createContext

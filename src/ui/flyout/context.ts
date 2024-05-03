@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { FlyoutContextProps } from "./index.type";
+import type { FlyoutContextProps } from "./type";
 
 /**
  * @description this is FlyoutContext made bt createContext
@@ -9,7 +9,7 @@ export const FlyoutContext = createContext<FlyoutContextProps>({ isOpen: false, 
 
 /**
  * @description this is hook for using in Flyout Compound Component
- * @returns {context}
+ * @returns {Context}
  */
 export const useFlyoutContext = () => {
   const context = useContext(FlyoutContext);

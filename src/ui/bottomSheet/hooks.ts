@@ -1,7 +1,7 @@
 import { useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import { OnDragEndEvent, OnDragEndInfo, UsePreviousValueProps } from "./index.type";
+import { OnDragEndEvent, OnDragEndInfo, UsePreviousValueProps } from "./type";
 
 /**
  * 이전의 값을 보여주는 훅

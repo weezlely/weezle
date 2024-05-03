@@ -7,9 +7,9 @@ import { ModalProvider } from "./provider";
 // Hooks
 import { useClickOutSide, useToggle } from "hooks";
 // Types
-import type { ModalBodyProps, ModalContextType, ModalFooterProps, ModalHeaderProps, ModalLayoutProps, ModalPortalProps, ModalTriggerProps } from "./index.type";
+import type { ModalBodyProps, ModalContextType, ModalFooterProps, ModalHeaderProps, ModalLayoutProps, ModalPortalProps, ModalTriggerProps } from "./type";
 // Style
-import * as styled from "./index.style";
+import * as styled from "./style";
 import { eventHandler } from "utils";
 
 /** Modal Container */
