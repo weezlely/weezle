@@ -4,7 +4,7 @@ import type { RadioContextProps } from "./type";
  * @description this is Radio Group Context mode at create Context
  */
 
-export const RadioContext = createContext<RadioContextProps>({ value: undefined, setValue: () => {} });
+export const RadioContext = createContext<RadioContextProps>({ value: undefined, handleChange: () => {}, propsOnChange: () => {} });
 
 /**
  * @description this is hook for using in radio-group Compound Component

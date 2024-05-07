@@ -1,8 +1,18 @@
-import type { HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
+import type { HTMLAttributes, PropsWithChildren } from "react";
+
+type Event = {
+  value: string | number;
+  name: string | number;
+};
 
 type ContextProps = {
   value?: string | number;
-  setValue?: (value: SetStateAction<undefined>) => void;
+  handleChange?: (value: string | number) => void;
+  propsOnChange?: (event: Event) => void;
+};
+
+type ProvideProps = {
+  onChange?: (event: Event) => void;
 };
 
 type GroupProps = {
@@ -14,7 +24,7 @@ type OptionProps = {
   name?: string;
 
   /** Radio button's label */
-  htmlFor: string;
+  label: string;
 
   /** Radio button's default Check */
   defaultChecked?: HTMLInputElement["defaultChecked"];
@@ -36,7 +46,7 @@ type InputProps = {};
 export type RadioContextProps = ContextProps;
 
 /** Radio's Provider Props */
-export type RadioProviderProps = PropsWithChildren<ContextProps>;
+export type RadioProviderProps = PropsWithChildren<ProvideProps>;
 
 /** Radio's Group Props */
 export type RadioGroupProps = PropsWithChildren<GroupProps> & HTMLAttributes<HTMLElement>;

@@ -2,8 +2,12 @@ import { useState } from "react";
 import { RadioContext } from "./context";
 import type { RadioProviderProps } from "./type";
 
-export const RadioProvider = ({ children }: RadioProviderProps) => {
-  const [value, setValue] = useState(undefined);
+export const RadioProvider = ({ onChange = undefined, children }: RadioProviderProps) => {
+  const [value, setValue] = useState<ID>("");
 
-  return <RadioContext.Provider value={{ value, setValue }}>{children}</RadioContext.Provider>;
+  const handleChange = (value: ID) => {
+    setValue(value); // Update the selected value when a radio option is selected
+  };
+
+  return <RadioContext.Provider value={{ value, handleChange, propsOnChange: onChange }}>{children}</RadioContext.Provider>;
 };

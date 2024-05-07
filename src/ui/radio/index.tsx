@@ -1,4 +1,5 @@
-import React, { Children, Ref, cloneElement } from "react";
+import React, { ChangeEvent, Children, Ref, cloneElement } from "react";
+import { eventHandler } from "utils";
 
 import { useRadioContext } from "./context";
 import { RadioProvider } from "./provider";
@@ -11,6 +12,7 @@ const RadioGroup = ({ name = "radio-group", style, children, ...rest }: RadioGro
       {Children.map(children, (child) =>
         cloneElement(child as any, {
           name,
+          ...rest,
         })
       )}
     </>
@@ -21,29 +23,46 @@ const RadioOption = React.forwardRef(function (
   {
     /** Radio Option props */
     id = "",
+    label = "",
     size = "md",
     value = "",
     name = "",
     defaultChecked = false,
-    checked = false,
+    onChange = undefined,
     style,
     children,
     ...rest
   }: RadioOptionProps,
   forwardedRef: Ref<HTMLInputElement>
 ) {
-  const { value: selectedValue } = useRadioContext();
+  const { value: selectedValue, handleChange, propsOnChange } = useRadioContext();
+
+  const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = event.target;
+
+    if (handleChange && typeof handleChange === "function" && value) {
+      handleChange(value);
+    }
+
+    if (onChange && typeof onChange === "function") {
+      onChange(event);
+    }
+
+    if (propsOnChange && typeof propsOnChange === "function") {
+      propsOnChange({ value, name });
+    }
+  };
 
   return (
-    <label htmlFor={id} style={{ ...styled.labelStyle, ...style }}>
+    <label id={id} htmlFor={label} style={{ ...styled.labelStyle, ...style }}>
       <input
         ref={forwardedRef}
-        id={id}
+        id={label}
         type="radio"
         value={value}
         name={name}
-        checked={checked ? checked : selectedValue === value}
-        defaultChecked={defaultChecked}
+        checked={defaultChecked ? defaultChecked : selectedValue === value}
+        onChange={handleRadioChange}
         style={{ ...styled.inputStyle }}
         {...rest}
       />
