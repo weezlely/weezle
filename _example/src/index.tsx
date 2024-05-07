@@ -11,6 +11,7 @@ import TestFlyout from "./components/test-flyout";
 import TestModal from "./components/test-modal";
 
 import "./checkbox.css";
+import TestRadioGroup from "./components/test-radio";
 const theme = createTheme();
 
 const App = () => (
@@ -21,8 +22,9 @@ const App = () => (
       {/* <TestSwitch /> */}
       {/* <TestBottomSheet /> */}
       {/* <TestCheckbox /> */}
-      <TestFlyout />
-      <TestModal />
+      {/* <TestFlyout /> */}
+      {/* <TestModal /> */}
+      <TestRadioGroup />
     </ThemeProvider>
   </div>
 );
