@@ -30,6 +30,7 @@ export default {
       globals: {
         react: "React",
         "react/jsx-runtime": "jsxRuntime",
+        "react-dom": "ReactDOM",
       },
     },
     {
@@ -43,6 +44,7 @@ export default {
       format: "umd",
       globals: {
         react: "React",
+        "react-dom": "ReactDOM",
       },
     },
   ],
