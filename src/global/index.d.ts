@@ -2,6 +2,7 @@ import { CSSProperties, MouseEvent } from "react";
 import { fontWeights } from "styles";
 
 declare global {
+  export type ID = string | number;
   export type Variant = "primary" | "secondary" | "default";
   export type Size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
   export type ButtonEvent = MouseEvent<HTMLButtonElement> | MouseEvent<HTMLInputElement>;
