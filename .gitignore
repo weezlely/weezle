@@ -1,27 +1,31 @@
 # node_modules
-/node_modules
 **/node_modules
 
-# buids
-/dist 
+# builds
 **/dist
 /lib
 
 # Markdown (README)
-README-npm.md
-
+**/README-npm.md
 
 # Example (Test)
 /example/package-lock.json
 
+# Package (Package)
+/package/package-lock.json
+/package/node_modules
+
 # sb (Storybook)
-sb/*storybook.log
-sb/.storybook*
-sb/storybook*
+stroybook/*storybook.log
+stroybook/.storybook*
+stroybook/storybook*
+stroybook/build-storybook.log
 
 # Package json
 **/package-lock.json
 
 # yarn
-yarn*
 **/yarn*
+
+# env
+package/.env**
