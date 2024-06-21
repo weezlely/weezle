@@ -2,8 +2,8 @@ import { motion as Motion } from "framer-motion";
 import React, { type CSSProperties, type Ref } from "react";
 import clsx from "clsx";
 
-import { eventHandler } from "../../utils";
-import { AnimateButtonProps } from "./index.type";
+import { eventHandler } from "../../functions";
+import type { AnimateButtonProps } from "./index.type";
 import * as styles from "./index.css";
 
 export interface IAnimateButton extends AnimateButtonProps {}
@@ -50,9 +50,9 @@ const AnimateButton = React.forwardRef(function Index(
       style={dynamicStyle}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.9 }}
-      onClick={(e) => eventHandler.handleClick(onClick, e)}
-      onMouseOver={(e) => eventHandler.handleClick(onMouseOver, e)}
-      onMouseOut={(e) => eventHandler.handleClick(onMouseOut, e)}
+      onClick={(e) => eventHandler.funcExecuteChecker(onClick, e)}
+      onMouseOver={(e) => eventHandler.funcExecuteChecker(onMouseOver, e)}
+      onMouseOut={(e) => eventHandler.funcExecuteChecker(onMouseOut, e)}
       {...(rest as any)}
     >
       {children}

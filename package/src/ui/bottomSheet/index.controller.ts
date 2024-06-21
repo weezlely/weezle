@@ -1,15 +1,16 @@
 import { useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import { OnDragEndEvent, OnDragEndInfo } from "../../types";
+import type { DragEvent, DragEndInfo } from "../../types";
 import { usePreviousValue } from "../../hooks";
 
-export function use_bottom_sheet_controller() {
+export function useBottomSheetController() {
   const controls = useAnimation();
   const [isOpen, setIsOpen] = useState(true);
+
   const prevIsOpen = usePreviousValue(isOpen!) || false;
 
-  const onDragEnd = (event: OnDragEndEvent, info: OnDragEndInfo) => {
+  const onDragEnd = (event: DragEvent, info: DragEndInfo) => {
     const shouldClose = info.point?.y > 20 || (info.point?.y >= 0 && info.point.y > 45);
 
     if (shouldClose) {

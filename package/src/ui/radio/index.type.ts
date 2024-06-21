@@ -1,23 +1,17 @@
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import Radio from ".";
+import { Events } from "../../types";
 
 type Color = string;
 type Size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
 
-export type EventObject = {
-  name: string | number;
-  value: string | number;
-  [key: string]: any;
-};
-
 type ContextProps = {
   value?: string | number;
   handleChange?: (value: string | number) => void;
-  propsOnChange?: (event: EventObject) => void;
+  propsOnChange?: (event: Events) => void;
 };
 
 type ProvideProps = {
-  onChange?: (event: EventObject) => void;
+  onChange?: (event: Events) => void;
 };
 
 type GroupProps = {

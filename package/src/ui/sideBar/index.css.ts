@@ -2,7 +2,6 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 // Sidebar container 스타일
 export const container = style({
-  width: "250px",
   height: "100vh",
   backgroundColor: "#2c3e50",
   display: "flex",

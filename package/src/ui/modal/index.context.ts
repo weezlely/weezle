@@ -1,11 +1,12 @@
 import { createContext, useContext } from "react";
+
 import type { ModalContextProps } from "./index.type";
 
 /**
  * @description this is ModalContext made bt createContext
  */
 
-export const ModalContext = createContext<ModalContextProps>({ isOpen: false, onClose() {}, onOpen() {} });
+export const ModalContext = createContext<ModalContextProps>({ isOpen: false, onClose: () => {}, onOpen: () => {} });
 
 /**
  * @description this is hook for using in Modal Compound Component

@@ -2,9 +2,7 @@ import { type CSSProperties } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
-import * as styles from "./index.css";
-import { SideBarProvider } from "./index.provider";
-import {
+import type {
   SideBarAllProps,
   SideBarContainerProps,
   SideBarHeaderProps,
@@ -14,6 +12,8 @@ import {
   SideBarToggleProps,
   SideBarDividerProps,
 } from "./index.type";
+import { SideBarProvider } from "./index.provider";
+import * as styles from "./index.css";
 
 export interface ISideBar extends SideBarAllProps {}
 

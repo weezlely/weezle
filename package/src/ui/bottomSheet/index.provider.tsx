@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react";
 
 import { BottomSheetContext } from "./index.context";
-import { use_bottom_sheet_controller } from "./controller";
+import { useBottomSheetController } from "./index.controller";
 
 /**
  *
@@ -9,7 +9,7 @@ import { use_bottom_sheet_controller } from "./controller";
  * @returns {React.Context<ContextProps>} Provider
  */
 export const BottomSheetProvider = ({ children }: PropsWithChildren) => {
-  const { onDragEnd, controls, setIsOpen, isOpen } = use_bottom_sheet_controller();
+  const { onDragEnd, controls, setIsOpen, isOpen } = useBottomSheetController();
 
   return <BottomSheetContext.Provider value={{ onDragEnd, controls, setIsOpen, isOpen }}>{children}</BottomSheetContext.Provider>;
 };

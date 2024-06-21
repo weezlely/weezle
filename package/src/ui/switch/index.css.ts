@@ -1,5 +1,4 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "../../styles";
 
 export const container = style({
   position: "relative",
@@ -21,7 +20,7 @@ export const toggle = style({
   position: "absolute",
   display: "flex",
   alignItems: "center",
-  backgroundColor: colors.white,
+  backgroundColor: "#fff",
 });
 
 export const title = style({});

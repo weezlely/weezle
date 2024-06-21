@@ -1,6 +1,7 @@
 import type { AnimationControls, DragElastic, HTMLMotionProps } from "framer-motion";
 import type { Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
-import { OnDragEnd } from "../../types";
+
+import { DragEndEventHandler } from "../../types";
 
 type XY = {
   x?: number;
@@ -8,7 +9,7 @@ type XY = {
 };
 
 type ContextProps = {
-  onDragEnd: OnDragEnd;
+  onDragEnd: DragEndEventHandler;
   controls?: AnimationControls;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;

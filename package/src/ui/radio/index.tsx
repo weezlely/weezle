@@ -3,10 +3,9 @@ import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
+import type { RadioGroupProps, RadioItemProps, RadioInputProps, RadioLabelProps } from "./index.type";
 import { useRadioContext } from "./index.context";
 import { RadioProvider } from "./index.provider";
-
-import { RadioGroupProps, RadioItemProps, RadioInputProps, RadioLabelProps } from "./index.type";
 import * as styles from "./index.css";
 
 const RadioGroup = ({ name = "radio-group", style, children, ...rest }: RadioGroupProps) => {

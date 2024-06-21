@@ -1,3 +1,5 @@
+import { Colors, KeyAbles } from "../types";
+
 const colors = {
   white: "#fff",
   black: "#000",
@@ -68,5 +70,7 @@ const styleConfigs = {
   fonts,
   fontSizes,
   fontWeights,
-};
+} as const;
+
+export type StyleConfig = typeof styleConfigs & KeyAbles;
 export default styleConfigs;

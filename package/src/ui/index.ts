@@ -26,14 +26,14 @@ export { default as Input, type IInput } from "./input";
 export { default as Modal, type IModal } from "./modal";
 // Radio
 export { default as Radio, type IRadio } from "./radio";
-// Typography
-export { default as Typography, type ITypographyProps } from "./typography";
 // SideBar
 export { default as Sidebar, type ISideBar } from "./sideBar";
 // Spacing
 export { default as Spacing, type ISpacing } from "./spacing";
 // Switch
 export { default as Switch, type ISwitch } from "./switch";
+// Typography
+export { default as Typography, type ITypographyProps } from "./typography";
 // Heading
 export { default as Heading, type IHeading } from "./heading";
 
@@ -57,7 +57,6 @@ export type {
 export type {
   // Button Types
   ButtonElement,
-  ButtonVariants,
   ButtonProps,
 } from "./button/index.type";
 
@@ -133,6 +132,11 @@ export type {
 } from "./sideBar/index.type";
 
 export type {
+  // Spacing
+  SpacingProps,
+} from "./spacing/index.type";
+
+export type {
   // Switch Types
   SwitchContextProps,
   SwitchProviderProps,
@@ -143,6 +147,7 @@ export type {
 
 export type {
   // Typography Types
+  TypographyAs,
   TypographyElement,
   TypographyProps,
 } from "./typography/index.type";

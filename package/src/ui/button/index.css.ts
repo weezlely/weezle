@@ -1,5 +1,7 @@
-// styles.css.ts
-import { recipe } from "@vanilla-extract/recipes";
+import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+
+export type ButtonRecipeVariants = RecipeVariants<typeof button> & PropsWithChildren<ComponentPropsWithoutRef<"button">>;
 
 export const button = recipe({
   base: {

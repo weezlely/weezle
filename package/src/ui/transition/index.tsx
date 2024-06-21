@@ -1,45 +1,30 @@
-import type { CSSProperties, FC } from "react";
-import { useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
+
+import { transitionStyles } from "./index.css";
 import { TransitionProps } from "./index.type";
 
-const Transition: FC<TransitionProps> = ({
-  in: inProp,
-  timeout,
-  onEntered,
-  onExited,
-  activeStyle = { width: "250px" },
-  inactiveStyle = { width: "80px" },
-  children,
-  ...rest
-}) => {
-  const nodeRef = useRef<HTMLDivElement>(null);
+const Transition: React.FC<TransitionProps> = ({ in: inProp, className = "transition", children }) => {
+  const [isVisible, setIsVisible] = useState(inProp);
 
   useEffect(() => {
-    const node = nodeRef.current;
-    if (node) {
-      node.style.transition = `all ${timeout}ms ease`;
-
-      const applyStyle = (style: CSSProperties) => {
-        Object.keys(style).forEach((key) => {
-          node.style[key as any] = style[key as keyof CSSProperties];
-        });
-      };
-
-      if (inProp) {
-        applyStyle(activeStyle);
-        if (onEntered) onEntered();
-      } else {
-        applyStyle(inactiveStyle);
-        if (onExited) onExited();
-      }
+    if (inProp) {
+      setIsVisible(true);
+    } else {
+      const timeout = setTimeout(() => setIsVisible(false), 500); // 500ms matches the animation duration
+      return () => clearTimeout(timeout);
     }
-  }, [inProp, timeout, onEntered, onExited, activeStyle, inactiveStyle]);
+  }, [inProp]);
 
-  return (
-    <div ref={nodeRef} {...rest}>
-      {children}
-    </div>
-  );
+  // if (!isVisible && !inProp) return null;
+
+  const classNames = clsx({
+    className,
+    [transitionStyles.enter]: inProp,
+    [transitionStyles.exit]: !inProp,
+  });
+
+  return <div className={classNames}>{children}</div>;
 };
 
 export default Transition;

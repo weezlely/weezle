@@ -1,16 +1,9 @@
-import type { CSSProperties, ComponentPropsWithoutRef, HTMLAttributes, PropsWithChildren } from "react";
-import { RecipeVariants } from "@vanilla-extract/recipes";
+import type { HTMLAttributes, PropsWithChildren } from "react";
 
-import * as styles from "./index.css";
+// import type { ButtonRecipeVariants } from "./index.css";
+import type { Color, KeyAbles } from "../../types";
 
 export type ButtonElement = HTMLButtonElement;
 
-export type ButtonVariants = RecipeVariants<typeof styles.button> & PropsWithChildren<ComponentPropsWithoutRef<"button">>;
-
-interface Props extends ButtonVariants {
-  color?: CSSProperties["color"] | Color;
-  background?: CSSProperties["color"] | Color;
-  [key: string]: any;
-}
-
+type Props = { color?: Color; background?: Color } & KeyAbles;
 export type ButtonProps = PropsWithChildren<Props> & HTMLAttributes<HTMLButtonElement>;

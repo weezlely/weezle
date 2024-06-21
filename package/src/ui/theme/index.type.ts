@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from "react";
-import { Theme } from "../../types";
+import { Themes } from "../../types";
 
 type ContextProps = {
-  theme: Theme;
+  theme: Themes;
 };
 type ProviderProps = {} & ContextProps;
 export type ThemeContextProps = PropsWithChildren<ContextProps>;

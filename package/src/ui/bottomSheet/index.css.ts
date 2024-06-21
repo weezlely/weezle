@@ -6,7 +6,7 @@ import { style } from "@vanilla-extract/css";
  * =================================================================
  */
 
-export const BOTTOM_SHEET_HEIGHT = window.innerHeight;
+export const BOTTOM_SHEET_HEIGHT = typeof window !== "undefined" ? window.innerHeight : 0;
 
 export const wrapper = style({
   flexDirection: "column",

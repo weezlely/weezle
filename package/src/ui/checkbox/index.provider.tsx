@@ -1,4 +1,5 @@
 import { useState, type FC } from "react";
+
 import { CheckBoxContext } from "./index.context";
 import { CheckBoxProviderProps } from "./index.type";
 

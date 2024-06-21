@@ -1,9 +1,9 @@
+import { style, styleVariants } from "@vanilla-extract/css";
 /**
  * =================================================================
  *                              Style
  * =================================================================
  */
-import { style, styleVariants } from "@vanilla-extract/css";
 
 export const typography = style({
   margin: 0,

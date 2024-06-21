@@ -2,11 +2,11 @@ import { type CSSProperties, type Ref, forwardRef } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
+import { eventHandler } from "../../functions";
 import { useCheckBoxContext } from "./index.context";
 import { CheckBoxProvider } from "./index.provider";
 import { CheckBoxInputProps, CheckBoxTextProps, CheckBoxWrapperProps } from "./index.type";
 import * as styles from "./index.css";
-import { eventHandler } from "functions";
 
 /** Checkbox Container */
 const CheckBoxContainer = ({ style, children, ...rest }: CheckBoxWrapperProps) => {
@@ -82,7 +82,7 @@ const CheckBoxInput = forwardRef(function CheckBoxInput(
       ref={forwardedRef!}
       className={classNames}
       style={dynamicStyle}
-      onClick={(e) => eventHandler.handleClick(onClick, e, () => setIsChecked(!isChecked))}
+      onClick={(e) => eventHandler.funcExecuteChecker(onClick, e, () => setIsChecked(!isChecked))}
       {...rest}
     />
   );

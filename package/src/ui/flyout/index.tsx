@@ -2,16 +2,11 @@ import type { CSSProperties, MutableRefObject } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
-// Hooks
-import { useHover } from "../../hooks";
-// Context
-import { useFlyoutContext } from "./index.context";
-// Provider
-import { FlyoutProvider } from "./index.provider";
-// Types
-import type { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type";
-// Styles
-import * as styles from "./index.css";
+import { useHover } from "../../hooks"; // Hooks
+import { useFlyoutContext } from "./index.context"; // Context
+import { FlyoutProvider } from "./index.provider"; // Provider
+import type { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type"; // Types
+import * as styles from "./index.css"; // Styles
 
 // Container
 const FlyoutContainer = ({ w = 200, h = 200, style, children, ...rest }: FlyoutContainerProps) => {

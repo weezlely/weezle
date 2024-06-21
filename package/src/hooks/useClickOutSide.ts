@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
+import { CallbackEventHandler } from "../types";
 
-type Callback = () => void | undefined;
-
-export default function useClickOutSide<T extends HTMLElement, U>(callback: Callback = () => {}, update: U | null) {
+export default function useClickOutSide<T extends HTMLElement, U>(callback: CallbackEventHandler = () => {}, update: U | null) {
   const ref = useRef<T>(null);
 
   useEffect(() => {

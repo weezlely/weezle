@@ -1,1 +1,1 @@
-export { default as styleConfigs } from "./style.config";
+export { default as styleConfigs, type StyleConfig } from "./style.config";

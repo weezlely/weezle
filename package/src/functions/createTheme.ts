@@ -1,7 +1,7 @@
-import { colors } from "styles";
+import { StyleConfig, styleConfigs } from "../configs";
 
-const defaultTheme = {
-  colors,
+const defaultTheme: StyleConfig = {
+  ...styleConfigs,
 };
 
 const createTheme = <T>(customizations: T) => {

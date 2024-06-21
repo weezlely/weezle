@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
-import { SwitchContextProps } from "./index.type";
+
+import type { SwitchContextProps } from "./index.type";
 
 /**
  * @description this is Switch Context made bt createContext

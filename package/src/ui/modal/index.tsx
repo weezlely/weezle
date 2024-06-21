@@ -4,11 +4,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { useClickOutSide, useToggle } from "../../hooks";
-import { eventHandler } from "../../utils";
-
-import { useModalContext } from "./index.context";
-import { ModalProvider } from "./index.provider";
-import * as styles from "./index.css";
+import { eventHandler } from "../../functions";
 import type {
   ModalContextProps,
   ModalProviderProps,
@@ -20,6 +16,9 @@ import type {
   ModalFooterProps,
   ModalAllProps,
 } from "./index.type";
+import { useModalContext } from "./index.context";
+import { ModalProvider } from "./index.provider";
+import * as styles from "./index.css";
 
 export interface IModal extends ModalAllProps {}
 // Modal's Container
@@ -86,9 +85,9 @@ ModalLayout.propTypes = {
 
 // Modal's Trigger
 const ModalTrigger = ({ className = "", onClick = undefined, style, children, ...rest }: ModalTriggerProps) => {
-  const context = useModalContext();
+  const { isOpen, onOpen, onClose } = useModalContext();
 
-  const onToggle = () => (context.isOpen ? context.onClose : context.onOpen);
+  const onToggle = () => (isOpen ? onClose() : onOpen());
 
   /**
    * @description static-change style depending on the Props
@@ -106,7 +105,7 @@ const ModalTrigger = ({ className = "", onClick = undefined, style, children, ..
   const classNames = clsx(...staticStyle, className);
 
   return (
-    <button className={classNames} onClick={(e) => eventHandler.handleClick(onClick, e, onToggle)} style={dynamicStyle} {...rest}>
+    <button className={classNames} onClick={(e) => eventHandler.funcExecuteChecker(onClick, e, onToggle)} style={dynamicStyle} {...rest}>
       {children}
     </button>
   );

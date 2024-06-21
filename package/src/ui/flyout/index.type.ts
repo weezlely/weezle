@@ -1,14 +1,14 @@
 import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
-import type { Size } from "types";
 
 import * as styles from "./index.css";
+import { SizeWHs } from "../../types";
 
 type ContextProps = {
   isOpen: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
 };
 
-type ContainerProps = object & Size;
+type ContainerProps = object & SizeWHs;
 
 type OverLayProps = {
   zIndex: number;
@@ -20,7 +20,7 @@ type ListProps = {
   position?: keyof typeof styles.positionVariants;
   direction?: keyof typeof styles.directionVariants;
   backgroundColor?: CSSProperties["backgroundColor"];
-} & Size;
+} & SizeWHs;
 
 type ItemProps = {
   id?: string | number;

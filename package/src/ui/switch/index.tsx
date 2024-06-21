@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import clsx from "clsx";
 
-import { colors, fontWeights } from "../../styles";
+// import { colors, fontWeights } from "../../styles";
 
 import { useSwitchContext } from "./index.context";
 import { SwitchProvider } from "./index.provider";
@@ -10,8 +10,9 @@ import * as styles from "./index.css";
 
 export interface ISwitch extends SwitchAllProps {}
 const SwitchContainer = ({
-  primary = colors.primary_50,
-  secondary = colors.secondary_50,
+  primary = "",
+  secondary = "",
+  fontColor = "#fff",
   fontWeight = "bold",
   className,
   style,
@@ -28,7 +29,7 @@ const SwitchContainer = ({
   /**
    * @description dynamic-change style depending on the Props
    */
-  const dynamicStyle: CSSProperties = { backgroundColor: isOn ? primary : secondary, color: colors.white, fontWeight: fontWeights[fontWeight], ...style };
+  const dynamicStyle: CSSProperties = { backgroundColor: isOn ? primary : secondary, color: fontColor, fontWeight: fontWeight, ...style };
 
   /**
    * @description classNames for static-change style

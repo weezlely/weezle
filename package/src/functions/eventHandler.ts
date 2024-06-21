@@ -1,4 +1,16 @@
 import type { ChangeEvent, MouseEvent } from "react";
+import { CallbackEventHandler, MouseEventButton, MouseEventInput } from "../types";
+
+const funcExecuteChecker = (handler: Function | undefined, event: MouseEvent, callback?: CallbackEventHandler): void => {
+  // if basic event handler, it is init
+  if (handler && typeof handler === "function") {
+    handler(event);
+  }
+  // if callback is being, it is init
+  if (callback && typeof callback === "function") {
+    callback();
+  }
+};
 
 /**
  * 이벤트 핸들러
@@ -6,7 +18,7 @@ import type { ChangeEvent, MouseEvent } from "react";
  * @param2 event
  * @param3 callback
  */
-const handleClick = (handler: Function | undefined, event: ButtonEvent, callback?: () => void): void => {
+const handleClick = (handler: Function | undefined, event: MouseEvent, callback?: CallbackEventHandler): void => {
   if (handler && typeof handler === "function") {
     handler(event);
   }
@@ -21,7 +33,7 @@ const handleClick = (handler: Function | undefined, event: ButtonEvent, callback
  * @param2 event
  * @param3 callback
  */
-const handleHover = (handler: Function | undefined, event: MouseEvent, callback?: () => void): void => {
+const handleHover = (handler: Function | undefined, event: MouseEvent, callback?: CallbackEventHandler): void => {
   if (handler && typeof handler === "function") {
     handler(event);
   }
@@ -44,4 +56,4 @@ const handleChange = (handler: Function | undefined, event: ChangeEvent, callbac
   }
 };
 
-export default { handleClick, handleHover, handleChange };
+export default { funcExecuteChecker, handleClick, handleHover, handleChange };
