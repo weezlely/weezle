@@ -1,101 +1,138 @@
-/**
- * Rollup 설정 모듈
- *
- * @author TAETAEO
- * @since 2024.04.26 Fri 17:44:31
- */
+import terser from "@rollup/plugin-terser";
+import ts from "typescript";
+import dts from "rollup-plugin-dts";
+import flatDts from "rollup-plugin-flat-dts";
+import esbuild from "rollup-plugin-esbuild";
+import json from "@rollup/plugin-json";
+import depsExternal from "rollup-plugin-node-externals";
+import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
+import filesize from "rollup-plugin-filesize";
+import path from "path";
 
-import { getPlugins, getOutputOptions } from "./rollup.plugins.mjs";
-import pkg from "./package.json" assert { type: "json" };
-
-const extensions = [".js", ".jsx", ".ts", ".tsx", ".scss", ".css", ".sss", ".pcss"];
-
-process.env.BABEL_ENV = "production";
-
-export default {
-  input: "./index.ts",
-  output: getOutputOptions(pkg),
-  assetFileNames: "assets/[name]-[hash][extname]",
-  watch: {
-    include: "*",
-    exclude: "node_modules/**",
-  },
-  plugins: getPlugins(extensions, pkg),
-  external: [...Object.keys(pkg.peerDependencies || {})],
+const loadCompilerOptions = (tsconfig) => {
+  if (!tsconfig) return {};
+  const configFile = ts.readConfigFile(tsconfig, ts.sys.readFile);
+  const { options } = ts.parseJsonConfigFileContent(configFile.config, ts.sys, "./");
+  return options;
 };
 
-// /**
-//  * Rollup 설정 모듈
-//  *
-//  * @author TAETAEO
-//  * @since 2024.04.26 Fri 17:44:31
-//  */
+/** @type {Set<string>} */
+const emittedCSSFiles = new Set();
 
-// import pkg from "./package.json" assert { type: "json" };
-// import typescript from "rollup-plugin-typescript2";
-// import peerDepsExternal from "rollup-plugin-peer-deps-external";
-// import postcss from "rollup-plugin-postcss";
-// import postcssPrefixer from "postcss-prefixer";
-// import commonjs from "@rollup/plugin-commonjs";
-// import json from "@rollup/plugin-json";
-// import babel from "@rollup/plugin-babel";
-// import { nodeResolve } from "@rollup/plugin-node-resolve";
+/**
+ * @return {() => import('rollup').Plugin}
+ */
+const bundleCssEmits = () => ({
+  name: "bundle-css-emits",
+  buildStart() {
+    emittedCSSFiles.clear();
+  },
+  /**
+   * @param {string} code
+   * @param {import('rollup').RenderedChunk} chunkInfo
+   */
+  renderChunk(code, chunkInfo) {
+    /** @type Array<[string, string]> */
+    const allImports = [...code.matchAll(/import (?:.* from )?['"]([^;'"]*)['"];?/g)];
+    const dirname = path.dirname(chunkInfo.fileName);
+    const output = allImports.reduce((resultingCode, [importLine, moduleId]) => {
+      if (emittedCSSFiles.has(path.posix.join(dirname, moduleId))) {
+        console.log("Stripping: " + importLine);
+        return resultingCode.replace(importLine, "");
+      }
+      return resultingCode;
+    }, code);
+    return {
+      code: output,
+      map: chunkInfo.map ?? null,
+    };
+  },
+  /**
+   * @param {import('rollup').RollupOptions} options
+   * @param {{ [fileName: string]: import('rollup').EmittedAsset | import('rollup').EmittedChunk }} bundle
+   */
+  generateBundle(options, bundle) {
+    const bundleCode = Array.from(emittedCSSFiles.values())
+      .map((file) => bundle[file])
+      .map(({ name, fileName, source }) => `/* ${name} -> ${fileName} */\n` + source)
+      .join("\n\n");
+    this.emitFile({
+      type: "asset",
+      name: "src/bundle.css",
+      source: bundleCode,
+    });
+    // this.emitFile({
+    //   type: 'asset',
+    //   name: 'src/index.css',
+    //   source: Array.from(emittedCSSFiles).map(name => `@import "${name.replace(/^assets\//, './')}";`).join('\n') + '\n',
+    // });
+  },
+});
 
-// const extensions = [".js", ".jsx", ".ts", ".tsx", ".scss", ".css"];
+const compilerOptions = loadCompilerOptions("tsconfig.json");
 
-// process.env.BABEL_ENV = "production";
+const plugins = [vanillaExtractPlugin(), depsExternal(), esbuild(), json(), terser({ maxWorkers: 4 }), filesize()];
 
-// export default {
-//   input: "./index.ts",
-//   output: [
-//     {
-//       file: pkg.main,
-//       format: "cjs",
-//       sourcemap: true,
-//       preserveModulesRoot: "src",
-//       globals: {
-//         react: "React",
-//         "react/jsx-runtime": "jsxRuntime",
-//         "react-dom": "ReactDOM",
-//       },
-//     },
-//     {
-//       file: pkg.module,
-//       format: "esm",
-//       sourcemap: true,
-//     },
-//     {
-//       name: pkg.name,
-//       file: pkg.browser,
-//       format: "umd",
-//       globals: {
-//         react: "React",
-//         "react-dom": "ReactDOM",
-//       },
-//     },
-//   ],
-//   watch: {
-//     include: "*",
-//     exclude: "node_modules/**",
-//   },
-//   plugins: [
-//     nodeResolve({ extensions }),
-//     babel({
-//       babelHelpers: "bundled",
-//       exclude: "node_modules/**",
-//       presets: ["@babel/preset-env", "@babel/preset-react"],
-//     }),
-//     peerDepsExternal(),
-//     json(),
-//     commonjs(), // commonjs 플러그인을 설정하여 CommonJS 모듈을 올바르게 변환
-//     typescript({ useTsconfigDeclarationDir: true }),
-//     postcss({
-//       extract: "dist/css", // CSS파일를 별도의 파일로 추출
-//       modules: true,
-//       sourceMap: true,
-//       use: ["sass"],
-//       plugins: [postcssPrefixer({ prefix: `${pkg.name}__` })],
-//     }),
-//   ],
-//   external: [...Object.keys(pkg.peerDependencies || {})],
-// };
+export default [
+  {
+    input: "src/index.ts",
+    plugins: [...plugins, bundleCssEmits()],
+    output: [
+      {
+        dir: "dist",
+        format: "esm",
+        preserveModules: true,
+        // preserveModulesRoot: 'src',
+        sourcemap: true,
+
+        // Change .css.js files to something else so that they don't get re-processed by consumer's setup
+        entryFileNames({ name }) {
+          return `${name.replace(/\.css$/, ".css.vanilla")}.js`;
+        },
+
+        // Apply preserveModulesRoot to asset names
+        assetFileNames(assetInfo) {
+          const assetPath = assetInfo.name.replace(/^src\//, "assets/");
+          if (assetPath.match(/\.css$/)) {
+            emittedCSSFiles.add(assetPath);
+          }
+          return assetPath;
+        },
+        // assetFileNames: "assets/[name][extname]",
+
+        exports: "named",
+      },
+    ],
+  },
+  // Declaration files
+  {
+    input: "src/index.ts",
+    plugins: [
+      ...plugins,
+      flatDts({
+        compilerOptions: {
+          ...compilerOptions,
+          baseUrl: path.resolve(compilerOptions.baseUrl || "."),
+          declaration: true,
+          noEmit: false,
+          emitDeclarationOnly: true,
+          noEmitOnError: true,
+          target: ts.ScriptTarget.ESNext,
+        },
+      }),
+      // flatDts(),
+    ],
+    output: [
+      {
+        dir: "dist",
+        format: "esm",
+        preserveModules: true,
+        preserveModulesRoot: "src",
+        // Change .css.js files to something else so that they don't get re-processed by consumer's setup
+        entryFileNames({ name }) {
+          return `${name.replace(/\.css$/, ".css.vanilla")}.d.ts`;
+        },
+      },
+    ],
+  },
+];
