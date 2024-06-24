@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import type { RadioGroupProps, RadioItemProps, RadioInputProps, RadioLabelProps } from "./index.type";
 import { useRadioContext } from "./index.context";
 import { RadioProvider } from "./index.provider";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 const RadioGroup = ({ name = "radio-group", style, children, ...rest }: RadioGroupProps) => {
   return (

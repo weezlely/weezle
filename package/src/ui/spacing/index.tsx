@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import type { SpacingProps } from "./index.type";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 export interface ISpacing extends SpacingProps {}
 const Spacing = React.forwardRef(function Index(

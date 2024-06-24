@@ -1,5 +1,6 @@
 // Theme
-export { default as ThemeProvider, type IThemeProvider } from "./theme/index.provider";
+export { default as ThemeProvider } from "./theme/index.provider";
+export type { IThemeProvider } from "./theme/index.provider";
 export type { ThemeContextProps, ThemeProviderProps } from "./theme/index.type";
 /**
  *
@@ -9,33 +10,47 @@ export type { ThemeContextProps, ThemeProviderProps } from "./theme/index.type";
  */
 
 // Animate Button
-export { default as AnimateButton, type IAnimateButton } from "./animateButton";
+export { default as AnimateButton } from "./animateButton";
+export type { IAnimateButton } from "./animateButton";
 // Button
-export { default as Button, type IButton } from "./button";
+export { default as Button } from "./button";
+export type { IButton } from "./button";
 // Bottom Sheets - x
-export { default as BottomSheet, type IBottomSheet } from "./bottomSheet";
+export { default as BottomSheet } from "./bottomSheet";
+export type { IBottomSheet } from "./bottomSheet";
 // Checkbox
-export { default as CheckBox, type ICheckbox } from "./checkbox";
+export { default as CheckBox } from "./checkbox";
+export type { ICheckbox } from "./checkbox";
 // Flex
-export { default as Flex, type IFlex } from "./flex";
+export { default as Flex } from "./flex";
+export type { IFlex } from "./flex";
 // Flyout
-export { default as Flyout, type IFlyout } from "./flyout";
+export { default as Flyout } from "./flyout";
+export type { IFlyout } from "./flyout";
 // Input
-export { default as Input, type IInput } from "./input";
+export { default as Input } from "./input";
+export type { IInput } from "./input";
 // Modal
-export { default as Modal, type IModal } from "./modal";
+export { default as Modal } from "./modal";
+export type { IModal } from "./modal";
 // Radio
-export { default as Radio, type IRadio } from "./radio";
+export { default as Radio } from "./radio";
+export type { IRadio } from "./radio";
 // SideBar
-export { default as Sidebar, type ISideBar } from "./sideBar";
+export { default as Sidebar } from "./sideBar";
+export type { ISideBar } from "./sideBar";
 // Spacing
-export { default as Spacing, type ISpacing } from "./spacing";
+export { default as Spacing } from "./spacing";
+export type { ISpacing } from "./spacing";
 // Switch
-export { default as Switch, type ISwitch } from "./switch";
+export { default as Switch } from "./switch";
+export type { ISwitch } from "./switch";
 // Typography
-export { default as Typography, type ITypographyProps } from "./typography";
+export { default as Typography } from "./typography";
+export type { ITypographyProps } from "./typography";
 // Heading
-export { default as Heading, type IHeading } from "./heading";
+export { default as Heading } from "./heading";
+export type { IHeading } from "./heading";
 
 export type {
   //  AnimateButton Types

@@ -1,11 +1,11 @@
-import { createContext, useContext } from "react";
+import * as React from "react";
 import { CheckBoxContextProps } from "./index.type";
 
 /**
  * @description this is CheckboxContext made bt createContext
  */
 
-export const CheckBoxContext = createContext<CheckBoxContextProps>({
+export const CheckBoxContext = React.createContext<CheckBoxContextProps>({
   isChecked: false,
   setIsChecked: () => {},
 });
@@ -16,7 +16,7 @@ export const CheckBoxContext = createContext<CheckBoxContextProps>({
  */
 
 export const useCheckBoxContext = () => {
-  const context = useContext(CheckBoxContext);
+  const context = React.useContext(CheckBoxContext);
 
   if (!context) {
     throw "value is not provided";

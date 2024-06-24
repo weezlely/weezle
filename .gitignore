@@ -8,8 +8,11 @@
 # Markdown (README)
 **/README-npm.md
 
-# Example (Test)
-/example/package-lock.json
+# Example (example-vite)
+/example-vite/package-lock.json
+
+# Example (example-webpack)
+/example-webpack/package-lock.json
 
 # Package (Package)
 /package/package-lock.json

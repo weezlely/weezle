@@ -16,9 +16,9 @@ import type {
   ModalFooterProps,
   ModalAllProps,
 } from "./index.type";
+import * as styles from "./styles.css";
 import { useModalContext } from "./index.context";
 import { ModalProvider } from "./index.provider";
-import * as styles from "./index.css";
 
 export interface IModal extends ModalAllProps {}
 // Modal's Container

@@ -1,7 +1,7 @@
 import type { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
 
 import { Color } from "../../types";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 /**
  * @type Typography Props Type

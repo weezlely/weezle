@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { useSwitchContext } from "./index.context";
 import { SwitchProvider } from "./index.provider";
 import type { SwitchContainerProps, SwitchLabelProps, SwitchToggleProps, SwitchAllProps } from "./index.type";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 export interface ISwitch extends SwitchAllProps {}
 const SwitchContainer = ({

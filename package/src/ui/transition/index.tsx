@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 
-import { transitionStyles } from "./index.css";
+import { transitionStyles } from "./styles.css";
 import { TransitionProps } from "./index.type";
 
 const Transition: React.FC<TransitionProps> = ({ in: inProp, className = "transition", children }) => {

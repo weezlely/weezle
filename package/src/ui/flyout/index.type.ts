@@ -1,6 +1,6 @@
 import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 import { SizeWHs } from "../../types";
 
 type ContextProps = {

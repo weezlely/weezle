@@ -13,11 +13,13 @@ import uglify from "rollup-plugin-uglify";
 import autoprefixer from "autoprefixer";
 import filesize from "rollup-plugin-filesize";
 import postcss from "rollup-plugin-postcss";
+import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 
 export function getPlugins(extensions, pkg) {
   return [
     nodeResolve({ extensions }),
     peerDepsExternal(),
+    vanillaExtractPlugin({}),
     postcss({
       extract: "css/index.css",
       modules: true,
@@ -63,11 +65,11 @@ export function getOutputOptions(pkg) {
       file: pkg.module,
       sourcemap: true,
     },
-    {
-      format: "umd",
-      file: pkg.browser,
-      name: pkg.name,
-      globals,
-    },
+    // {
+    //   format: "umd",
+    //   file: pkg.browser,
+    //   name: pkg.name,
+    //   globals,
+    // },
   ];
 }

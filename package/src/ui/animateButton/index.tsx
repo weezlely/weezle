@@ -1,10 +1,11 @@
+import type { CSSProperties, Ref } from "react";
 import { motion as Motion } from "framer-motion";
-import React, { type CSSProperties, type Ref } from "react";
+import React from "react";
 import clsx from "clsx";
 
 import { eventHandler } from "../../functions";
 import type { AnimateButtonProps } from "./index.type";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 export interface IAnimateButton extends AnimateButtonProps {}
 

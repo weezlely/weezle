@@ -6,7 +6,7 @@ import { useHover } from "../../hooks"; // Hooks
 import { useFlyoutContext } from "./index.context"; // Context
 import { FlyoutProvider } from "./index.provider"; // Provider
 import type { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type"; // Types
-import * as styles from "./index.css"; // Styles
+import * as styles from "./styles.css"; // Styles
 
 // Container
 const FlyoutContainer = ({ w = 200, h = 200, style, children, ...rest }: FlyoutContainerProps) => {

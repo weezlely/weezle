@@ -1,9 +1,9 @@
 import type { CSSProperties, Ref } from "react";
-import React from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 import { HeadingProps } from "./index.type";
 
 export interface IHeading extends HeadingProps {}

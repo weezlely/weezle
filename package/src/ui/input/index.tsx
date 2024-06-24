@@ -2,7 +2,7 @@ import type { CSSProperties, Ref } from "react";
 import { forwardRef } from "react";
 import clsx from "clsx";
 
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 import { InputProps } from "./index.type";
 
 export interface IInput extends InputProps {}

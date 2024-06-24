@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 
 import { useBottomSheetContext } from "./index.context";
 import { BottomSheetProvider } from "./index.provider";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 import type { BottomSheetAllProps, BottomSheetBodyProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "./index.type";
 
 export interface IBottomSheet extends BottomSheetAllProps {}

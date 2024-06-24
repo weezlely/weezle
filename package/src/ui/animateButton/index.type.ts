@@ -2,7 +2,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import type { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
 
 import { KeyAbles } from "../../types";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 type Props = {
   variant?: keyof typeof styles.buttonVariants;

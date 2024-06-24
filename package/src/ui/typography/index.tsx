@@ -1,9 +1,10 @@
-import React, { type CSSProperties, type Ref } from "react";
+import type { CSSProperties, Ref } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import type { TypographyProps, TypographyElement } from "./index.type";
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 
 export interface ITypographyProps extends TypographyProps {}
 const Typography = React.forwardRef(

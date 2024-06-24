@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import * as styles from "./index.css";
+import * as styles from "./styles.css";
 import { ButtonProps } from "./index.type";
 
 export interface IButton extends ButtonProps {}
@@ -16,6 +16,7 @@ const Button = React.forwardRef(function button(
     size = "md", // Button's size
     color = "#fff", // Button's color
     background = "none", // Button's background color
+    disabled = false,
     style,
     children,
     ...rest
@@ -37,7 +38,7 @@ const Button = React.forwardRef(function button(
    */
   const classNames = clsx(staticStyle);
   return (
-    <button ref={forwardRef} id={id} className={classNames} style={dynamicStyle} {...rest}>
+    <button ref={forwardRef} id={id} className={classNames} style={dynamicStyle} disabled={disabled} {...rest}>
       {children}
     </button>
   );

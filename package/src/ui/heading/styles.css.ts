@@ -1,13 +1,18 @@
+import { createVar, style, styleVariants } from "@vanilla-extract/css";
+
+/**
+ * =================================================================
+ *                              Var
+ * =================================================================
+ */
+const colorVar = createVar();
+const backgroundColorVar = createVar();
+
 /**
  * =================================================================
  *                              Style
  * =================================================================
  */
-
-import { createVar, style, styleVariants } from "@vanilla-extract/css";
-
-const colorVar = createVar();
-const backgroundColorVar = createVar();
 
 export const headingBase = style({
   margin: 0,
