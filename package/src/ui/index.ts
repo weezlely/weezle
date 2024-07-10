@@ -2,12 +2,6 @@
 export { default as ThemeProvider } from "./theme/index.provider";
 export type { IThemeProvider } from "./theme/index.provider";
 export type { ThemeContextProps, ThemeProviderProps } from "./theme/index.type";
-/**
- *
- *
- *
- *
- */
 
 // Animate Button
 export { default as AnimateButton } from "./animateButton";
@@ -27,6 +21,9 @@ export type { IFlex } from "./flex";
 // Flyout
 export { default as Flyout } from "./flyout";
 export type { IFlyout } from "./flyout";
+// Heading
+export { default as Heading } from "./heading";
+export type { IHeading } from "./heading";
 // Input
 export { default as Input } from "./input";
 export type { IInput } from "./input";
@@ -47,10 +44,10 @@ export { default as Switch } from "./switch";
 export type { ISwitch } from "./switch";
 // Typography
 export { default as Typography } from "./typography";
-export type { ITypographyProps } from "./typography";
-// Heading
-export { default as Heading } from "./heading";
-export type { IHeading } from "./heading";
+export type { ITypography } from "./typography";
+// Transition
+export { default as Transition } from "./transition";
+export type { ITransition } from "./transition";
 
 export type {
   //  AnimateButton Types
@@ -102,6 +99,11 @@ export type {
   FlyoutItemProps,
   FlyoutAllProps,
 } from "./flyout/index.type";
+
+export type {
+  // Heading Types
+  HeadingProps,
+} from "./heading/index.type";
 
 export type {
   // Input Types
@@ -168,6 +170,6 @@ export type {
 } from "./typography/index.type";
 
 export type {
-  // Heading Types
-  HeadingProps,
-} from "./heading/index.type";
+  // Transition Types
+  TransitionProps,
+} from "./transition/index.type";

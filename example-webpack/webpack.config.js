@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
 
 module.exports = {
-  entry: ["./src/index.tsx"],
+  entry: "./src/index.tsx",
   module: {
     rules: [
       {
@@ -17,7 +17,12 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            transpileOnly: true,
+          },
+        },
       },
       {
         test: /\.html$/,

@@ -1,11 +1,11 @@
 {
   "name": "taeo-ui",
   "description": "taeo's ui library for react",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "browser": "dist/index.umd.js",
+  "browser": "dist/index.js",
   "files": [
     "dist",
     "lib",
@@ -89,8 +89,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.3.0",
     "react-transition-group": "^4.4.5"
-  },
-  "dependencies": {
-    "@emotion/is-prop-valid": "^1.2.2"
   }
 }

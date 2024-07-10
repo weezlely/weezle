@@ -1,12 +1,19 @@
-import type { CSSProperties, Ref } from "react";
-import { forwardRef } from "react";
+import type { ReactNode, FC, CSSProperties, Ref } from "react";
+import * as React from "react";
 import clsx from "clsx";
 
 import * as styles from "./styles.css";
 import { InputProps } from "./index.type";
 
-export interface IInput extends InputProps {}
-const Input = forwardRef(function Input({ type = "text", className = "input", style, children, ...rest }: InputProps, forwardedRef: Ref<HTMLInputElement>) {
+export interface IInput extends InputProps {
+  style?: CSSProperties;
+  children: ReactNode;
+}
+
+const Input: FC<IInput> = React.forwardRef<HTMLInputElement, IInput>(function Input(
+  { type = "text", className = "input", style, children, ...rest },
+  forwardedRef: Ref<HTMLInputElement>
+) {
   /**
    * @description static-change style depending on the Props
    */
@@ -22,7 +29,7 @@ const Input = forwardRef(function Input({ type = "text", className = "input", st
    */
   const classNames = clsx(className, ...staticStyle);
 
-  return <input type={type} className={classNames} style={dynamicStyle} ref={forwardedRef} />;
+  return <input type={type} className={classNames} style={dynamicStyle} ref={forwardedRef} {...rest} />;
 });
 
 export default Input;

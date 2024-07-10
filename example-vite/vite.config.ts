@@ -10,7 +10,7 @@ export default defineConfig({
       plugins: [veEsbuildPlugin({ runtime: true })],
     },
   },
-  plugins: [react(), tsconfigPaths(), veVitePlugin()],
+  plugins: [react(), tsconfigPaths()],
   envPrefix: "VITE_ENV",
   resolve: {},
   build: {

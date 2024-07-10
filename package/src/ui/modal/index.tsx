@@ -1,10 +1,13 @@
+import type { FC, CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import type { CSSProperties } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { useClickOutSide, useToggle } from "../../hooks";
 import { eventHandler } from "../../functions";
+import { useModalContext } from "./_modal.context";
+import { ModalProvider } from "./_modal.provider";
+import * as styles from "./styles.css";
 import type {
   ModalContextProps,
   ModalProviderProps,
@@ -16,13 +19,10 @@ import type {
   ModalFooterProps,
   ModalAllProps,
 } from "./index.type";
-import * as styles from "./styles.css";
-import { useModalContext } from "./index.context";
-import { ModalProvider } from "./index.provider";
 
 export interface IModal extends ModalAllProps {}
 // Modal's Container
-const ModalContainer = ({ children }: ModalProviderProps) => {
+const ModalContainer: FC<ModalProviderProps> = ({ children }) => {
   const { isOpen, onClose, onOpen } = useToggle();
   return (
     <ModalProvider isOpen={isOpen} onClose={onClose} onOpen={onOpen}>
@@ -31,25 +31,25 @@ const ModalContainer = ({ children }: ModalProviderProps) => {
   );
 };
 
-ModalContainer.propTypes = {
-  children: PropTypes.node,
-};
+// ModalContainer.propTypes = {
+//   children: PropTypes.node,
+// };
 
 // Modal's Portal
-const ModalPortal = ({ modalId = "root-modal", style, children, ...rest }: ModalPortalProps) => {
+const ModalPortal: FC<ModalPortalProps> = ({ modalId = "root-modal", style, children, ...rest }) => {
   const container = document.getElementById(modalId);
   if (container === null) return null;
 
   return createPortal(children, container);
 };
 
-ModalPortal.propTypes = {
-  modalId: PropTypes.string.isRequired,
-  children: PropTypes.node,
-};
+// ModalPortal.propTypes = {
+//   modalId: PropTypes.string.isRequired,
+//   children: PropTypes.node,
+// };
 
 // Modal's Layout
-const ModalLayout = ({ layoutStyle = undefined, dimmedStyle = undefined, children, ...rest }: ModalLayoutProps) => {
+const ModalLayout: FC<ModalLayoutProps> = ({ layoutStyle = undefined, dimmedStyle = undefined, children, ...rest }) => {
   const context = useModalContext();
   const ref = useClickOutSide<HTMLDivElement, ModalContextProps>(context.onClose, context);
 
@@ -77,14 +77,15 @@ const ModalLayout = ({ layoutStyle = undefined, dimmedStyle = undefined, childre
     </div>
   );
 };
-ModalLayout.propTypes = {
-  dimmedStyle: PropTypes.object,
-  layoutStyle: PropTypes.object,
-  children: PropTypes.node,
-};
+
+// ModalLayout.propTypes = {
+//   dimmedStyle: PropTypes.object,
+//   layoutStyle: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 // Modal's Trigger
-const ModalTrigger = ({ className = "", onClick = undefined, style, children, ...rest }: ModalTriggerProps) => {
+const ModalTrigger: FC<ModalTriggerProps> = ({ className = "", onClick = undefined, style, children, ...rest }) => {
   const { isOpen, onOpen, onClose } = useModalContext();
 
   const onToggle = () => (isOpen ? onClose() : onOpen());
@@ -110,14 +111,14 @@ const ModalTrigger = ({ className = "", onClick = undefined, style, children, ..
     </button>
   );
 };
-ModalTrigger.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// ModalTrigger.propTypes = {
+//   className: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 // Modal's Header
-const ModalHeader = ({ className = "", style, children, ...rest }: ModalHeaderProps) => {
+const ModalHeader: FC<ModalHeaderProps> = ({ className = "", style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -138,13 +139,13 @@ const ModalHeader = ({ className = "", style, children, ...rest }: ModalHeaderPr
     </div>
   );
 };
-ModalHeader.propTypes = {
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// ModalHeader.propTypes = {
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 // Modal's Body
-const ModalBody = ({ className = "", style, children, ...rest }: ModalBodyProps) => {
+const ModalBody: FC<ModalBodyProps> = ({ className = "", style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -166,13 +167,13 @@ const ModalBody = ({ className = "", style, children, ...rest }: ModalBodyProps)
     </div>
   );
 };
-ModalBody.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// ModalBody.propTypes = {
+//   className: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 // Modal's Footer
-const ModalFooter = ({ className = "", style, children, ...rest }: ModalFooterProps) => {
+const ModalFooter: FC<ModalFooterProps> = ({ className = "", style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -193,11 +194,11 @@ const ModalFooter = ({ className = "", style, children, ...rest }: ModalFooterPr
     </div>
   );
 };
-ModalFooter.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// ModalFooter.propTypes = {
+//   className: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 const Modal = Object.assign(ModalContainer, {
   Portal: ModalPortal,
   Layout: ModalLayout,

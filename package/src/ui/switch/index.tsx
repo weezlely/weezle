@@ -1,15 +1,16 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, FC } from "react";
 import clsx from "clsx";
 
 // import { colors, fontWeights } from "../../styles";
 
-import { useSwitchContext } from "./index.context";
-import { SwitchProvider } from "./index.provider";
+import { useSwitchContext } from "./_switch.context";
+import { SwitchProvider } from "./_switch.provider";
 import type { SwitchContainerProps, SwitchLabelProps, SwitchToggleProps, SwitchAllProps } from "./index.type";
 import * as styles from "./styles.css";
 
 export interface ISwitch extends SwitchAllProps {}
-const SwitchContainer = ({
+
+const SwitchContainer: FC<SwitchContainerProps> = ({
   primary = "",
   secondary = "",
   fontColor = "#fff",
@@ -18,7 +19,7 @@ const SwitchContainer = ({
   style,
   children,
   ...rest
-}: SwitchContainerProps) => {
+}) => {
   const { isOn, toggle } = useSwitchContext();
 
   /**
@@ -43,7 +44,7 @@ const SwitchContainer = ({
   );
 };
 
-const SwitchToggle = ({ className, style, children, ...rest }: SwitchToggleProps) => {
+const SwitchToggle: FC<SwitchToggleProps> = ({ className, style, children, ...rest }) => {
   const { isOn } = useSwitchContext();
 
   /**
@@ -68,7 +69,7 @@ const SwitchToggle = ({ className, style, children, ...rest }: SwitchToggleProps
   );
 };
 
-const SwitchLabel = ({ className, style, children, ...rest }: SwitchLabelProps) => {
+const SwitchLabel: FC<SwitchLabelProps> = ({ className, style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */

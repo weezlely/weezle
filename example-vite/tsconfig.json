@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // 결과 파일 형식
+    "target": "ESNext", // 결과 파일 형식
     "module": "ESNext", // module 형식
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -20,11 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    "noEmitOnError": false,
+
     "baseUrl": "src",
     // Alias
     "paths": {
       "@/*": ["*"]
     }
+    // TypeScript 컴파일러가 라이브러리 파일의 타입 검사를 생략
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

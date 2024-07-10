@@ -1,4 +1,3 @@
-// styles.css.ts
 import { style, keyframes } from "@vanilla-extract/css";
 
 const fadeIn = keyframes({

@@ -1,4 +1,4 @@
-import type { CSSProperties, Ref } from "react";
+import type { ReactNode, FC, CSSProperties, Ref } from "react";
 import * as React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
@@ -6,10 +6,13 @@ import clsx from "clsx";
 import * as styles from "./styles.css";
 import { HeadingProps } from "./index.type";
 
-export interface IHeading extends HeadingProps {}
+export interface IHeading extends HeadingProps {
+  style?: CSSProperties;
+  children: ReactNode;
+}
 
-const Heading = React.forwardRef(function Index(
-  { as: Component = "h3", className = "heading", backgroundColor = "#fff", color = "#000", style, children, ...rest }: HeadingProps,
+const Heading: FC<IHeading> = React.forwardRef<HTMLHeadingElement, IHeading>(function Index(
+  { as: Component = "h3", className = "heading", backgroundColor = "#fff", color = "#000", style, children, ...rest },
   forwardedRef: Ref<HTMLHeadingElement>
 ) {
   /**
@@ -29,7 +32,7 @@ const Heading = React.forwardRef(function Index(
   /**
    * @description classNames for static-change style
    */
-  const classNames = clsx(className, staticStyle);
+  const classNames = clsx(className, staticStyle, styles.variable);
 
   return (
     <Component className={classNames} style={dynamicStyle} ref={forwardedRef} {...rest}>
@@ -38,10 +41,10 @@ const Heading = React.forwardRef(function Index(
   );
 });
 
-Heading.propTypes = {
-  as: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]),
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// Heading.propTypes = {
+//   as: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]),
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 export default Heading;

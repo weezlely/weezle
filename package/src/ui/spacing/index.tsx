@@ -1,14 +1,18 @@
-import type { CSSProperties, Ref } from "react";
-import React from "react";
+import type { ReactNode, FC, CSSProperties, Ref } from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import type { SpacingProps } from "./index.type";
 import * as styles from "./styles.css";
 
-export interface ISpacing extends SpacingProps {}
-const Spacing = React.forwardRef(function Index(
-  { className = "spacing", size = "none", style, children, ...rest }: SpacingProps,
+export interface ISpacing extends SpacingProps {
+  style?: CSSProperties;
+  children: ReactNode;
+}
+
+const Spacing: FC<SpacingProps> = React.forwardRef(function Index(
+  { className = "spacing", size = "none", style, children, ...rest },
   forwardedRef: Ref<HTMLElement>
 ) {
   /**
@@ -32,11 +36,11 @@ const Spacing = React.forwardRef(function Index(
   );
 });
 
-Spacing.propTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// Spacing.propTypes = {
+//   className: PropTypes.string,
+//   size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 export default Spacing;

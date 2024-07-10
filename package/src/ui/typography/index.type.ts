@@ -1,6 +1,6 @@
 import type { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
 
-import { Color } from "../../types";
+import { Color, DefaultProps } from "../../types";
 import * as styles from "./styles.css";
 
 /**
@@ -30,7 +30,7 @@ type Props = {
   textAlign?: keyof typeof styles.textAlign;
   color?: CSSProperties["color"] | Color;
   backgroundColor?: CSSProperties["color"] | Color;
-};
+} & DefaultProps;
 export type TypographyElement = HTMLSpanElement | HTMLParagraphElement;
 
 export type TypographyProps = PropsWithChildren<Props> & HTMLAttributes<TypographyElement>;

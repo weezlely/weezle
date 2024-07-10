@@ -1,5 +1,5 @@
 import type { CSSProperties, Ref } from "react";
-import React from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
@@ -8,7 +8,7 @@ import { ButtonProps } from "./index.type";
 
 export interface IButton extends ButtonProps {}
 
-const Button = React.forwardRef(function button(
+const Button = React.forwardRef<HTMLButtonElement, IButton>(function button(
   {
     /** @description Buttons Props */
     id = undefined,
@@ -17,10 +17,10 @@ const Button = React.forwardRef(function button(
     color = "#fff", // Button's color
     background = "none", // Button's background color
     disabled = false,
-    style,
+    style = {},
     children,
     ...rest
-  }: ButtonProps,
+  },
   forwardRef: Ref<HTMLButtonElement>
 ) {
   /**
@@ -44,12 +44,13 @@ const Button = React.forwardRef(function button(
   );
 });
 
-Button.propTypes = {
-  variant: PropTypes.oneOf(["primary", "secondary", "success", "danger", "error"]),
-  size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl"]),
-  color: PropTypes.string,
-  background: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
+// Button.propTypes = {
+//   variant: PropTypes.oneOf(["primary", "secondary", "success", "danger", "error"]),
+//   size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl"]),
+//   color: PropTypes.string,
+//   background: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 export default Button;

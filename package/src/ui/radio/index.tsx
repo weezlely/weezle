@@ -1,11 +1,11 @@
 import type { CSSProperties, ChangeEvent, Ref } from "react";
-import React from "react";
+import * as React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import type { RadioGroupProps, RadioItemProps, RadioInputProps, RadioLabelProps } from "./index.type";
-import { useRadioContext } from "./index.context";
-import { RadioProvider } from "./index.provider";
+import { useRadioContext } from "./_radio.context";
+import { RadioProvider } from "./_radio.provider";
 import * as styles from "./styles.css";
 
 const RadioGroup = ({ name = "radio-group", style, children, ...rest }: RadioGroupProps) => {
@@ -20,13 +20,13 @@ const RadioGroup = ({ name = "radio-group", style, children, ...rest }: RadioGro
     </>
   );
 };
-RadioGroup.propTypes = {
-  name: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// RadioGroup.propTypes = {
+//   name: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
-const RadioLabel = React.forwardRef(function Label(
+const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>(function Label(
   {
     /** @description RadioGroup's label Props */
     id = "",
@@ -68,15 +68,15 @@ const RadioLabel = React.forwardRef(function Label(
   );
 });
 
-RadioLabel.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
-  circleColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// RadioLabel.propTypes = {
+//   id: PropTypes.string,
+//   label: PropTypes.string.isRequired,
+//   checked: PropTypes.bool,
+//   circleColor: PropTypes.string,
+//   backgroundColor: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 const RadioInput = React.forwardRef(function Input(
   {
@@ -124,15 +124,15 @@ const RadioInput = React.forwardRef(function Input(
   );
 });
 
-RadioInput.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// RadioInput.propTypes = {
+//   name: PropTypes.string,
+//   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//   checked: PropTypes.bool,
+//   defaultChecked: PropTypes.bool,
+//   disabled: PropTypes.bool,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 const RadioOption = React.forwardRef(function (
   {
@@ -178,19 +178,19 @@ const RadioOption = React.forwardRef(function (
   );
 });
 
-RadioOption.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  circleColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// RadioOption.propTypes = {
+//   id: PropTypes.string,
+//   label: PropTypes.string.isRequired,
+//   name: PropTypes.string,
+//   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//   checked: PropTypes.bool,
+//   defaultChecked: PropTypes.bool,
+//   disabled: PropTypes.bool,
+//   circleColor: PropTypes.string,
+//   backgroundColor: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 const Radio = Object.assign(RadioProvider, {
   Group: RadioGroup,

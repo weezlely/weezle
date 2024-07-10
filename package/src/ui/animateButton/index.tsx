@@ -1,6 +1,6 @@
-import type { CSSProperties, Ref } from "react";
+import type { FC, CSSProperties, Ref } from "react";
 import { motion as Motion } from "framer-motion";
-import React from "react";
+import * as React from "react";
 import clsx from "clsx";
 
 import { eventHandler } from "../../functions";
@@ -9,7 +9,7 @@ import * as styles from "./styles.css";
 
 export interface IAnimateButton extends AnimateButtonProps {}
 
-const AnimateButton = React.forwardRef(function Index(
+const AnimateButton: FC<AnimateButtonProps> = React.forwardRef(function Index(
   {
     /** @description Animate Buttons Props */
     id = undefined,
@@ -24,7 +24,7 @@ const AnimateButton = React.forwardRef(function Index(
     style,
     children,
     ...rest
-  }: AnimateButtonProps,
+  },
   forwardRef: Ref<HTMLButtonElement>
 ) {
   /**

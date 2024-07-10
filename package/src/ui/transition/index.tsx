@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
+import * as React from "react";
 import clsx from "clsx";
 
 import { transitionStyles } from "./styles.css";
 import { TransitionProps } from "./index.type";
 
-const Transition: React.FC<TransitionProps> = ({ in: inProp, className = "transition", children }) => {
-  const [isVisible, setIsVisible] = useState(inProp);
+export interface ITransition extends TransitionProps {
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+}
 
-  useEffect(() => {
+const Transition: React.FC<ITransition> = ({ in: inProp, className = "transition", style, children, ...rest }) => {
+  const [isVisible, setIsVisible] = React.useState(inProp);
+
+  React.useEffect(() => {
     if (inProp) {
       setIsVisible(true);
     } else {
@@ -24,7 +29,11 @@ const Transition: React.FC<TransitionProps> = ({ in: inProp, className = "transi
     [transitionStyles.exit]: !inProp,
   });
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div className={classNames} style={style} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 export default Transition;

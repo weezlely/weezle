@@ -71,7 +71,8 @@ const bundleCssEmits = () => ({
 
 const compilerOptions = loadCompilerOptions("tsconfig.json");
 
-const plugins = [vanillaExtractPlugin(), depsExternal(), esbuild(), json(), terser({ maxWorkers: 4 }), filesize()];
+const plugins = [vanillaExtractPlugin(), depsExternal(), esbuild(), json(), filesize()];
+const globals = { react: "React", "react-dom": "ReactDOM", "react/jsx-runtime": "jsxRuntime" };
 
 export default [
   {
@@ -109,18 +110,23 @@ export default [
     input: "src/index.ts",
     plugins: [
       ...plugins,
-      flatDts({
+      dts({
         compilerOptions: {
           ...compilerOptions,
           baseUrl: path.resolve(compilerOptions.baseUrl || "."),
           declaration: true,
-          noEmit: false,
+          noEmit: true,
           emitDeclarationOnly: true,
-          noEmitOnError: true,
+          noEmitOnError: false,
           target: ts.ScriptTarget.ESNext,
         },
       }),
-      // flatDts(),
+      flatDts({
+        compilerOptions: {
+          baseUrl: path.resolve(compilerOptions.baseUrl || "."),
+        },
+        lib: true,
+      }),
     ],
     output: [
       {
@@ -132,6 +138,20 @@ export default [
         entryFileNames({ name }) {
           return `${name.replace(/\.css$/, ".css.vanilla")}.d.ts`;
         },
+        // entryFileNames({ name }) {
+        //   if (name.endsWith(".css")) {
+        //     console.log("------------------- name 1: ", name);
+        //     return `${name.replace(/\.css$/, ".css.vanilla")}.d.ts`;
+        //   }
+        //   //  else if (name.endsWith(".css.ts")) {
+        //   //   console.log("------------------- name 2: ", name);
+        //   //   return `${name.replace(/\.css\.ts$/, ".css.vanilla.ts")}.d.ts`;
+        //   // }
+        //   else {
+        //     console.log("------------------- name 3: ", name);
+        //     return `${name}.d.ts`;
+        //   }
+        // },
       },
     ],
   },

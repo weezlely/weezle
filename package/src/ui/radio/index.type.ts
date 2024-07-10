@@ -1,5 +1,6 @@
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import { Events } from "../../types";
+
+import { DefaultProps, Events } from "../../types";
 
 type Color = string;
 type Size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
@@ -10,14 +11,9 @@ type ContextProps = {
   propsOnChange?: (event: Events) => void;
 };
 
-type ProvideProps = {
-  onChange?: (event: Events) => void;
-};
+type ProvideProps = { onChange?: (event: Events) => void } & DefaultProps;
 
-type GroupProps = {
-  name?: string;
-};
-
+type GroupProps = { name?: string } & DefaultProps;
 type OptionProps = {
   // Radio buttons's name
   name?: string;
@@ -36,7 +32,8 @@ type OptionProps = {
 
   // Radio button's activate
   disabled?: boolean;
-} & ContextProps;
+} & ContextProps &
+  DefaultProps;
 
 type LabelProps = {
   id?: string;
@@ -44,7 +41,7 @@ type LabelProps = {
   checked?: boolean;
   circleColor?: Color;
   backgroundColor?: Color;
-};
+} & DefaultProps;
 
 type InputProps = {
   checked?: boolean;
@@ -52,7 +49,7 @@ type InputProps = {
   value?: string | number;
   defaultChecked?: boolean;
   disabled?: boolean;
-};
+} & DefaultProps["style"];
 
 export type RadioContextProps = ContextProps;
 

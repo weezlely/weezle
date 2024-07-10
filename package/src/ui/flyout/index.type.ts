@@ -1,31 +1,26 @@
 import type { CSSProperties, Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
+import { DefaultProps, SizeWHs } from "../../types";
 import * as styles from "./styles.css";
-import { SizeWHs } from "../../types";
 
-type ContextProps = {
-  isOpen: boolean;
-  toggle: Dispatch<SetStateAction<boolean>>;
-};
+type ContextProps = { isOpen: boolean; toggle: Dispatch<SetStateAction<boolean>> };
 
-type ContainerProps = object & SizeWHs;
+type ContainerProps = object & SizeWHs & DefaultProps;
 
-type OverLayProps = {
-  zIndex: number;
-};
-type ToggleProps = object;
-type HeaderProps = object;
+type OverLayProps = { zIndex: number } & DefaultProps;
+
+type ToggleProps = object & DefaultProps;
+
+type HeaderProps = object & DefaultProps;
 
 type ListProps = {
   position?: keyof typeof styles.positionVariants;
   direction?: keyof typeof styles.directionVariants;
   backgroundColor?: CSSProperties["backgroundColor"];
-} & SizeWHs;
+} & SizeWHs &
+  DefaultProps;
 
-type ItemProps = {
-  id?: string | number;
-  color?: string;
-};
+type ItemProps = { id?: string | number; color?: string } & DefaultProps;
 
 // Flyout's Context Prop
 export type FlyoutContextProps = PropsWithChildren<ContextProps>;

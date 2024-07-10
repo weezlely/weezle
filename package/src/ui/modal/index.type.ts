@@ -1,26 +1,25 @@
 import type { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
 
+import { DefaultProps } from "../../types";
+
 type ContextProps = {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
 };
-type ProviderProps = object & ContextProps;
+type ProviderProps = object & ContextProps & DefaultProps;
 
-type PortalProps = {
-  modalId?: string;
-};
+type PortalProps = { modalId?: string } & DefaultProps;
 
-type LayoutProps = {
-  layoutStyle?: CSSProperties;
-  dimmedStyle?: CSSProperties;
-};
+type LayoutProps = { layoutStyle?: CSSProperties; dimmedStyle?: CSSProperties } & DefaultProps;
 
-type TriggerProps = {};
+type TriggerProps = object & DefaultProps;
 
-type HeaderProps = {};
-type BodyProps = {};
-type FooterProps = {};
+type HeaderProps = object & DefaultProps;
+
+type BodyProps = object & DefaultProps;
+
+type FooterProps = object & DefaultProps;
 
 // Modal's Context Prop
 export type ModalContextProps = PropsWithChildren<ContextProps>;

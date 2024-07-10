@@ -1,14 +1,15 @@
 import { motion as Motion } from "framer-motion";
-import type { CSSProperties } from "react";
+import type { FC, CSSProperties } from "react";
 import { clsx } from "clsx";
 
-import { useBottomSheetContext } from "./index.context";
-import { BottomSheetProvider } from "./index.provider";
+import { useBottomSheetContext } from "./_bottomSheet.context";
+import { BottomSheetProvider } from "./_bottomSheet.provider";
 import * as styles from "./styles.css";
 import type { BottomSheetAllProps, BottomSheetBodyProps, BottomSheetHeaderProps, BottomSheetWrapperProps } from "./index.type";
 
 export interface IBottomSheet extends BottomSheetAllProps {}
-const BottomSheetWrapper = ({
+
+const BottomSheetWrapper: FC<BottomSheetWrapperProps> = ({
   initial = "visible",
   dragDirection = "y",
   visible = { x: 0, y: 300 },
@@ -18,7 +19,7 @@ const BottomSheetWrapper = ({
   style,
   children,
   ...rest
-}: BottomSheetWrapperProps) => {
+}) => {
   const { onDragEnd, controls, setIsOpen, isOpen } = useBottomSheetContext();
 
   /**
@@ -54,7 +55,7 @@ const BottomSheetWrapper = ({
   );
 };
 
-const BottomSheetHeader = ({ style, children, ...rest }: BottomSheetHeaderProps) => {
+const BottomSheetHeader: FC<BottomSheetHeaderProps> = ({ style, children, ...rest }) => {
   const { controls } = useBottomSheetContext();
 
   /**
@@ -79,7 +80,7 @@ const BottomSheetHeader = ({ style, children, ...rest }: BottomSheetHeaderProps)
   );
 };
 
-const BottomSheetBody = ({ style, children, ...rest }: BottomSheetBodyProps) => {
+const BottomSheetBody: FC<BottomSheetBodyProps> = ({ style, children, ...rest }: BottomSheetBodyProps) => {
   const { controls } = useBottomSheetContext();
 
   /**

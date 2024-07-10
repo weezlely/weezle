@@ -1,20 +1,20 @@
 import type { Dispatch, HTMLAttributes, PropsWithChildren, SetStateAction } from "react";
 
-import { Color, FontWeight } from "../../types";
+import { Color, DefaultProps, FontWeight } from "../../types";
 
 type ContextProps = {
   isOn: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
 };
-type ProviderProps = object & ContextProps;
+type ProviderProps = object & ContextProps & DefaultProps;
 type ContainerProps = {
   primary?: Color;
   secondary: Color;
   fontColor?: Color;
   fontWeight?: FontWeight;
-};
-type ToggleProps = object;
-type LabelProps = object;
+} & DefaultProps;
+type ToggleProps = object & DefaultProps;
+type LabelProps = object & DefaultProps;
 
 // Switch's Context Prop
 export type SwitchContextProps = PropsWithChildren<ContextProps> & HTMLAttributes<HTMLElement>;

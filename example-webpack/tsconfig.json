@@ -6,14 +6,15 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ES6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "declaration": true,
     "declarationDir": "types",
     "outDir": "dist",
     "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
     "baseUrl": "."
   },
   "exclude": ["node_modules"]

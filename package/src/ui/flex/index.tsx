@@ -1,5 +1,5 @@
-import type { CSSProperties, Ref } from "react";
-import React from "react";
+import type { FC, CSSProperties, Ref } from "react";
+import * as React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 //
@@ -8,7 +8,7 @@ import { FlexProps } from "./index.type";
 
 export interface IFlex extends FlexProps {}
 
-const Flex = React.forwardRef(function Flex(
+const Flex: FC<IFlex> = React.forwardRef<HTMLSpanElement, IFlex>(function Flex(
   {
     /** @description Flex Props */
     id = undefined,
@@ -19,7 +19,7 @@ const Flex = React.forwardRef(function Flex(
     style,
     children,
     ...rest
-  }: FlexProps,
+  },
   forwardRef: Ref<HTMLSpanElement>
 ) {
   /**
@@ -44,14 +44,14 @@ const Flex = React.forwardRef(function Flex(
   );
 });
 
-Flex.propTypes = {
-  id: PropTypes.string,
-  dir: PropTypes.oneOf(["row", "column"]),
-  align: PropTypes.oneOf(["flex-start", "flex-end", "center", "baseline", "stretch"]),
-  justify: PropTypes.oneOf(["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]),
-  gap: PropTypes.number,
-  style: PropTypes.object,
-  children: PropTypes.node,
-};
+// Flex.propTypes = {
+//   id: PropTypes.string,
+//   dir: PropTypes.oneOf(["row", "column"]),
+//   align: PropTypes.oneOf(["flex-start", "flex-end", "center", "baseline", "stretch"]),
+//   justify: PropTypes.oneOf(["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]),
+//   gap: PropTypes.number,
+//   style: PropTypes.object,
+//   children: PropTypes.node,
+// };
 
 export default Flex;

@@ -1,6 +1,6 @@
 import type { HTMLAttributes, PropsWithChildren } from "react";
 
-import { KeyAbles } from "../../types";
+import { DefaultProps, KeyAbles } from "../../types";
 
 type Props = {
   dir?: "row" | "column";
@@ -9,4 +9,4 @@ type Props = {
   gap?: number;
 } & KeyAbles;
 
-export type FlexProps = PropsWithChildren<Props> & HTMLAttributes<HTMLSpanElement>;
+export type FlexProps = PropsWithChildren<Props> & HTMLAttributes<HTMLSpanElement> & DefaultProps;

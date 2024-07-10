@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { FC, CSSProperties } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
@@ -12,12 +12,12 @@ import type {
   SideBarToggleProps,
   SideBarDividerProps,
 } from "./index.type";
-import { SideBarProvider } from "./index.provider";
+import { SideBarProvider } from "./_sideBar.provider";
 import * as styles from "./styles.css";
 
 export interface ISideBar extends SideBarAllProps {}
 
-const SidebarContainer = ({ className, style, children, ...rest }: SideBarContainerProps) => {
+const SidebarContainer: FC<SideBarContainerProps> = ({ className, style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -38,7 +38,7 @@ const SidebarContainer = ({ className, style, children, ...rest }: SideBarContai
   );
 };
 
-const SidebarHeader = ({ style, children, ...rest }: SideBarHeaderProps) => {
+const SidebarHeader: FC<SideBarHeaderProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -57,7 +57,7 @@ const SidebarHeader = ({ style, children, ...rest }: SideBarHeaderProps) => {
     </div>
   );
 };
-const SidebarBody = ({ style, children, ...rest }: SideBarBodyProps) => {
+const SidebarBody: FC<SideBarBodyProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -77,7 +77,7 @@ const SidebarBody = ({ style, children, ...rest }: SideBarBodyProps) => {
   );
 };
 
-const SidebarList = ({ style, children, ...rest }: SideBarListProps) => {
+const SidebarList: FC<SideBarListProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -98,7 +98,7 @@ const SidebarList = ({ style, children, ...rest }: SideBarListProps) => {
   );
 };
 
-const SidebarItem = ({ style, children, ...rest }: SideBarItemProps) => {
+const SidebarItem: FC<SideBarItemProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -118,7 +118,7 @@ const SidebarItem = ({ style, children, ...rest }: SideBarItemProps) => {
   );
 };
 
-const SidebarToggle = ({ style, children, ...rest }: SideBarToggleProps) => {
+const SidebarToggle: FC<SideBarToggleProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -139,7 +139,7 @@ const SidebarToggle = ({ style, children, ...rest }: SideBarToggleProps) => {
   );
 };
 
-const SidebarDivider = ({ style, children, ...rest }: SideBarDividerProps) => {
+const SidebarDivider: FC<SideBarDividerProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */

@@ -1,5 +1,6 @@
-import { createContext } from "react";
+import * as React from "react";
+
 import { ThemeContextProps } from "./index.type";
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+const ThemeContext = React.createContext<ThemeContextProps | undefined>(undefined);
 export default ThemeContext;

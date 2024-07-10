@@ -1,15 +1,15 @@
-import type { CSSProperties, MutableRefObject } from "react";
+import type { FC, CSSProperties, MutableRefObject } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { useHover } from "../../hooks"; // Hooks
-import { useFlyoutContext } from "./index.context"; // Context
-import { FlyoutProvider } from "./index.provider"; // Provider
+import { useFlyoutContext } from "./_flyout.context"; // Context
+import { FlyoutProvider } from "./_flyout.provider"; // Provider
 import type { FlyoutContainerProps, FlyoutHeaderProps, FlyoutItemProps, FlyoutListProps, FlyoutOverLayProps, FlyoutToggleProps } from "./index.type"; // Types
 import * as styles from "./styles.css"; // Styles
 
 // Container
-const FlyoutContainer = ({ w = 200, h = 200, style, children, ...rest }: FlyoutContainerProps) => {
+const FlyoutContainer: FC<FlyoutContainerProps> = ({ w = 200, h = 200, style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -31,15 +31,15 @@ const FlyoutContainer = ({ w = 200, h = 200, style, children, ...rest }: FlyoutC
   );
 };
 
-FlyoutContainer.propTypes = {
-  w: PropTypes.number,
-  h: PropTypes.number,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// FlyoutContainer.propTypes = {
+//   w: PropTypes.number,
+//   h: PropTypes.number,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 // Overlay
-const FlyoutOverlay = ({ zIndex = 9, style, children, ...rest }: FlyoutOverLayProps) => {
+const FlyoutOverlay: FC<FlyoutOverLayProps> = ({ zIndex = 9, style, children, ...rest }) => {
   const { isOpen, toggle } = useFlyoutContext();
   if (!isOpen) return null;
   /**
@@ -62,14 +62,14 @@ const FlyoutOverlay = ({ zIndex = 9, style, children, ...rest }: FlyoutOverLayPr
   );
 };
 
-FlyoutOverlay.prototype = {
-  zIndex: PropTypes.number,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// FlyoutOverlay.prototype = {
+//   zIndex: PropTypes.number,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 // Toggle
-const FlyoutToggle = ({ style, children, ...rest }: FlyoutToggleProps) => {
+const FlyoutToggle: FC<FlyoutToggleProps> = ({ style, children, ...rest }) => {
   const { isOpen, toggle } = useFlyoutContext();
   /**
    * @description static-change style depending on the Props
@@ -96,7 +96,7 @@ FlyoutToggle.prototype = {
 };
 
 // Header
-const FlyoutHeader = ({ style, children, ...rest }: FlyoutHeaderProps) => {
+const FlyoutHeader: FC<FlyoutHeaderProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -117,7 +117,16 @@ const FlyoutHeader = ({ style, children, ...rest }: FlyoutHeaderProps) => {
 };
 
 // List
-const FlyoutList = ({ position = "relative", w = 200, h = 300, direction = "column", backgroundColor = "#fff", style, children, ...rest }: FlyoutListProps) => {
+const FlyoutList: FC<FlyoutListProps> = ({
+  position = "relative",
+  w = 200,
+  h = 300,
+  direction = "column",
+  backgroundColor = "#fff",
+  style,
+  children,
+  ...rest
+}) => {
   const { isOpen } = useFlyoutContext();
 
   const [targetRef, isHovering] = useHover();
@@ -160,7 +169,7 @@ FlyoutList.prototype = {
 };
 
 // Item
-const FlyoutItem = ({ id = undefined, color = "#000", style, children, ...rest }: FlyoutItemProps) => {
+const FlyoutItem: FC<FlyoutItemProps> = ({ id = undefined, color = "#000", style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */

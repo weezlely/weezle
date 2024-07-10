@@ -1,22 +1,24 @@
-import type { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
+import type { HTMLAttributes, PropsWithChildren } from "react";
 
-type ContextProps = {};
+import { DefaultProps } from "../../types";
 
-type ProviderProps = {};
+type ContextProps = object & DefaultProps;
 
-type ContainerProps = {};
+type ProviderProps = object & DefaultProps;
 
-type HeaderProps = {};
+type ContainerProps = object & DefaultProps;
 
-type BodyProps = {};
+type HeaderProps = object & DefaultProps;
 
-type ListProps = {};
+type BodyProps = object & DefaultProps;
 
-type ItemProps = {};
+type ListProps = object & DefaultProps;
 
-type ToggleProps = {};
+type ItemProps = object & DefaultProps;
 
-type DividerProps = {};
+type ToggleProps = object & DefaultProps;
+
+type DividerProps = object & DefaultProps;
 
 export type SideBarContextProps = PropsWithChildren<ContextProps>;
 

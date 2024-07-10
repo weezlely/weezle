@@ -10,6 +10,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "jsx": "preserve",
+
     // Base
     "composite": false,
     "declarationMap": true,
@@ -30,7 +31,7 @@
     "emitDeclarationOnly": true,
     "noEmitOnError": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "!*.d.ts"],
   "exclude": ["node_modules"]
 }
 // {

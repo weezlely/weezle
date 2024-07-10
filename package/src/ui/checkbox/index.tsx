@@ -1,16 +1,16 @@
-import type { CSSProperties, Ref } from "react";
+import type { FC, CSSProperties, Ref } from "react";
 import * as React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { eventHandler } from "../../functions";
-import { useCheckBoxContext } from "./index.context";
-import { CheckBoxProvider } from "./index.provider";
+import { useCheckBoxContext } from "./_checkbox.context";
+import { CheckBoxProvider } from "./_checkbox.provider";
 import { CheckBoxInputProps, CheckBoxTextProps, CheckBoxWrapperProps } from "./index.type";
 import * as styles from "./styles.css";
 
 /** Checkbox Container */
-const CheckBoxContainer = ({ style, children, ...rest }: CheckBoxWrapperProps) => {
+const CheckBoxContainer: FC<CheckBoxWrapperProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -32,13 +32,13 @@ const CheckBoxContainer = ({ style, children, ...rest }: CheckBoxWrapperProps) =
     </label>
   );
 };
-CheckBoxContainer.propTypes = {
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// CheckBoxContainer.propTypes = {
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 /** Checkbox input */
-const CheckBoxInput = React.forwardRef(function CheckBoxInput(
+const CheckBoxInput: FC<CheckBoxInputProps> = React.forwardRef<HTMLInputElement, CheckBoxInputProps>(function CheckBoxInput(
   {
     // Props
     id = undefined,
@@ -49,7 +49,7 @@ const CheckBoxInput = React.forwardRef(function CheckBoxInput(
     style,
     children,
     ...rest
-  }: CheckBoxInputProps,
+  },
   forwardedRef: Ref<HTMLInputElement>
 ) {
   const { isChecked, setIsChecked } = useCheckBoxContext();
@@ -88,17 +88,17 @@ const CheckBoxInput = React.forwardRef(function CheckBoxInput(
     />
   );
 });
-CheckBoxInput.propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  checkColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string,
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// CheckBoxInput.propTypes = {
+//   id: PropTypes.string,
+//   className: PropTypes.string,
+//   checkColor: PropTypes.string.isRequired,
+//   backgroundColor: PropTypes.string,
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 /** 체크 박스 - Paragraph */
-const CheckBoxText = ({ style, children, ...rest }: CheckBoxTextProps) => {
+const CheckBoxText: FC<CheckBoxTextProps> = ({ style, children, ...rest }) => {
   /**
    * @description static-change style depending on the Props
    */
@@ -121,10 +121,10 @@ const CheckBoxText = ({ style, children, ...rest }: CheckBoxTextProps) => {
   );
 };
 
-CheckBoxText.propTypes = {
-  style: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
+// CheckBoxText.propTypes = {
+//   style: PropTypes.object,
+//   children: PropTypes.node.isRequired,
+// };
 
 const CheckBox = Object.assign(CheckBoxProvider, {
   Container: CheckBoxContainer,
