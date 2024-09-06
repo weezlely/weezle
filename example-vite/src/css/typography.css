@@ -1,0 +1,58 @@
+.typography {
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+.textAlign-left {
+  text-align: left;
+}
+
+.textAlign-center {
+  text-align: center;
+}
+
+.textAlign-right {
+  text-align: right;
+}
+
+.textAlign-justify {
+  text-align: justify;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-red {
+  color: red;
+}
+
+/* 추가적으로 필요한 색상들을 정의해주세요 */
+.fontSize-xs {
+  font-size: 12px;
+}
+
+.fontSize-sm {
+  font-size: 14px;
+}
+
+.fontSize-md {
+  font-size: 16px;
+}
+
+.fontSize-lg {
+  font-size: 18px;
+}
+
+.fontSize-xl {
+  font-size: 20px;
+}
+
+.fontSize-xxl {
+  font-size: 24px;
+}
+
+.fontSize-xxxl {
+  font-size: 28px;
+}
