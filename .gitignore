@@ -1,0 +1,34 @@
+# node_modules
+**/node_modules
+
+# builds
+**/dist
+/lib
+
+# Markdown (README)
+**/README-npm.md
+
+# Example (example-vite)
+/example-vite/package-lock.json
+
+# Example (example-webpack)
+/example-webpack/package-lock.json
+
+# Package (Package)
+/package/package-lock.json
+/package/node_modules
+
+# sb (Storybook)
+stroybook/*storybook.log
+stroybook/.storybook*
+stroybook/storybook*
+stroybook/build-storybook.log
+
+# Package json
+**/package-lock.json
+
+# yarn
+**/yarn*
+
+# env
+package/.env**
