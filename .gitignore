@@ -32,3 +32,4 @@ stroybook/build-storybook.log
 
 # env
 package/.env**
+package/_dummy
