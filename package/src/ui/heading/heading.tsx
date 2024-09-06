@@ -1,13 +1,26 @@
 /* eslint-disable react-refresh/only-export-components */
 import * as React from "react";
-import clsx from "clsx";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { clsx } from "clsx";
 
 import type { HeadingProps } from "./heading.type";
 import * as styles from "./styles.css";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
 
 export default React.forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ as: Component = "h3", className = "heading", fontColor, bgColor = "transparent", isUnderline = false, style, children, ...rest }, forwardedRef) => {
+  (
+    {
+      /** @description Heading's props */
+      as: Component = "h3",
+      className = "heading",
+      fontColor,
+      bgColor = "transparent",
+      isUnderline = false,
+      style,
+      children,
+      ...rest
+    },
+    forwardedRef
+  ) => {
     /**
      * @description static-change style depending on the Props
      */
