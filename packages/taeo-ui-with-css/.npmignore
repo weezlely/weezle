@@ -1,0 +1,12 @@
+.storybook/
+src/
+example/
+rollup.config.mjs
+tsconfig.json
+yarn.lock
+node_modules/
+README-git.md
+README.md
+storybook*
+.storybook/*
+./storybook-statick/**/*
