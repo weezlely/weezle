@@ -1,1 +1,25 @@
-{}
+{
+  "name": "@weezle/taeo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is library for ui",
+  "main": "index.js",
+  "devDependencies": {},
+  "workspaces": {
+    "packages": [
+      "packages/taeo-ui-with-css",
+      "packages/taeo-ui-with-js"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules & rm -rf package-lock.json ",
+    "taeo-ui": "yarn workspace @weezle/taeo-ui-with-css"
+  },
+  "keywords": [
+    "ui",
+    "react"
+  ],
+  "author": "taetaeo <ohtk1119@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/taetaeo"
+}

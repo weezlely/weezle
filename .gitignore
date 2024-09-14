@@ -1,18 +1,20 @@
 # node_modules
 **/node_modules
+node_modules/
 
 # builds
 **/dist
-/lib
+dist/
+
 
 # Markdown (README)
 **/README-npm.md
 
 # Example (example-vite)
-/example-vite/package-lock.json
+/app/example-vite/package-lock.json
 
 # Example (example-webpack)
-/example-webpack/package-lock.json
+/app/example-webpack/package-lock.json
 
 # Package (Package)
 /package/package-lock.json
