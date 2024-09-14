@@ -1,6 +1,10 @@
 {
   "name": "@weezle/taeo-ui-with-css",
   "description": "taeo's ui library for react",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
