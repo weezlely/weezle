@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 결과 파일 형식
+    "module": "ESNext", // module 형식
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx", // JSX 설정 추가
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "noEmitOnError": false,
+
+    "baseUrl": "src",
+    // Alias
+    "paths": {
+      "@/*": ["*"]
+    }
+    // TypeScript 컴파일러가 라이브러리 파일의 타입 검사를 생략
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
