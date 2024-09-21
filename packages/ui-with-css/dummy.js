@@ -5,7 +5,7 @@ import depsExternal from "rollup-plugin-node-externals";
 import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 import { dts } from "rollup-plugin-dts";
 import path from "path";
-import flatDts from "rollup-plugin-flat-dts";
+// import flatDts from "rollup-plugin-flat-dts";
 
 const loadCompilerOptions = (tsconfig) => {
   if (!tsconfig) return {};

@@ -1,5 +1,5 @@
 import React from "react";
-import { Radio as TaeoUiRadio } from "taeo-ui";
+import { Radio as TaeoUiRadio } from "@weezle/taeo-ui-with-css";
 
 const Radio = () => {
   const [value, setValue] = React.useState<{ [key in string]: string }>({

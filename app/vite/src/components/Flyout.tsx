@@ -1,5 +1,5 @@
 import React from "react";
-import { Flyout as TaeoUiFlyout } from "taeo-ui";
+import { Flyout as TaeoUiFlyout } from "@weezle/taeo-ui-with-css";
 
 const Flyout = () => {
   return (

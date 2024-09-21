@@ -1,5 +1,5 @@
 {
-  "name": "@weezle/taeo",
+  "name": "@taeopia/taeo",
   "version": "1.0.0",
   "private": true,
   "description": "This is library for ui",
@@ -7,13 +7,13 @@
   "devDependencies": {},
   "workspaces": {
     "packages": [
-      "packages/taeo-ui-with-css",
-      "packages/taeo-ui-with-js"
+      "packages/ui-with-css",
+      "packages/ui-with-js"
     ]
   },
   "scripts": {
     "clean": "rm -rf node_modules & rm -rf package-lock.json ",
-    "taeo-ui": "yarn workspace @weezle/taeo-ui-with-css"
+    "taeo-ui-css": "yarn workspace @taeopia/ui-with-css"
   },
   "keywords": [
     "ui",

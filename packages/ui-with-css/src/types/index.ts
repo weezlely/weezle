@@ -46,3 +46,7 @@ export type HTMLAnyElement = HTMLElement & HTMLDivElement & HTMLButtonElement;
 
 // export interface ProviderProps<P> extends PropsWithChildren<P | unknown> {}
 export interface ProviderProps extends PropsWithChildren {}
+
+// export interface Elements<'div'|''> extends PropsWithChildren {
+//     div:HTMLDivElement
+// }

@@ -36,5 +36,5 @@
     "noEmitOnError": true
   },
   "extends": "./tsconfig/react-library.json",
-  "include": ["src", "_dummy"]
+  "include": ["src"]
 }

@@ -1,15 +1,19 @@
-import type { ProviderProps, Themes } from "../types";
+import type { Color, ProviderProps, Themes } from "../types";
 import { palette } from "../vars";
 
-interface ContextProps {
-  theme?: Themes;
-  isDarkMode?: boolean;
+export type Theme = "light" | "dark";
+
+interface ThemeProps {
+  theme?: Theme;
   toggleTheme: () => void;
+
+  lightTheme: CreateThemePrams;
+  darkTheme: CreateThemePrams;
 }
 
-export interface ThemeContextProps extends ContextProps {}
+export interface ThemeContextProps extends ThemeProps {}
 
-export interface ThemeProviderProps extends ProviderProps, ContextProps {}
+export interface ThemeProviderProps extends ProviderProps, ThemeProps {}
 
 export type CreateThemePrams =
   | typeof palette.aqua
@@ -39,3 +43,8 @@ export type CreateThemePrams =
   | typeof palette.skyBlue
   | typeof palette.teal
   | typeof palette.yellow;
+
+export type Palette<L extends string> = {
+  [key in `${L}`]: Color;
+};
+export type PaletteKey = "05" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90";

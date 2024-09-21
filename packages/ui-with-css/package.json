@@ -1,5 +1,5 @@
 {
-  "name": "@weezle/taeo-ui-with-css",
+  "name": "@taeopia/ui-with-css",
   "description": "taeo's ui library for react",
   "publishConfig": {
     "access": "public",

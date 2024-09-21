@@ -1,5 +1,5 @@
 import * as React from "react";
-import { navyTheme, limeGreenTheme, blueTheme } from "taeo-ui";
+import { navyTheme, limeGreenTheme, blueTheme } from "@weezle/taeo-ui-with-css";
 
 import TaeoUiButtons from "./components/taeoui-button";
 import TaeouiHeading from "./components/taeoui-heading";

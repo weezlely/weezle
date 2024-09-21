@@ -15,3 +15,4 @@ export * from "./spacing/spacing.type";
 export * from "./switch/switch.type";
 export * from "./typography/typography.type";
 export * from "./transition/transition.type";
+export * from "./cards/card.type";

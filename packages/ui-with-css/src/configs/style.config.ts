@@ -1,4 +1,39 @@
-import { KeyAbles } from "../types";
+import type { Palette, PaletteKey } from "../theme/theme.type";
+import type { KeyAbles } from "../types";
+
+export type DefaultPaletteColor =
+  | "navy"
+  | "blue"
+  | "royalBlue"
+  | "skyBlue"
+  | "aqua"
+  | "teal"
+  | "green"
+  | "limeGreen"
+  | "lime"
+  | "olive"
+  | "yellow"
+  | "gold"
+  | "saddleBrown"
+  | "brown"
+  | "darkRed"
+  | "red"
+  | "orange"
+  | "coral"
+  | "salmon"
+  | "hotPink"
+  | "pink"
+  | "fuchsia"
+  | "purple"
+  | "blueViolet"
+  | "black"
+  | "charcoal"
+  | "gray"
+  | "white";
+
+export type PaletteObject = {
+  [key in DefaultPaletteColor]: Palette<PaletteKey>;
+};
 
 export const palette = {
   navy: {
@@ -342,37 +377,46 @@ export const palette = {
 const fonts = {
   ft10: 10,
   ft12: 12,
+  ft13: 13,
   ft14: 14,
+  ft15: 15,
   ft16: 16,
+  ft17: 17,
   ft18: 18,
+  ft19: 19,
   ft20: 20,
+  ft25: 25,
+  ft32: 32,
   ft36: 36,
+  ft40: 40,
   ft48: 48,
+  ft50: 50,
+  ft66: 66,
 } as const;
 
-const fontSizes = {
-  xs: fonts.ft10,
-  sm: fonts.ft12,
-  md: fonts.ft14,
-  lg: fonts.ft16,
-  xl: fonts.ft20,
-  xxl: fonts.ft36,
-  xxxl: fonts.ft48,
-} as const;
+const fontSizes = { xs: fonts.ft10, sm: fonts.ft12, md: fonts.ft14, lg: fonts.ft16, xl: fonts.ft20, xxl: fonts.ft36, xxxl: fonts.ft48 } as const;
 
-const fontWeights = {
-  bold: 700,
-  semiBold: 600,
-  medium: 500,
-  regular: 400,
-} as const;
+const fontWeights = { bold: 700, semiBold: 600, medium: 500, regular: 400 } as const;
+
+const spacings = { xs: "0.25rem", sm: "0.5rem", md: "1rem", lg: "1.5rem", xl: "2rem" } as const;
 
 const styleConfigs = {
   palette,
   fonts,
   fontSizes,
   fontWeights,
+  spacings,
 } as const;
+
+const fontStyle = {
+  display: {},
+  heading: {},
+  title: {},
+  body: {},
+  detail: {},
+  label: {},
+  link: {},
+};
 
 export type StyleConfig = typeof styleConfigs & KeyAbles;
 export default styleConfigs;

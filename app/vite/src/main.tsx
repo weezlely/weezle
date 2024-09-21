@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import App from "./app";
 
-import "taeo-ui/dist/assets/bundle.css";
+import "@weezle/taeo-ui-with-css/dist/assets/bundle.css";
 import "vite/modulepreload-polyfill";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

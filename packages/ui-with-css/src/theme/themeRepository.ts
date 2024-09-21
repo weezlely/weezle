@@ -1,37 +1,10 @@
 import { createGlobalTheme, createTheme } from "@vanilla-extract/css";
+import type { CreateThemePrams } from "./theme.type";
 import { palette, themeVars } from "../vars";
-
-type Colors =
-  | typeof palette.aqua
-  | typeof palette.black
-  | typeof palette.blue
-  | typeof palette.blueViolet
-  | typeof palette.brown
-  | typeof palette.charcoal
-  | typeof palette.coral
-  | typeof palette.darkRed
-  | typeof palette.fuchsia
-  | typeof palette.gold
-  | typeof palette.gray
-  | typeof palette.green
-  | typeof palette.hotPink
-  | typeof palette.lime
-  | typeof palette.limeGreen
-  | typeof palette.navy
-  | typeof palette.olive
-  | typeof palette.orange
-  | typeof palette.pink
-  | typeof palette.purple
-  | typeof palette.red
-  | typeof palette.royalBlue
-  | typeof palette.saddleBrown
-  | typeof palette.salmon
-  | typeof palette.skyBlue
-  | typeof palette.teal
-  | typeof palette.yellow;
+import { styleConfigs } from "../configs";
 
 // Light Mode와 Dark Mode 생성 함수
-export const createLightAndDarkThemes = (primaryColor: Colors, secondaryColor: Colors) => {
+export const createLightAndDarkThemes = (primaryColor: CreateThemePrams, secondaryColor: CreateThemePrams) => {
   // 전역 테마 생성
   createGlobalTheme(":root", themeVars, {
     color: {
@@ -52,13 +25,7 @@ export const createLightAndDarkThemes = (primaryColor: Colors, secondaryColor: C
       body: "Arial, sans-serif",
       heading: "Georgia, serif",
     },
-    spacing: {
-      xs: "4px",
-      sm: "8px",
-      md: "16px",
-      lg: "24px",
-      xl: "32px",
-    },
+    spacing: styleConfigs.spacings,
     border: {
       defaultColor: primaryColor["40"],
       focusColor: primaryColor["50"],
@@ -91,9 +58,7 @@ export const createLightAndDarkThemes = (primaryColor: Colors, secondaryColor: C
     },
     interactive: {
       hoverColor: primaryColor["60"],
-
       focusColor: primaryColor["70"],
-
       activeColor: primaryColor["80"],
     },
   });
@@ -118,13 +83,7 @@ export const createLightAndDarkThemes = (primaryColor: Colors, secondaryColor: C
         body: "Arial, sans-serif",
         heading: "Georgia, serif",
       },
-      spacing: {
-        xs: "4px",
-        sm: "8px",
-        md: "16px",
-        lg: "24px",
-        xl: "32px",
-      },
+      spacing: styleConfigs.spacings,
       border: {
         defaultColor: primaryColor["40"],
         focusColor: primaryColor["70"],
@@ -182,13 +141,7 @@ export const createLightAndDarkThemes = (primaryColor: Colors, secondaryColor: C
         body: "Arial, sans-serif",
         heading: "Georgia, serif",
       },
-      spacing: {
-        xs: "4px",
-        sm: "8px",
-        md: "16px",
-        lg: "24px",
-        xl: "32px",
-      },
+      spacing: styleConfigs.spacings,
       border: {
         defaultColor: primaryColor["40"],
         focusColor: primaryColor["70"],
