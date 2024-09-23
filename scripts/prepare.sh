@@ -2,17 +2,22 @@
 
 set -e
 
-echo "패키지 설치 시작"
 
-# package 디렉토리로 이동
-cd package || { echo "package 디렉토리 이동 실패"; exit 1; }
+yarn @taeopia/canvas-editor clean
 
-echo "현재 경로: $(pwd)"
+yarn @taeopia/canvas-editor install
 
-# 의존성 설치
-yarn || { echo "yarn 설치 실패"; exit 1; }
+yarn @taeopia/canvas-editor build
 
-# Rollup 빌드
-npx rollup -c || { echo "npx rollup -c 실패"; exit 1; }
+yarn @taeopia/ui-with-css clean
 
-echo "패키지 설치 완료"
+yarn @taeopia/ui-with-css install
+
+yarn @taeopia/ui-with-css build
+
+yarn exam-react clean
+
+yarn exam-react install
+
+
+echo "The package is now installed and ready to run."
