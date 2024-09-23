@@ -4,8 +4,10 @@
 >
 > This package consists of:
 >
-> 1. UI library based on vanilla-extract
-> 2. Canvas Editor based on fabric.js
+> 1. UI library based on vanilla-extract : [@taeopia/ui-with-css](https://github.com/weezlely/taeopia/tree/master/packages/ui-with-css)
+> 2. Canvas Editor based on fabric.js : [@taeo/canvas-editor](https://github.com/weezlely/taeopia/tree/master/packages/canvas-editor)
+
+- If you would like more information about the package, please click the blue button.
 
 ## workspace
 
