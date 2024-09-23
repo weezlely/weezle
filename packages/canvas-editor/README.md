@@ -25,3 +25,4 @@ yarn run build
 ```
 
 - Once you have a `/dist` folder, you are now ready.
+- Please check the development-related rules [here](https://github.com/weezlely/taeopia/blob/master/packages/canvas-editor/markdown/DEVELOPMENT.md).
