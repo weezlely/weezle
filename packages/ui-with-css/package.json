@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "prepare": "rm -rf dist",
-    "build": "npm run prepare & rollup -c",
+    "build": "rollup -c",
     "exam": "cd _example && npm start",
     "watch": "npm run prepare:npm & rollup -cw",
     "start": "npm run exam & npm run watch",

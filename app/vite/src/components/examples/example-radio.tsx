@@ -1,7 +1,7 @@
 import React from "react";
-import { Radio as TaeoUiRadio } from "@weezle/taeo-ui-with-css";
+import { Radio as TaeoUiRadio } from "@taeopia/ui-with-css";
 
-const Radio = () => {
+export const ExampleRadio = () => {
   const [value, setValue] = React.useState<{ [key in string]: string }>({
     colors: "",
     foods: "",
@@ -43,5 +43,3 @@ const Radio = () => {
     </>
   );
 };
-
-export default Radio;

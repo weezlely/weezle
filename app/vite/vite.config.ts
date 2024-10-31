@@ -9,8 +9,9 @@ export default defineConfig({
     esbuildOptions: {
       plugins: [veEsbuildPlugin({ runtime: true })],
     },
+    exclude: ["js-big-decimal"],
   },
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths(), veVitePlugin()],
   envPrefix: "VITE_ENV",
   resolve: {},
   build: {

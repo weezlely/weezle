@@ -1,27 +1,24 @@
-import * as React from "react";
-import { navyTheme, limeGreenTheme, blueTheme } from "@weezle/taeo-ui-with-css";
+import { RouterProvider } from "react-router-dom";
+import { routerConfig, styleConfig } from "./configs";
 
-import TaeoUiButtons from "./components/taeoui-button";
-import TaeouiHeading from "./components/taeoui-heading";
+styleConfig();
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
+  return <RouterProvider router={routerConfig} />;
+}
 
-  // const [isOpen, setIsOpen] = useState(true);
-
-  // const toggleSidebar = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
-  return (
-    <>
-      <main className={isDarkMode ? blueTheme.dark : blueTheme.light} style={{ height: "100vh" }}>
+export default App;
+{
+  /* <main className={isDarkMode ? blueTheme.dark : blueTheme.light} style={{ height: "100vh" }}>
         <button onClick={() => setIsDarkMode(!isDarkMode)}>{isDarkMode ? "밝기모드" : "다크모드"}</button>
-        <TaeoUiButtons />
-        <TaeouiHeading />
-      </main>
+        <ExampleButtons />
+        <ExampleHeadings />
+        <ExampleCanvasEditor />
+      </main> */
+}
 
-      {/* <Flex dir="column">
+{
+  /* <Flex dir="column">
         <Flex>
           <Radio />
         </Flex>
@@ -39,10 +36,8 @@ function App() {
         <Button variant="success">버튼</Button>
       </Flex>
 
-      <Sidebar /> */}
-      {/* <Flyout /> */}
-    </>
-  );
+      <Sidebar /> */
 }
-
-export default App;
+{
+  /* <Flyout /> */
+}

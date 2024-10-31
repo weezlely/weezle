@@ -33,7 +33,6 @@
     "@vanilla-extract/webpack-plugin": "^2.3.10",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.11",
-    "prop-types": "^15.8.1",
-    "taeo-ui": "file:../package"
+    "prop-types": "^15.8.1"
   }
 }

@@ -19,8 +19,6 @@ type Parameters = {
 export class CanvasModel extends fabric.Canvas {
   public error: Error | null;
 
-  public history: any;
-  public historyStep: number = 0;
   public context: CanvasRenderingContext2D | null; // Canvas's context
   public pixel: number = 30;
 
@@ -260,7 +258,71 @@ export class CanvasModel extends fabric.Canvas {
     this.requestRenderAll();
   }
 
-  public drawGridBackground() {}
+  public drawGridBackground(
+    canvasModel: CanvasModel,
+    options: {
+      pixel: number;
+    }
+  ) {
+    const { width, height } = canvasModel;
+    const {pixel} = options
+
+    for (let sw = 1; sw < width!; sw++) {
+      if (sw % 2 === 0) {
+        canvasModel.add(new fabric.Text(String(sw *pixel), { left: pixel * sw, top: 0, fill: TEXT_COLOR, fontSize: FONT_SIZE, selectable: false }));
+      }
+
+      canvasModel.add(
+        new fabric.Line([0, 10 * sw, width!, 10 * sw], {
+          stroke: LINE_COLOR,
+          strokeWidth: 0.1,
+          selectable: false,
+          strokeDashArray: [0.5, 0.5],
+          excludeFromExport: true,
+        })
+      );
+
+      canvasModel.add(
+        new fabric.Line([0, pixel * sw, width!, pixel * sw], {
+          stroke: LINE_COLOR,
+          strokeWidth: 1,
+          selectable: false,0
+          strokeDashArray: [1, 1],
+          excludeFromExport: true,
+        })
+      );
+    }
+
+    for (let sh = 1; sh < height!; sh++) {
+      if (sh % 2 === 0) {
+        canvasModel.add(
+          new fabric.Text(String(sh * pixel), { left: 0, top: pixel * sh, fill: LINE_COLOR, fontSize: FONT_SIZE, selectable: false, excludeFromExport: true })
+        );
+      }
+
+      canvasModel.add(
+        new fabric.Line([10 * sh, 0, 10 * sh, height!], {
+          stroke: LINE_COLOR,
+          strokeWidth: 0.1,
+          selectable: false,
+          strokeDashArray: [0.5, 0.5],
+          excludeFromExport: true,
+        })
+      );
+
+      canvasModel.add(
+        new fabric.Line([pixel * sh, 0, pixel * sh, height!], {
+          stroke: LINE_COLOR,
+          strokeWidth: 1,
+          selectable: false,
+          strokeDashArray: [1, 1],
+          excludeFromExport: true,
+        })
+      );
+    }
+
+    return canvasModel;
+  }
 
   /** @event GET - Canvas의 Context를 호출하는 이벤트  */
   public getCanvasContext(): CanvasRenderingContext2D | null {

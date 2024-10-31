@@ -4,20 +4,28 @@
   "private": true,
   "description": "This is library for ui",
   "main": "index.js",
-  "devDependencies": {},
   "workspaces": {
     "packages": [
-      "packages/ui-with-css",
-      "packages/ui-with-js"
+      "packages/*",
+      "app/*"
     ]
   },
   "scripts": {
-    "clean": "rm -rf node_modules & rm -rf package-lock.json ",
-    "taeo-ui-css": "yarn workspace @taeopia/ui-with-css"
+    "@taeopia/ui-with-css": "yarn workspace @taeopia/ui-with-css",
+    "@taeopia/canvas-editor": "yarn workspace @taeopia/canvas-editor",
+    "exam-react": "yarn workspace @taeopia/vite",
+    "clean": "sh ./scripts/clean.sh",
+    "exam": "sh ./scripts/exam.sh",
+    "packages": "sh ./scripts/packages.sh"
   },
   "keywords": [
-    "ui",
-    "react"
+    "taeopia",
+    "taetaeo",
+    "taeo",
+    "react",
+    "react-table",
+    "table",
+    "front end"
   ],
   "author": "taetaeo <ohtk1119@gmail.com>",
   "license": "ISC",

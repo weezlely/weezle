@@ -1,6 +1,6 @@
-import { Box, Heading, palette } from "taeo-ui";
+import { Box, Heading, palette } from "@taeopia/ui-with-css";
 
-const TaeouiHeading = () => {
+export const ExampleHeadings = () => {
   return (
     <Box>
       <Heading as="h1" isUnderline>
@@ -21,5 +21,3 @@ const TaeouiHeading = () => {
     </Box>
   );
 };
-
-export default TaeouiHeading;

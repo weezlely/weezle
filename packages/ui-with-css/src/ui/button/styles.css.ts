@@ -20,6 +20,7 @@ export const button = recipe({
     padding: "8px 16px",
     fontSize: "16px",
     fontFamily: themeVars.font.body,
+    width: "max-content",
   },
   variants: {
     variant: {

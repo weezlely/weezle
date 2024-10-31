@@ -1,8 +1,8 @@
 import React from "react";
 
-import { SideBar as TaeoUiSidebar, Transition } from "taeo-ui";
+import { SideBar as TaeoUiSidebar, Transition } from "@taeopia/ui-with-css";
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const [isOpen, setIsOpen] = React.useState(true);
 
   const toggleSidebar = () => {
@@ -30,5 +30,3 @@ const Sidebar = () => {
     </Transition>
   );
 };
-
-export default Sidebar;

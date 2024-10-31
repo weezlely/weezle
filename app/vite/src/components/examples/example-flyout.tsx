@@ -1,7 +1,7 @@
 import React from "react";
-import { Flyout as TaeoUiFlyout } from "@weezle/taeo-ui-with-css";
+import { Flyout as TaeoUiFlyout } from "@taeopia/ui-with-css";
 
-const Flyout = () => {
+export const ExampleFlyout = () => {
   return (
     <TaeoUiFlyout>
       <TaeoUiFlyout.Toggle>Flyout's 토글</TaeoUiFlyout.Toggle>
@@ -15,5 +15,3 @@ const Flyout = () => {
     </TaeoUiFlyout>
   );
 };
-
-export default Flyout;

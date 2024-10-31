@@ -1,4 +1,3 @@
-"use strict";
 import { fabric } from "fabric";
 
 export class ImageModel extends fabric.Image {

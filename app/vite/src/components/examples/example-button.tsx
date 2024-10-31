@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Button, Flex, Heading } from "taeo-ui";
+import { Box, Button, Flex, Heading } from "@taeopia/ui-with-css";
 
-const TaeoUiButtons = () => {
+export const ExampleButtons = () => {
   return (
     <Flex>
       <Box>
@@ -83,4 +83,3 @@ const TaeoUiButtons = () => {
     </Flex>
   );
 };
-export default TaeoUiButtons;
