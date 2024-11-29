@@ -1,14 +1,22 @@
 /**
- * Rollup 설정 모듈
- *
+ * @description Rollup 설정 모듈
  * @author TAETAEO
- * @since 2024.04.26 Fri 17:44:31
+ * @since 2024.11.27 Wed 17:44:31
  */
 
 import { getPlugins, getOutputOptions } from "./rollup.plugins.mjs";
 import pkg from "./package.json" assert { type: "json" };
 
-const extensions = [".js", ".jsx", ".ts", ".tsx", ".scss", ".css", ".sss", ".pcss"];
+const extensions = [
+  ".js",
+  ".jsx",
+  ".ts",
+  ".tsx",
+  ".scss",
+  ".css",
+  ".sss",
+  ".pcss",
+];
 
 process.env.BABEL_ENV = "production";
 

@@ -27,7 +27,11 @@ export function getPlugins(extensions, pkg) {
       modules: false,
       sourceMap: true,
       use: ["sass"],
-      plugins: [postcssPrefixer({ prefix: `${pkg.name}__` }), cssimport(), autoprefixer()],
+      plugins: [
+        postcssPrefixer({ prefix: `${pkg.name}__` }),
+        cssimport(),
+        autoprefixer(),
+      ],
     }),
     babel({
       babelHelpers: "bundled",
@@ -43,7 +47,9 @@ export function getPlugins(extensions, pkg) {
     typescript({ tsconfig: "./tsconfig.json" }),
     alias({
       resolve: [".ts", ".tsx"],
-      entries: [{ find: "@/", replacement: path.resolve(__dirname, "./dist/src/") }],
+      entries: [
+        { find: "@/", replacement: path.resolve(__dirname, "./dist/src/") },
+      ],
     }),
     replace({
       ENV: JSON.stringify(process.env.NODE_ENV || "development"),

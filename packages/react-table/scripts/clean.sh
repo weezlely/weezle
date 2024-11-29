@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 명령어가 실패하면 즉시 종료
+# Exit immediately if command fails
 set -e
 
 echo "Removing node_modules folder..."
