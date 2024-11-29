@@ -1,16 +1,16 @@
-## @taeopia/canvas-editor
+## @taeopia/react-table
 
-> This package is a library with the function to edit Canvas based on ‘fabric.js`.
+> This package is a library with the function to edit table components based on ‘@tanstack/react-table`.
 
 ## Get Started
 
 ```bash
 # Install when you use npm.
-npm install @taeopia/canvas-editor
+npm install @taeopia/react-table
 
 
 # Install when you use yarn.
-yarn add @taeopia/canvas-editor
+yarn add @taeopia/react-table
 ```
 
 ## Use package
