@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* Light Mode */
+:root[data-theme="light"] {
+  /* Background Colors */
+  --background-primary: #ffffff; /* Main light background */
+  --background-secondary: rgba(0, 0, 0, 0.1); /* Secondary light background */
+  --background-overlay: rgba(0, 0, 0, 0.05); /* For overlays */
+
+  /* Text Colors */
+  --text-primary: rgba(0, 0, 0, 0.87); /* High opacity black for text */
+  --text-secondary: rgba(0, 0, 0, 0.6); /* Medium opacity text */
+  --text-placeholder: rgba(0, 0, 0, 0.4); /* Low opacity text for placeholders */
+
+  /* Primary Colors */
+  --primary-color: #004ea2; /* Main primary color */
+  --primary-hover: #003d7e; /* Hover state for primary */
+  --primary-focus: rgba(0, 78, 162, 0.5); /* Focus state with transparency */
+
+  /* Error Colors */
+  --error-color: #d60000; /* Error red */
+  --error-overlay: rgba(219, 0, 0, 0.08); /* Error overlay */
+
+  /* Border and Divider */
+  --divider-color: rgba(0, 0, 0, 0.12); /* Dividers and borders */
+
+  /* Disabled State */
+  --disabled-background: rgba(0, 0, 0, 0.1); /* Disabled background */
+  --disabled-text: rgba(0, 0, 0, 0.3); /* Disabled text */
+}
+
+/* Dark Mode */
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --background-primary: #0a0f24; /* Main dark background */
+  --background-secondary: rgba(255, 255, 255, 0.1); /* Secondary dark background */
+  --background-overlay: rgba(255, 255, 255, 0.05); /* For overlays with slight transparency */
+
+  /* Text Colors */
+  --text-primary: rgba(255, 255, 255, 0.87); /* High opacity white for text */
+  --text-secondary: rgba(255, 255, 255, 0.6); /* Medium opacity text */
+  --text-placeholder: rgba(255, 255, 255, 0.4); /* Low opacity text for placeholders */
+
+  /* Primary Colors */
+  --primary-color: #004ea2; /* Main primary color */
+  --primary-hover: #003d7e; /* Hover state for primary */
+  --primary-focus: rgba(0, 78, 162, 0.5); /* Focus state with transparency */
+
+  /* Error Colors */
+  --error-color: #d60000; /* Error red */
+  --error-overlay: rgba(219, 0, 0, 0.08); /* Error overlay */
+
+  /* Border and Divider */
+  --divider-color: rgba(255, 255, 255, 0.12); /* Dividers and borders */
+
+  /* Disabled State */
+  --disabled-background: rgba(255, 255, 255, 0.1); /* Disabled background */
+  --disabled-text: rgba(255, 255, 255, 0.3); /* Disabled text */
+}
+
+html[data-theme="light"] {
+  background-color: var(--background-primary);
+}
+html[data-theme="dark"] {
+  background-color: var(--background-primary);
+}
+.taeopia_table {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary); /* 텍스트 기본 색상 */
+  width: 100%;
+  border-collapse: separate;
+}
+
+.taeopia_table tr.selected,
+.taeopia_table tr:hover:not(.disabled):not(.disable):not(.row_type2.disabled):not(.hover),
+.taeopia_table tr:focus,
+.taeopia_table tr.hover {
+  background: var(--background-overlay); /* Hover/Selected 배경색 */
+}
+
+.taeopia_table th,
+.taeopia_table td {
+  text-align: center; /* 기본 가운데 정렬 */
+  vertical-align: middle; /* 수직 정렬 중간 */
+  border-right: 1px solid var(--divider-color); /* 셀 구분선 색상 */
+}
+
+.taeopia_table th {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 48px;
+  background: var(--background-secondary); /* 헤더 배경색 */
+  padding: 8px 12px;
+  color: var(--text-primary); /* 헤더 텍스트 색상 */
+}
+
+.taeopia_table th:last-child,
+.taeopia_table td:last-child {
+  border-right: none;
+}
+
+.taeopia_table td {
+  height: 48px;
+  border-bottom: 1px solid var(--divider-color); /* 행 구분선 색상 */
+  padding: 8px 12px;
+  color: var(--text-secondary); /* 본문 텍스트 색상 */
+}
+
+.taeopia_table td.hover {
+  height: 48px;
+  border-top: 2px solid transparent !important;
+}
+
+.taeopia_table.md th,
+.taeopia_table.md td {
+  height: 45px;
+}
+
+.taeopia_table.md td {
+  padding: 4px 12px;
+}
+
+.taeopia_table.vertical {
+  border-top: 1px solid var(--divider-color);
+}
+
+.taeopia_table.vertical tr:hover,
+.taeopia_table.vertical tr:focus {
+  background: transparent !important;
+}
+
+.taeopia_table.vertical th {
+  width: 120px;
+  text-align: left;
+  border-right: none;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.taeopia_table.sm th {
+  height: 40px;
+  background: transparent;
+  border-top: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.taeopia_table.sm td {
+  height: 40px;
+  padding: 4px 12px;
+}
+
+.taeopia_table_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color); /* 제목 색상 */
+}
+
+.taeopia_table thead th {
+  background-color: var(--background-secondary);
+  font-weight: 500;
+  border-right: none;
+}
+
+.taeopia_table tbody td:not(.disabled),
+.taeopia_table tbody td:not(.hover) {
+  line-height: 1.2;
+  border-right: none;
+}
