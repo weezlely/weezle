@@ -1,15 +1,17 @@
 import { flexRender, useReactTable } from "@tanstack/react-table";
 
-import type { TableHeadComponentClass } from "@/types";
+import type { ThComponent, TheadComponent, TrComponent } from "@/types";
 
-export interface TableHeadProps extends TableHeadComponentClass {
+interface ClassesStyles extends TheadComponent, TrComponent, ThComponent {}
+
+interface TableHeadProps extends ClassesStyles {
   tableInstance: ReturnType<typeof useReactTable>;
 }
 export const TableHead = (props: TableHeadProps) => {
-  const { tableInstance, tableHeadClass, thClass } = props;
+  const { tableInstance, theadClass, thClass } = props;
 
   return (
-    <thead className={tableHeadClass}>
+    <thead className={theadClass}>
       {tableInstance.getHeaderGroups().map((headerGroup) => (
         <tr key={headerGroup.id} role="row">
           {headerGroup.headers.map((header) => (

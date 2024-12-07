@@ -2,12 +2,14 @@ import type { PropsWithChildren, RefObject } from "react";
 import { forwardRef, useEffect } from "react";
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table";
 
-import type { CreateTableColumns, TableBodyComponentClass, TableComponentClass, TableHeadComponentClass } from "@/types";
-import { useOutSideClick } from "@/utils";
+import type { CreateTableColumns, TableComponent } from "@/types";
+import { utils } from "@/lib";
+import { useTableOutSideClick } from "@/hooks";
 import { TableBodyComponent, TableHead } from "@/components";
-import { helper } from "@/utils/helpers";
 
-interface TableProps extends PropsWithChildren, TableHeadComponentClass, TableBodyComponentClass, TableComponentClass {
+interface ClassesStyles extends TableComponent {}
+
+interface TableProps extends PropsWithChildren, ClassesStyles {
   columns: any;
   data: any;
   refs?: RefObject<HTMLElement | HTMLDivElement>[];
@@ -47,9 +49,15 @@ export const Table = forwardRef<HTMLTableElement, TableProps>((props, forwardedR
 
   useEffect(() => {
     if (selectedId) {
+      console.log(selectedId);
       try {
-        const foundRowData = helper.findRowDataById(data, selectedId);
-        handleRowClick(undefined, foundRowData);
+        const foundRowData = utils.findRowDataById(data, selectedId);
+
+        console.log("found row data : ", foundRowData);
+
+        if (foundRowData) {
+          handleRowClick(undefined, foundRowData);
+        }
       } catch (error) {
         if (error instanceof Error) {
           console.error(error.message);
@@ -60,7 +68,7 @@ export const Table = forwardRef<HTMLTableElement, TableProps>((props, forwardedR
     }
   }, [selectedId, data]);
 
-  useOutSideClick(forwardedRef as RefObject<HTMLElement>, handleOutSideClick, refs);
+  useTableOutSideClick(forwardedRef as RefObject<HTMLElement>, handleOutSideClick, refs);
 
   return (
     <table ref={forwardedRef} className={rest.tableClass} role="table" aria-label="table">

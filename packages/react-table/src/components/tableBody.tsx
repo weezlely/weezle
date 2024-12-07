@@ -1,9 +1,11 @@
 import * as React from "react";
 import { flexRender, useReactTable } from "@tanstack/react-table";
 
-import type { CreateTableColumns, TableBodyComponentClass } from "@/types";
+import type { CreateTableColumns, TbodyComponent, TdComponent, TrComponent } from "@/types";
 
-export interface TableBodyComponentProps extends TableBodyComponentClass {
+interface ClassesStyles extends TdComponent, TrComponent, TbodyComponent {}
+
+interface TableBodyComponentProps extends ClassesStyles {
   emptyStateMessage?: string | React.ReactNode;
   tableInstance: ReturnType<typeof useReactTable>;
   handleNavigate: (param: string) => void;
