@@ -1,20 +1,23 @@
+import replace from "rollup-plugin-replace";
+import postcssPrefixer from "postcss-prefixer";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import alias from "@rollup/plugin-alias";
+
+import path from "path";
+import autoprefixer from "autoprefixer";
+import cssimport from "postcss-import";
+
 import terser from "@rollup/plugin-terser";
 import babel from "@rollup/plugin-babel";
 import typescript from "rollup-plugin-typescript2";
 import commonjs from "@rollup/plugin-commonjs";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import replace from "rollup-plugin-replace";
-import cssimport from "postcss-import";
 import image from "@rollup/plugin-image";
 import json from "@rollup/plugin-json";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import alias from "@rollup/plugin-alias";
-import postcssPrefixer from "postcss-prefixer";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+
 import uglify from "rollup-plugin-uglify";
-import autoprefixer from "autoprefixer";
 import filesize from "rollup-plugin-filesize";
 import postcss from "rollup-plugin-postcss";
-import path from "path";
 
 const __dirname = path.resolve();
 
@@ -23,15 +26,11 @@ export function getPlugins(extensions, pkg) {
     nodeResolve({ extensions }),
     peerDepsExternal(),
     postcss({
-      extract: "css/vms-editor.css",
+      extract: "css/taeopia-table.css",
       modules: false,
       sourceMap: true,
       use: ["sass"],
-      plugins: [
-        postcssPrefixer({ prefix: `${pkg.name}__` }),
-        cssimport(),
-        autoprefixer(),
-      ],
+      plugins: [postcssPrefixer({ prefix: `${pkg.name}__` }), cssimport(), autoprefixer()],
     }),
     babel({
       babelHelpers: "bundled",
@@ -47,9 +46,7 @@ export function getPlugins(extensions, pkg) {
     typescript({ tsconfig: "./tsconfig.json" }),
     alias({
       resolve: [".ts", ".tsx"],
-      entries: [
-        { find: "@/", replacement: path.resolve(__dirname, "./dist/src/") },
-      ],
+      entries: [{ find: "@/", replacement: path.resolve(__dirname, "./dist/src/") }],
     }),
     replace({
       ENV: JSON.stringify(process.env.NODE_ENV || "development"),

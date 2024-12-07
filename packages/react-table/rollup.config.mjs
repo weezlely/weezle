@@ -7,16 +7,7 @@
 import { getPlugins, getOutputOptions } from "./rollup.plugins.mjs";
 import pkg from "./package.json" assert { type: "json" };
 
-const extensions = [
-  ".js",
-  ".jsx",
-  ".ts",
-  ".tsx",
-  ".scss",
-  ".css",
-  ".sss",
-  ".pcss",
-];
+const extensions = [".js", ".jsx", ".ts", ".tsx", ".scss", ".css", ".sss", ".pcss"];
 
 process.env.BABEL_ENV = "production";
 
@@ -29,5 +20,5 @@ export default {
     exclude: "node_modules/**",
   },
   plugins: getPlugins(extensions, pkg),
-  external: [...Object.keys(pkg.peerDependencies || {})],
+  external: [...Object.keys(pkg.peerDependencies || {}), /@testing-library/],
 };
