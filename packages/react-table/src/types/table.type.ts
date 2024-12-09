@@ -1,10 +1,12 @@
 import type { ColumnDef } from "@tanstack/react-table";
 
+import type { Id } from "@/types";
+
 /**
  * @description Table's Columns value type
  */
 
-export type TableColumnValue = string | number;
+type CreatedTableColumnValue = string | number;
 
 /**
  * @description This is a type that represents the number of table columns
@@ -25,7 +27,7 @@ export type TableColumnValue = string | number;
  */
 
 export type CreateTableColumns<L extends number | undefined> = {
-  [key in `col${number & keyof [...Array<L extends number ? L : 0>]}`]: TableColumnValue;
+  [key in `col${number & keyof [...Array<L extends number ? L : 0>]}`]: CreatedTableColumnValue;
 };
 
 // TData는 테이블에 표시될 데이터의 타입
@@ -35,3 +37,36 @@ export type ColumnsType<TData> = ColumnDef<TData>[];
 export type DataType = Record<string, any>;
 
 export type DataArray<TData> = TData[];
+
+/**
+ * @description These are type for Table Header's column component
+ */
+export interface ColumnState {
+  id: Id;
+  [key: string]: any;
+}
+
+export interface HeaderState {
+  id: Id;
+  [key: string]: any;
+}
+
+export interface TableState {
+  [key: string]: any;
+}
+
+export interface CellState {
+  [key: string]: any;
+}
+
+/**
+ * @description This is type about Table header component's props
+ *  - column
+ *  - header
+ *  - table
+ */
+export interface TableHeadColumnProps {
+  column?: ColumnState;
+  header?: HeaderState;
+  table?: TableState;
+}

@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
-
-type ClassName = string;
+import type { ClassName } from "@/types";
 
 export interface FallbackComponent {
   fallbackClass?: ClassName;
