@@ -1,0 +1,57 @@
+/* Light Mode */
+:root[data-theme="light"] {
+  /* Background Colors */
+  --background-primary: #ffffff; /* Main light background */
+  --background-secondary: rgba(0, 0, 0, 0.1); /* Secondary light background */
+  --background-overlay: rgba(0, 0, 0, 0.05); /* For overlays */
+
+  /* Text Colors */
+  --text-primary: rgba(0, 0, 0, 0.87); /* High opacity black for text */
+  --text-secondary: rgba(0, 0, 0, 0.6); /* Medium opacity text */
+  --text-placeholder: rgba(0, 0, 0, 0.4); /* Low opacity text for placeholders */
+
+  /* Primary Colors */
+  --primary-color: #004ea2; /* Main primary color */
+  --primary-hover: #003d7e; /* Hover state for primary */
+  --primary-focus: rgba(0, 78, 162, 0.5); /* Focus state with transparency */
+
+  /* Error Colors */
+  --error-color: #d60000; /* Error red */
+  --error-overlay: rgba(219, 0, 0, 0.08); /* Error overlay */
+
+  /* Border and Divider */
+  --divider-color: rgba(0, 0, 0, 0.12); /* Dividers and borders */
+
+  /* Disabled State */
+  --disabled-background: rgba(0, 0, 0, 0.1); /* Disabled background */
+  --disabled-text: rgba(0, 0, 0, 0.3); /* Disabled text */
+}
+
+/* Dark Mode */
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --background-primary: #0a0f24; /* Main dark background */
+  --background-secondary: rgba(255, 255, 255, 0.1); /* Secondary dark background */
+  --background-overlay: rgba(255, 255, 255, 0.05); /* For overlays with slight transparency */
+
+  /* Text Colors */
+  --text-primary: rgba(255, 255, 255, 0.87); /* High opacity white for text */
+  --text-secondary: rgba(255, 255, 255, 0.6); /* Medium opacity text */
+  --text-placeholder: rgba(255, 255, 255, 0.4); /* Low opacity text for placeholders */
+
+  /* Primary Colors */
+  --primary-color: #004ea2; /* Main primary color */
+  --primary-hover: #003d7e; /* Hover state for primary */
+  --primary-focus: rgba(0, 78, 162, 0.5); /* Focus state with transparency */
+
+  /* Error Colors */
+  --error-color: #d60000; /* Error red */
+  --error-overlay: rgba(219, 0, 0, 0.08); /* Error overlay */
+
+  /* Border and Divider */
+  --divider-color: rgba(255, 255, 255, 0.12); /* Dividers and borders */
+
+  /* Disabled State */
+  --disabled-background: rgba(255, 255, 255, 0.1); /* Disabled background */
+  --disabled-text: rgba(255, 255, 255, 0.3); /* Disabled text */
+}
