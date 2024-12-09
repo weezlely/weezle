@@ -1,23 +1,35 @@
-import type { RefObject, Ref } from "react";
-import { forwardRef } from "react";
+import type { RefObject, Ref, CSSProperties } from "react";
+import type { ColumnDef } from "@tanstack/react-table";
+import { forwardRef, useRef } from "react";
 
-import type { Columns, Data, Refs, TableComponent } from "@/types";
+import type { ClassName, TableComponent } from "@/types";
 import { useTable, useTableOutSideClick } from "@/hooks";
 import { RowTableHead, RowTableBody } from "@/components";
 
-interface Props extends ReturnType<typeof useTable>, Refs {}
+// interface Props extends ReturnType<typeof useTable>, Refs, TableComponent, HTMLAttributes<HTMLTableElement> {}
 
-interface RowTableProps<T, D> extends Props, TableComponent, Columns<T>, Data<D> {}
+interface RowTableProps<TData, Data> extends ReturnType<typeof useTable> {
+  refs?: RefObject<HTMLElement & HTMLDivElement>[];
+  tableClass?: ClassName;
+  tableStyle?: CSSProperties;
+  columns: ColumnDef<TData, unknown>[];
+  data: Data[];
+}
 
 // export const RowTable = forwardRef<HTMLTableElement, RowTableProps<T>>((props, forwardedRef) => {
-const RowTableComponent = <T, D>(props: RowTableProps<T, D>, forwardedRef: Ref<HTMLTableElement>) => {
-  const { columns, data, refs, tableClass, tableStyle, ...tableInstance } = props;
+export const RowTableComponent = <T, D>(
+  props: RowTableProps<T, D>,
+
+  forwardedRef: Ref<HTMLTableElement>
+) => {
+  const tableRef = useRef<HTMLTableElement>(null);
+  const { refs, columns, data, tableClass, tableStyle, ...tableInstance } = props;
 
   const { caption, onClickOutSide } = tableInstance;
 
-  useTableOutSideClick(forwardedRef as RefObject<HTMLElement & HTMLDivElement>, onClickOutSide, refs);
+  useTableOutSideClick((forwardedRef as RefObject<HTMLTableElement>) || tableRef, onClickOutSide, refs);
   return (
-    <table {...{ className: tableClass, style: tableStyle }} ref={forwardedRef} role="table" aria-label="table">
+    <table {...{ className: tableClass, style: tableStyle }} ref={forwardedRef || tableRef} role="table" aria-label="table">
       {/*  < Caption > */}
       <caption className={caption?.blind ? "blind" : ""}>{caption?.text}</caption>
       {/*  </ Caption > */}
@@ -33,4 +45,8 @@ const RowTableComponent = <T, D>(props: RowTableProps<T, D>, forwardedRef: Ref<H
   );
 };
 
-export const RowTable = forwardRef(RowTableComponent);
+export const RowTable = forwardRef(RowTableComponent) as <T, D>(
+  props: RowTableProps<T, D> & {
+    ref?: Ref<HTMLTableElement>;
+  }
+) => ReturnType<typeof RowTableComponent>;

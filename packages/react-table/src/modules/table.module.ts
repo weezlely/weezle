@@ -11,7 +11,7 @@ export class TableManager {
     }
   }
 
-  // 열 생성 메서드
+  // Method to create columns (열 생성 메서드)
   createTableColumns(headers: (string | unknown)[]): TableManageColumnAble[] {
     if (!headers || headers.length === 0) {
       throw new Error("⚠️ Unable to create table. - Please check the header settings again. ⚠️");
@@ -28,8 +28,7 @@ export class TableManager {
 
     return this.columns;
   }
-
-  // 열의 일반 형식 업데이트 메서드
+  // Method to update general column properties. (열의 일반 형식 업데이트 메서드)
   updateTableColumn(key: string, options: Partial<TableManageColumnAble> = {}): void {
     const foundIndex = this.columns.findIndex((column) => column.accessorKey === key);
 
@@ -41,6 +40,7 @@ export class TableManager {
     this.columns[foundIndex] = { ...snapshot, ...options };
   }
 
+  // Method to update the column component (열 구성 요소를 업데이트)
   updateTableColumnComponent<T>(key: string, Component: T): void {
     const foundIndex = this.columns.findIndex((column) => column.accessorKey === key);
 
@@ -52,12 +52,12 @@ export class TableManager {
     this.columns[foundIndex] = { ...snapshot, ...{ cell: Component } };
   }
 
-  // 열 반환 메서드
+  // Method to generate test data (열 반환 메서드)
   getColumns(): TableManageColumnAble[] {
     return this.columns;
   }
 
-  // 테스트 데이터
+  // Method to generate test data (테스트 데이터 생성 메서드)
   getTestData(length: number = 5, options = { col: "", data: "" }) {
     const dataColumns = this.columns.map((column) => column.accessorKey);
 
@@ -84,7 +84,7 @@ export class TableManager {
     }));
   }
 
-  // column의 clean-up
+  // Method to clean up columns (컬럼의 clean-up 메서드)
   cleanup(): void {
     this.columns = [];
   }

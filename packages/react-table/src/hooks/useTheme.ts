@@ -1,7 +1,7 @@
 import type { ChangeEvent } from "react";
 import { useEffect, useState } from "react";
 
-import type { Theme } from "@/types";
+import type { ClassName, Theme } from "@/types";
 
 /**
  * @Refactors
@@ -13,16 +13,31 @@ import type { Theme } from "@/types";
  * 4. 타입 안정성 강화: theme 값 검증 추가.
  */
 
-export function useTheme(themeKey: string = "taeopia-theme") {
+interface UseThemeOptions {
+  targetClass?: ClassName;
+}
+
+export function useTheme(themeKey: string = "taeopia-theme", options: UseThemeOptions) {
+  const { targetClass } = options;
+
   const [theme, setTheme] = useState<Theme>(() => {
     const storedTheme = localStorage.getItem(themeKey) as Theme;
     return storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light";
   });
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    if (targetClass) {
+      const $el = document.getElementsByClassName(targetClass);
+
+      Array.from($el).forEach((element) => {
+        element.setAttribute("data-theme", theme);
+      });
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+
     localStorage.setItem(themeKey, theme);
-  }, [theme, themeKey]);
+  }, [theme, themeKey, targetClass]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

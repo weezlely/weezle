@@ -11,7 +11,7 @@ import { utils } from "@/lib";
 
 export interface UseTableProps {
   columns: ColumnsType<any>;
-  data: DataType[];
+  data: DataType[]; // 기본적으로 키-값 구조의 객체
 
   queryKey?: CreateTableColumns<number>;
 
@@ -61,9 +61,10 @@ export const useTable = (props: UseTableProps) => {
       ...Object.keys(queryKey!)
         .filter((key) => key.startsWith("col")) // "col"로 시작하는 키 필터링
         .reduce((acc, key) => {
-          const value = parsedRowData[key as keyof CreateTableColumns<number>];
-          if (value !== undefined) {
-            acc[key] = value; // 동적으로 키와 값을 추가
+          const colKey = queryKey![key as keyof typeof queryKey]; // queryKey의 값
+          const colValue = parsedRowData[key as keyof typeof parsedRowData]; // row 데이터
+          if (colValue !== undefined) {
+            acc[colKey] = colValue; // 동적으로 키와 값을 추가
           }
           return acc;
         }, {} as Record<string, any>),

@@ -70,7 +70,12 @@ export const RowTableBody = (props: RowTableBodyProps) => {
         rows.map((row) => (
           <tr {...classesStyles.tr} key={row.id} data-row={JSON.stringify(row.original)} onClick={(e) => handleRowClick(e, row.original as CreateTableColumns<number>)} role="row" tabIndex={0}>
             {row.getVisibleCells().map((cell) => (
-              <td {...classesStyles.td} key={cell.id} role="cell" onClick={() => handleNavigateClick(row.id)}>
+              <td
+                {...classesStyles.td}
+                key={cell.id}
+                role="cell"
+                //  onClick={() => handleNavigateClick(row.id)}
+              >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </td>
             ))}
