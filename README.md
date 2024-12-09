@@ -1,11 +1,13 @@
 ## @taeopia
 
-> This is packages made by @taeopia
+> This is packages made by @taeopia - taeo
 >
 > This package consists of:
 >
-> 1. UI library based on vanilla-extract : [@taeopia/ui-with-css](https://github.com/weezlely/taeopia/tree/master/packages/ui-with-css)
-> 2. Canvas Editor based on fabric.js : [@taeo/canvas-editor](https://github.com/weezlely/taeopia/tree/master/packages/canvas-editor)
+> 1. UI library based on vanilla-extract - [@taeopia/ui-with-css](https://github.com/weezlely/taeopia/tree/master/packages/ui-with-css)
+> 2. Canvas Editor based on fabric.js - [@taeo/canvas-editor](https://github.com/weezlely/taeopia/tree/master/packages/canvas-editor)
+> 3. table library based on tanstack/react-table - [@taeopia/react-table](https://github.com/weezlely/taeopia/tree/master/packages/react-table)
+> 4. react tool library based on React - [@taeopia/react-tool](https://github.com/weezlely/taeopia/tree/master/packages/react-tools)
 
 - If you would like more information about the package, please click the blue button.
 
@@ -13,7 +15,6 @@
 
 ```json
 
-// --------- omission ---------
 
 "workspaces": {
     "packages": [
@@ -22,12 +23,14 @@
     ]
   },
   "scripts": {
+    "@taeopia/app-vite": "yarn workspace @taeopia/app-vite",
     "@taeopia/ui-with-css": "yarn workspace @taeopia/ui-with-css",
     "@taeopia/canvas-editor": "yarn workspace @taeopia/canvas-editor",
+    "@taeopia/react-table": "yarn workspace @taeopia/react-table",
+    "@taeopia/react-tool": "yarn workspace @taeopia/react-tool"
   },
 
 
-// --------- omission ---------
 
 ```
 
