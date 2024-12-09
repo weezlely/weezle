@@ -1,7 +1,11 @@
 import "@taeopia/ui-with-css/dist/assets/bundle.css";
-import "@/styles/global.css";
+import "@taeopia/react-table/dist/css/taeopia-table.css";
 
-export default () => {
+import "@/app/css/index.css";
+import "@/app/styles/global.css";
+// import "@/style/table.css";
+
+export const styleConfig = () => {
   console.log(`
                 _                               _        
         ____  | |                             (_)       

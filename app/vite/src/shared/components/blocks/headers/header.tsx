@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Header: React.FC<{ isDarkMode: boolean; toggleTheme: () => void }> = ({ isDarkMode, toggleTheme }) => {
   return (
-    <header style={headerStyles}>
+    <header style={headerStyles} aria-label="Main Header">
       <div style={logoStyles}>
         <Link to="/" style={linkStyles}>
           @taeopia
@@ -15,6 +15,9 @@ export const Header: React.FC<{ isDarkMode: boolean; toggleTheme: () => void }> 
         </Link>
         <Link to="Canvas" style={linkStyles}>
           Canvas
+        </Link>
+        <Link to="table" style={linkStyles}>
+          Table
         </Link>
         <Link to="UI Library" style={linkStyles}>
           UI Library
@@ -35,7 +38,7 @@ const headerStyles: React.CSSProperties = {
   justifyContent: "space-between",
   alignItems: "center",
   color: "#282c34",
-  height: "60px",
+  height: "48px",
   position: "sticky",
   width: "100%",
   top: 0,

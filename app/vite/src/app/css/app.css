@@ -1,0 +1,61 @@
+.page-wrapper {
+  display: flex; /* Flexbox를 활성화 */
+  min-height: calc(100vh - 48px); /* 헤더 높이 반영 */
+  border-radius: 32px 0 0 0;
+
+  color: #000; /* 텍스트 색상 */
+  background: var(--bg_body); /* 배경 색상 */
+
+  padding: 32px; /* 내부 여백 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  flex: 1;
+}
+
+.side-menu {
+  flex: 0 0 auto; /* 고정 너비 설정 */
+  max-width: 244px; /* 최대 너비 */
+  width: 244px; /* 기본 너비 */
+  height: calc(100vh - 48px); /* 헤더 높이를 제외한 높이 */
+
+  background-color: var(--bg_sidebar); /* 배경 색상 */
+  border-right: 1px solid var(--border_color); /* 경계선 */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* 그림자 */
+  transition: width 0.3s ease; /* 애니메이션 효과 */
+}
+
+.side-menu:hover {
+  width: 244px; /* Hover 시 너비 확장 */
+}
+
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu li {
+  margin-bottom: 16px; /* 각 메뉴 간격 */
+}
+
+.side-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.side-menu a:hover {
+  background-color: var(--hover_bg_color); /* Hover 배경 색상 */
+  color: var(--hover_text_color); /* Hover 텍스트 색상 */
+}
+
+.content {
+  flex: 1; /* 나머지 공간을 차지 */
+  padding: 16px;
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  background: var(--bg_content); /* 콘텐츠 배경 색상 */
+  border-radius: 8px; /* 콘텐츠 영역 모서리 */
+  backdrop-filter: blur(1.875rem);
+}

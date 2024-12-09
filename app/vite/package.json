@@ -1,5 +1,5 @@
 {
-  "name": "@taeopia/vite",
+  "name": "@taeopia/app-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@taeopia/canvas-editor": "file:../../packages/canvas-editor",
+    "@taeopia/react-table": "file:../../packages/react-table",
     "@taeopia/ui-with-css": "file:../../packages/ui-with-css",
+    "@tanstack/react-table": "^8.20.5",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/recipes": "^0.5.3",
     "@vanilla-extract/vite-plugin": "4.0.9",
@@ -30,6 +32,7 @@
     "taeo-hooks": "^1.1.2"
   },
   "devDependencies": {
+    "@tanstack/react-table": "^8.20.5",
     "@types/fabric": "^5.3.7",
     "@types/node": "^20.12.7",
     "@types/react": "^18.3.3",

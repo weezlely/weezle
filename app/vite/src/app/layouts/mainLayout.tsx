@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useLocalStorage } from "taeo-hooks";
-import { blueTheme } from "@taeopia/ui-with-css";
+import { blueTheme, SideBar } from "@taeopia/ui-with-css";
 
-import { Header } from "@/components";
+import { Header, Sidebar } from "@/shared/components";
 
 export function MainLayout() {
   const { read, save } = useLocalStorage("taeopia-theme", false, { initialSave: true });
@@ -19,18 +19,23 @@ export function MainLayout() {
 
   return (
     <React.Suspense fallback={<div>로딩중</div>}>
+      {/* Header */}
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <main className={isDarkMode ? blueTheme.dark : blueTheme.light} style={mainStyles}>
+      {/* Header */}
+
+      {/* Main */}
+      <main className={`page-wrapper ${isDarkMode ? blueTheme.dark : blueTheme.light}`}>
+        {/* Side Menu */}
+        <aside className="side-menu">사이드 메뉴</aside>
+        {/* Side Menu */}
+
         <Outlet />
       </main>
+      {/* Main */}
+
+      <footer>
+        <p>&copy; 2024 Taeopia. All rights reserved.</p>
+      </footer>
     </React.Suspense>
   );
 }
-const mainStyles: React.CSSProperties = {
-  width: "100%",
-  minHeight: "100vh",
-  maxHeight: "100%",
-
-  padding: "8px",
-  // border: "1px solid red",
-};
