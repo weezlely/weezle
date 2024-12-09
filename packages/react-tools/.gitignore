@@ -1,0 +1,14 @@
+# node_modules
+node_modules*
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# build
+**/dist
+dist/
+
+# coverage
+**/coverage
+coverage/
