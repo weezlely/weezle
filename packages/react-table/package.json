@@ -1,6 +1,7 @@
 {
   "name": "@taeopia/react-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "private": true,
   "description": "This is a table library for use in React.",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
