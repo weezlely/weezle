@@ -17,7 +17,7 @@ npm run build
 # 변경 사항 커밋
 git add .
 
-git commit -m "release: 새로운 릴리스 $new_version"
+git commit -m "release: New Version $new_version"
 
 # 사용자에게 알림
-echo "릴리스 완료: $new_version"
+echo "Ready to release: $new_version"
