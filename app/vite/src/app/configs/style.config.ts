@@ -1,5 +1,6 @@
 import "@taeopia/ui-with-css/dist/assets/bundle.css";
 import "@taeopia/react-table/dist/css/taeopia-table.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 import "@/app/css/index.css";
 import "@/app/styles/global.css";

@@ -1,4 +1,22 @@
-export const urlConfigs = {
+const tableUrl = {
+  main: "table",
+  components: {
+    main: "component",
+    rowTable: "rowTable",
+  },
+  hooks: {
+    main: "hooks",
+    useTable: "useTable",
+    useTableOutsideClick: "useTableOutsideClick",
+    useTheme: "useTheme",
+  },
+  module: {
+    main: "modules",
+    tableManager: "tableManger",
+  },
+};
+
+export const urlConfig = {
   default: "",
   main: "/",
   home: {
@@ -8,7 +26,5 @@ export const urlConfigs = {
     main: "canvas",
   },
 
-  table: {
-    main: "table",
-  },
+  table: tableUrl,
 };

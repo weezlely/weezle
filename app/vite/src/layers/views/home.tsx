@@ -1,19 +1,16 @@
 import React from "react";
 
 import { ExampleButtons } from "@/shared/components";
+import { Flex } from "@taeopia/ui-with-css";
 
 export default function HomePage() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
-  // const [isOpen, setIsOpen] = useState(true);
-
-  // const toggleSidebar = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
   return (
-    <article>
-      <ExampleButtons />
-    </article>
+    <Flex>
+      <article>
+        <ExampleButtons />
+      </article>
+    </Flex>
   );
 }

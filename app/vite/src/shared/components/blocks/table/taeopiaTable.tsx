@@ -13,11 +13,10 @@ interface Props extends Refs {}
 export const TaeopiaTable = (props: Props) => {
   const tableRef = useRef<HTMLTableElement>(null);
   // const themes = useTheme("taeopia-theme", "table-wrapper");
-  const themes = useTheme();
-
-  const data = useMemo<ExampleTable[]>(() => (exampleTable.getTestData(10) as ExampleTable[]) || [], [exampleTable]);
+  const themes = useTheme("taeopia-theme", {});
 
   const columns = useMemo(() => exampleTable.getColumns(), []);
+  const data = useMemo<ExampleTable[]>(() => (exampleTable.getTestData(10) as ExampleTable[]) || [], [exampleTable]);
 
   const tableInstance = useTable({
     columns,

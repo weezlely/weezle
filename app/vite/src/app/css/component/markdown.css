@@ -1,0 +1,55 @@
+.markdown-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+/* Mac 스타일 전체 박스 */
+.macStyle {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mac 스타일 헤더 */
+.macHeaderStyle {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #eee;
+}
+
+/* Mac 헤더의 원형 버튼 */
+.dotStyle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.dotStyle.red {
+  background-color: red;
+}
+
+.dotStyle.yellow {
+  background-color: yellow;
+}
+
+.dotStyle.green {
+  background-color: green;
+}
+
+/* 코드 컨테이너 */
+.code-container {
+  padding: 15px;
+  background-color: #282c34;
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 1.5;
+}
+/* .hljs {
+  background-color: var(--bg_01);
+} */

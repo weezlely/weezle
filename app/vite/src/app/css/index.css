@@ -2,8 +2,8 @@
 @import "reset.css";
 @import "font.css";
 @import "helper.css";
-@import "layout.css";
 @import "guide.css";
-@import "template.css";
 @import "theme.css";
 @import "app.css";
+
+@import "./component/index.css";

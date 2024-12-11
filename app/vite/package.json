@@ -15,8 +15,10 @@
   "dependencies": {
     "@taeopia/canvas-editor": "file:../../packages/canvas-editor",
     "@taeopia/react-table": "file:../../packages/react-table",
+    "@taeopia/react-tool": "file:../../packages/react-tools",
     "@taeopia/ui-with-css": "file:../../packages/ui-with-css",
     "@tanstack/react-table": "^8.20.5",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/recipes": "^0.5.3",
     "@vanilla-extract/vite-plugin": "4.0.9",
@@ -28,8 +30,13 @@
     "js-cookie": "^3.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.26.2",
-    "taeo-hooks": "^1.1.2"
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-highlight": "^7.0.1",
+    "shiki": "^1.24.1",
+    "taeo-hooks": "^1.1.2",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@tanstack/react-table": "^8.20.5",
