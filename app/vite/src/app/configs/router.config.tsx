@@ -3,7 +3,7 @@ import { lazy } from "react";
 
 import { urlConfig } from "@/app/configs";
 import { LazyLayout, MainLayout } from "@/shared";
-import * as Views from "@/layers/views";
+import * as TableViews from "@/layers/views/table";
 
 export type Routers = RouteObject[];
 
@@ -37,21 +37,21 @@ const createRoutes = (): Routers => {
           children: [
             {
               path: "",
-              element: <Views.TableMainView />,
+              element: <TableViews.TableMainView />,
             },
             {
               path: "components",
               children: [
                 { path: "", element: <Navigate to="rowTable" /> },
-                { path: "rowTable", element: <Views.TableRowTableView /> },
+                { path: "rowTable", element: <TableViews.ComponentRowTableView /> },
               ],
             },
             {
               path: "hooks",
               children: [
                 { path: "", element: <Navigate to="useTable" /> },
-                { path: "useTable", element: <DevelopingPage /> },
-                { path: "useTableOutSideClick", element: <DevelopingPage /> },
+                { path: "useTable", element: <TableViews.HooksUseTableView /> },
+                { path: "useTableOutSideClick", element: <TableViews.HooksUseTableOutsideClickView /> },
                 { path: "useTheme", element: <DevelopingPage /> },
               ],
             },

@@ -20,18 +20,20 @@ export const Markdown = (props: Props) => {
         </Heading>
       )}
 
-      <div className="macStyle">
-        <div className="macHeaderStyle">
-          <span className="dotStyle red"></span>
-          <span className="dotStyle yellow"></span>
-          <span className="dotStyle green"></span>
+      <div className="mac-style">
+        <div className="mac-header-style">
+          <span className="dot-style red" />
+          <span className="dot-style yellow" />
+          <span className="dot-style green" />
         </div>
         <div className="code-container">
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{`
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]} className="markdown-code">
+            {`
 \`\`\`${props.content.type}
 ${props.content.code || "console.log('Hello, world!');"}
 \`\`\`
-`}</ReactMarkdown>
+`}
+          </ReactMarkdown>
         </div>
       </div>
     </div>

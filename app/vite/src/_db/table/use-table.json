@@ -1,12 +1,12 @@
 {
   "id": "1",
   "type": "title",
-  "content": "RowTable",
+  "content": "useTable",
   "tag": "h1",
   "paragraphs": [
     {
       "id": "test",
-      "title": "Let's start",
+      "title": "Let's start !",
       "tag": "h1",
       "brief": "Getting started",
       "direction": "row",
@@ -15,7 +15,7 @@
           "type": "desc",
           "title": "라이브러리 설치 방법",
           "tag": "h4",
-          "desc": ["How to install and set up @taeo/react-table UI in your project."],
+          "desc": ["How should I use the useTable hook provided by @taeo/react-table? This is an explanation of how to use useTable. Please refer to the information below."],
           "md": null,
           "imgUrl": ""
         }
@@ -24,19 +24,19 @@
 
     {
       "id": "test",
-      "title": "How to use?",
+      "title": "When to use?",
       "tag": "h3",
-      "brief": "How to use",
+      "brief": "When to use?",
       "direction": "column",
       "contents": [
         {
           "type": "code",
           "title": "Import",
           "tag": "h4",
-          "desc": ["1) Import Component and Module.", "To use tables, RowTable and TableManager are imported from the package."],
+          "desc": ["1) Import source from taeopia/react-table"],
           "md": {
             "type": "javascript",
-            "code": "import { RowTable, TableManager } from \"@taeopia/react-table;\""
+            "code": "import { RowTable, TableManager, useTable, useTheme } from \"@taeopia/react-table;\""
           },
           "imgUrl": ""
         },
@@ -44,15 +44,10 @@
           "type": "code",
           "title": "모듈 생성",
           "tag": "h4",
-          "desc": [
-            "2) Create TableManger Module",
-            "The TableManager class is used to implement the table management module, which efficiently manages the structure and data of tables.",
-            "In the code below, we define the default column configuration for the table by passing an array of column titles such as [\"id\", \"No.\", \"name\", \"dept\", \"phone\"]. This configuration simplifies defining columns and mapping data in tables and provides the flexibility to dynamically add or modify columns based on specific requirements.",
-            "Additionally, the ExampleTable interface extends CreateTableColumns<5> to explicitly indicate type information related to the number of columns, helping to make table management more type safe."
-          ],
+          "desc": ["2) Create TableManger Module"],
           "md": {
             "type": "javascript",
-            "code": "interface ExampleTable extends CreateTableColumns<5> {}\n\nconst exampleTable = new TableManager([\"id\", \"No.\", \"name\", \"dept\", \"phone\"]);"
+            "code": "interface ExampleTable extends CreateTableColumns<5> {}\nconst exampleTable = new TableManager([\"id\", \"No.\", \"name\", \"dept\", \"phone\"]);"
           },
           "imgUrl": ""
         },
@@ -60,7 +55,7 @@
           "type": "code",
           "title": "Get columns methods",
           "tag": "h4",
-          "desc": ["3) Get table columns", "Table columns are retrieved through tableManger’s getColumns method."],
+          "desc": ["3) Table columns are retrieved through tableManger’s getColumns() method."],
           "md": {
             "type": "javascript",
             "code": "const columns = useMemo(() => exampleTable.getColumns(), []);"
@@ -81,7 +76,6 @@
           "title": "사용방법",
           "tag": "h4",
           "desc": [
-            "",
             "The generic interface <TData, Data> flexibly handles table data types and column definition types.",
             "TData defines the data of each table column, and Data defines the array type of data to be rendered in the table.",
             "useTableOutSideClick: This hook handles detecting out-of-table clicks so you can execute a specific action. Use forwardedRef and tableRef to set up out-of-click detection, and pass the onClickOutSide function and refs to handle the action on out-of-table clicks."

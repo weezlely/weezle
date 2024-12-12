@@ -1,10 +1,3 @@
-/* Accordion 전체 스타일 */
-.accordion-wrapper {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .accordion-item,
 .accordion-item > div > a {
   color: var(--bg_01);
@@ -13,9 +6,10 @@
 .accordion-item > .accordion-toggle {
   font-weight: 700;
   font-size: 18px;
+  color: var(--bg_01);
 }
 .accordion-item > div {
-  padding: 15px;
+  padding: 8px;
   cursor: pointer;
   font-weight: normal; /* 기본 폰트 굵기 */
   transition: color 0.3s ease, font-weight 0.3s ease;
@@ -26,9 +20,7 @@
   font-weight: bold; /* hover 시 텍스트 굵기 증가 */
   color: #333; /* hover 시 색상 변경 */
 }
-
 .accordion-item .side-bar-content {
-  padding: 15px;
   display: none;
   overflow: hidden;
   transition: max-height 0.3s ease-out;

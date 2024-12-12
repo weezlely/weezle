@@ -1,9 +1,10 @@
 @charset "utf-8";
-@import "reset.css";
-@import "font.css";
-@import "helper.css";
-@import "guide.css";
-@import "theme.css";
-@import "app.css";
+@import "./common/reset.css";
+@import "./common/font.css";
+@import "./common/helper.css";
+@import "./common/guide.css";
+@import "./common/theme.css";
+@import "./common/app.css";
+@import "./common/border.css";
 
 @import "./component/index.css";
