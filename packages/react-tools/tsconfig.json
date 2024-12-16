@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "module": "es6",
+    "module": "es2020",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
