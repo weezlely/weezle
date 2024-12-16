@@ -25,3 +25,15 @@ yarn run build
 ```
 
 - Once you have a `/dist` folder, you are now ready.
+
+### Update Schedule
+
+| Schedule   | Description             | Version |
+| ---------- | ----------------------- | ------- |
+| 2024.12.16 | Add Lazy Loader Wrapper | 1.0.0   |
+
+### Community
+
+> Send me an email(ohtk1119@gmail.com) or Contribute on Issues, I glad to hear your suggestion.
+>
+> 이메일을 보내주시거나 이슈를 통해 의견을 주시면 감사하겠습니다.
