@@ -2,7 +2,7 @@
   "name": "@taeopia/taeo",
   "version": "1.0.0",
   "private": true,
-  "description": "This is library for ui",
+  "description": "taeopia library packages.",
   "main": "index.js",
   "workspaces": {
     "packages": [
@@ -11,13 +11,16 @@
     ]
   },
   "scripts": {
-    "@taeopia/app-vite": "yarn workspace @taeopia/app-vite",
-    "@taeopia/ui-with-css": "yarn workspace @taeopia/ui-with-css",
-    "@taeopia/canvas-editor": "yarn workspace @taeopia/canvas-editor",
+    "@taeopia/react": "yarn workspace @taeopia/react",
+    "@taeopia/sb": "yarn workspace @taeopia/sb",
     "@taeopia/react-table": "yarn workspace @taeopia/react-table",
     "@taeopia/react-tool": "yarn workspace @taeopia/react-tool",
+    "@taeopia/canvas-editor": "yarn workspace @taeopia/canvas-editor",
+    "@taeopia/ui-with-css": "yarn workspace @taeopia/ui-with-css",
     "clean": "sh ./scripts/clean.sh",
-    "exam": "sh ./scripts/exam.sh",
+    "dev:react": "sh ./scripts/dev-react.sh",
+    "dev:next": "sh ./scripts/dev-next.sh",
+    "dev:sb": "sh ./scripts/dev-sb.sh",
     "packages": "sh ./scripts/packages.sh"
   },
   "keywords": [
