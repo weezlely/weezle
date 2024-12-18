@@ -1,5 +1,5 @@
 {
-  "name": "@weezle/example-webpack",
+  "name": "@taeopia/webpack",
   "description": "taeo-ui's library example",
   "version": "1.0.0",
   "main": "index.js",
