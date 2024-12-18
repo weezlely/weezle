@@ -10,7 +10,7 @@ export function ExampleCanvasEditorToolbar() {
   return (
     <Flex as="div" dir="row" style={{ flexWrap: "nowrap", marginBottom: "16px" }}>
       <Flex dir="row" gap={8}>
-        <Button variant="primary">사각형</Button>
+        <Button variant="secondary">사각형</Button>
         <Button variant="primary">원형</Button>
         <Button variant="primary" onClick={() => addTextToCanvas("텍스트", 0, 0)}>
           텍스트

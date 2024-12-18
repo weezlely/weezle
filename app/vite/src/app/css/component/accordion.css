@@ -1,12 +1,12 @@
 .accordion-item,
 .accordion-item > div > a {
-  color: var(--bg_01);
+  color: var(--text);
 }
 
 .accordion-item > .accordion-toggle {
   font-weight: 700;
   font-size: 18px;
-  color: var(--bg_01);
+  color: var(--text);
 }
 .accordion-item > div {
   padding: 8px;

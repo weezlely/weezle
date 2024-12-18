@@ -1,19 +1,27 @@
-.header_main {
+.header {
   background-color: transparent;
-
-  position: sticky;
-  width: 100%;
-  height: 100%;
+  position: fixed;
   top: 0;
+  width: 100%;
   backdrop-filter: blur(1.875rem);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.header_inner {
+
+/*  Header's type - single, multiple */
+.header-single-line {
+  height: 70px;
+}
+
+.header-multi-line {
+  height: auto; /* 두 줄은 내용에 따라 높이가 조절됨 */
+  padding: 1.5rem 2rem;
+}
+
+.header__inner {
   padding: 16px;
 
   max-width: 1440px;
-  min-height: 100%;
-  height: 60px;
+  height: 50%;
 
   display: flex;
   justify-content: space-between;
@@ -21,24 +29,87 @@
   margin: 0 auto;
 }
 
-.header_logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--bg_01);
+/* Header's left-side */
+.header__left {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  padding: 0 16px 0 0;
+}
+/* Header's right-side */
+.header__right {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  padding: 0 0 0 16px;
 }
 
-.header_nav {
+/* Header's Item */
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text);
+}
+.header__menu {
+}
+
+.header__menu-item {
+  /* position: relative; */
+}
+
+/* Header's Navigation */
+.header__nav {
   display: flex;
   gap: 15px;
 }
 
+/* Header navigation's item */
 .header_nav a {
-  color: var(--bg_01);
+  color: var(--text);
   text-decoration: none;
   font-size: 1rem;
 }
 
-.header_user-actions {
+.header__user-actions {
   display: flex;
   align-items: center;
+}
+
+.header__console-clear,
+.header__language-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* Header's sub-menu */
+.header__submenu {
+  display: flex;
+  top: 100%;
+  height: 50%;
+
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 4px;
+}
+
+.header__submenu-item {
+  padding: 16px;
+
+  color: #000;
+
+  box-sizing: border-box;
+}
+
+.header__submenu-link {
+  padding-bottom: 16px;
+  color: var(--text);
+}
+
+.header__submenu-link:hover {
+  border-bottom: 1px solid #000;
 }

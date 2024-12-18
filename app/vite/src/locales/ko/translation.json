@@ -1,0 +1,15 @@
+{
+  "header": {
+    "docs": "문서",
+    "logout": "사용자 인터페이스",
+    "canvas": "캔버스",
+    "table": "테이블",
+    "hooks": "훅",
+    "blogs": "블로그",
+    "posts": "포스트"
+  },
+  "paragraphs": {
+    "start": "시작하기",
+    "Get Started": "시작하기"
+  }
+}

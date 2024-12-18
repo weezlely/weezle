@@ -7,12 +7,12 @@ interface InfoPanelProps {
 }
 
 export const InfoPanel = ({ tag, descriptions }: InfoPanelProps) => {
-  const baseStyle = { fontSize: "22px", color: "var(--bg_01)", marginBottom: "8px" };
-  const secondaryStyle = { color: "var(--bg_01)", paddingLeft: "20px" };
+  const baseStyle = { fontSize: "22px", marginBottom: "8px" };
+  const secondaryStyle = { paddingLeft: "20px" };
   return (
     <>
       {descriptions.map((desc, index) => (
-        <Heading key={index} as={tag as HeadingAs} style={index === 0 ? baseStyle : secondaryStyle}>
+        <Heading className="text_bk_wh" key={index} as={tag as HeadingAs} style={index === 0 ? baseStyle : secondaryStyle}>
           {desc}
         </Heading>
       ))}

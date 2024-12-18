@@ -1,9 +1,9 @@
 import { useTheme } from "@taeopia/react-table";
 
-import { keyConfig } from "@/app/configs";
+import { keyConstant } from "@/shared/constants";
 
 export const ThemeToggle = () => {
-  const themes = useTheme(keyConfig.THEME, {});
+  const themes = useTheme(keyConstant.THEME, {});
 
   return (
     <div className="lightmode">

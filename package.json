@@ -11,9 +11,11 @@
     ]
   },
   "scripts": {
+    "@taeopia/app-vite": "yarn workspace @taeopia/app-vite",
     "@taeopia/ui-with-css": "yarn workspace @taeopia/ui-with-css",
     "@taeopia/canvas-editor": "yarn workspace @taeopia/canvas-editor",
-    "exam-react": "yarn workspace @taeopia/vite",
+    "@taeopia/react-table": "yarn workspace @taeopia/react-table",
+    "@taeopia/react-tool": "yarn workspace @taeopia/react-tool",
     "clean": "sh ./scripts/clean.sh",
     "exam": "sh ./scripts/exam.sh",
     "packages": "sh ./scripts/packages.sh"

@@ -6,7 +6,17 @@ export * from "./examples/example-radio";
 export * from "./examples/example-sidebar";
 
 export * from "./canvasEditor";
-export * from "./theme";
-export * from "./headers";
-export * from "./footers";
+
+// Theme
+export * from "./theme/themeToggle";
+
+// Headers
+export * from "./headers/header";
+export * from "./headers/homeHeader";
+export * from "./headers/pageHeader";
+// Footers
+export * from "./footers/footer";
+export * from "./footers/homeFooter";
+
+// Sidebar
 export * from "./sidebar";

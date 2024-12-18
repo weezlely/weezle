@@ -1712,7 +1712,7 @@ button.disabled .img_on {
 }
 
 /*header*/
-header {
+/* header {
   position: fixed;
   left: 0;
   top: 0;
@@ -1762,7 +1762,7 @@ header.two_line {
 .header_logo a {
   display: flex;
   align-items: center;
-}
+} */
 
 .logo_hd_kisa {
   width: 96px;
@@ -1814,13 +1814,13 @@ header.two_line {
   color: var(--primary-pri_100);
 }
 
-.header_right {
+/* .header_right {
   display: flex;
   align-items: center;
   -moz-column-gap: 20px;
   column-gap: 20px;
   padding: 0 0 0 16px;
-}
+} */
 
 .profile_box {
   display: flex;
@@ -2011,11 +2011,7 @@ header.two_line {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .spin_animation {
@@ -2173,8 +2169,7 @@ header.two_line {
   border-collapse: separate;
 }
 .table_box tr.selected,
-.table_box
-  tr:hover:not(.disabled):not(.disable):not(.row_type2.disabled):not(.hover),
+.table_box tr:hover:not(.disabled):not(.disable):not(.row_type2.disabled):not(.hover),
 .table_box tr:focus,
 .table_box tr.hover {
   background: var(--alpha-bk-to-whbk-05);

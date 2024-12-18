@@ -1,14 +1,24 @@
 import { createBrowserRouter, Navigate, type RouteObject } from "react-router-dom";
 import { lazy } from "react";
+import { LazyWrapper } from "@taeopia/react-tool";
 
-import { urlConfig } from "@/app/configs";
-import { LazyLayout, MainLayout } from "@/shared";
-import * as TableViews from "@/layers/views/table";
+// layouts...
+import { MainLayout, SubLayout } from "@/shared";
+
+// Views...
+import * as ErrorViews from "@/features/views/errors";
+import * as MainViews from "@/features/views/main";
+import * as TableViews from "@/features/views/table";
+import * as CanvasViews from "@/features/views/canvases";
+
+// Controllers
+// import * as Controller from "@/features";
+import * as Controller from "@/features";
 
 export type Routers = RouteObject[];
 
-const LazyHomePage = lazy(() => import("@/layers/views/home"));
-const LazyCanvasPage = lazy(() => import("@/layers/views/canvas"));
+const LazyHomePage = lazy(() => import("@/features/views/home"));
+// const LazyCanvasPage = lazy(() => import("@/layers/views/canvas"));
 
 const DevelopingPage = () => {
   return (
@@ -21,16 +31,31 @@ const DevelopingPage = () => {
 const createRoutes = (): Routers => {
   const routes: Routers = [
     {
-      path: urlConfig.default,
+      path: "",
       element: <MainLayout />,
       children: [
         {
-          path: urlConfig.home.main,
-          element: LazyLayout(LazyHomePage),
+          path: "/",
+          element: <Controller.MainController />,
         },
+      ],
+    },
+
+    {
+      path: "",
+      element: <SubLayout />,
+      children: [
+        // {
+        //   path: urlConfig.home.main,
+        //   element: <MainViews.MainHomeView />,
+        // },
         {
           path: "canvas",
-          element: LazyLayout(LazyCanvasPage),
+          children: [{ path: "", element: <CanvasViews.CanvasMainView /> }],
+        },
+        {
+          path: "applications",
+          element: <Navigate to="/table" />,
         },
         {
           path: "table",
@@ -43,15 +68,15 @@ const createRoutes = (): Routers => {
               path: "components",
               children: [
                 { path: "", element: <Navigate to="rowTable" /> },
-                { path: "rowTable", element: <TableViews.ComponentRowTableView /> },
+                { path: "rowTable", element: <Controller.TableLibraryDocsController /> },
               ],
             },
             {
               path: "hooks",
               children: [
                 { path: "", element: <Navigate to="useTable" /> },
-                { path: "useTable", element: <TableViews.HooksUseTableView /> },
-                { path: "useTableOutSideClick", element: <TableViews.HooksUseTableOutsideClickView /> },
+                { path: "useTable", element: <Controller.TableLibraryDocsController /> },
+                { path: "useTableOutSideClick", element: <Controller.TableLibraryDocsController /> },
                 { path: "useTheme", element: <DevelopingPage /> },
               ],
             },
@@ -59,7 +84,7 @@ const createRoutes = (): Routers => {
               path: "modules",
               children: [
                 { path: "", element: <Navigate to="tableManager" /> },
-                { path: "tableManager", element: <DevelopingPage /> },
+                { path: "tableManager", element: <Controller.TableLibraryDocsController /> },
               ],
             },
           ],
@@ -73,7 +98,7 @@ const createRoutes = (): Routers => {
      */
     {
       path: "*",
-      element: <div>에러</div>,
+      element: <ErrorViews.ErrorNotFoundView />,
     },
     /**
      * @description The page is displayed when a user enters an unauthorized page.
@@ -81,7 +106,7 @@ const createRoutes = (): Routers => {
     {
       path: "unauthorized",
 
-      element: <div>권한받지않았습니다.</div>,
+      element: <ErrorViews.ErrorUnAuthorizedView />,
     },
   ];
 

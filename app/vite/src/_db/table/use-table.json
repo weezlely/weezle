@@ -6,7 +6,7 @@
   "paragraphs": [
     {
       "id": "test",
-      "title": "Let's start !",
+      "title": "start",
       "tag": "h1",
       "brief": "Getting started",
       "direction": "row",

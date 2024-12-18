@@ -5,7 +5,7 @@ export const LeftSidebar = () => {
   return (
     <aside className="side-bar left-bar">
       <nav className="side-bar-left">
-        <Heading as="h3" className="p-10" style={{ color: "var(--bg_01)" }}>
+        <Heading as="h3" className="p-10" style={{ color: "var(--text)" }}>
           Guide
         </Heading>
         <Accordion>

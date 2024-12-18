@@ -4,7 +4,6 @@ import "highlight.js/styles/atom-one-dark.css";
 
 import "@/app/css/index.css";
 import "@/app/styles/global.css";
-// import "@/style/table.css";
 
 export const styleConfig = () => {
   console.log(`

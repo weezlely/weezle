@@ -20,7 +20,7 @@ export const ScrollSidebar = () => {
             onClick={() => scrollToSection(ref)}
             style={{
               padding: "10px",
-              color: activeSection === index ? "#195774" : "var(--bg_01)",
+              color: activeSection === index ? "#195774" : "var(--text)",
               cursor: "pointer",
               width: "100%",
             }}
