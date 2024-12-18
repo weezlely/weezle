@@ -1,0 +1,54 @@
+.markdown-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.markdown-wrapper .code-container pre {
+  /* font-family: Consolas, "Courier New", Courier, monospace; */
+  font-size: 24px;
+  overflow: auto;
+}
+
+.mac-style {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mac-header-style {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #eee;
+}
+
+.dot-style {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.dot-style.red {
+  background-color: red;
+}
+
+.dot-style.yellow {
+  background-color: yellow;
+}
+
+.dot-style.green {
+  background-color: green;
+}
+
+.code-container {
+  padding: 15px;
+  background-color: #282c34;
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 1.5;
+}

@@ -1,0 +1,71 @@
+{
+  "name": "@taeopia/react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "sh ./scripts/clean.sh",
+    "prepare:build": "rm -rf dist",
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview --host --port 8080"
+  },
+  "dependencies": {
+    "@taeopia/canvas-editor": "file:../../packages/canvas-editor",
+    "@taeopia/react-table": "file:../../packages/react-table",
+    "@taeopia/react-tool": "file:../../packages/react-tools",
+    "@taeopia/ui-with-css": "file:../../packages/ui-with-css",
+    "@tanstack/react-table": "^8.20.5",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vanilla-extract/css": "^1.15.3",
+    "@vanilla-extract/recipes": "^0.5.3",
+    "@vanilla-extract/vite-plugin": "4.0.9",
+    "clsx": "^2.1.1",
+    "fabric": "^5.3.0",
+    "fabricjs-react": "^1.2.2",
+    "figlet": "^1.7.0",
+    "framer-motion": "^11.2.11",
+    "i18next": "^24.1.0",
+    "js-cookie": "^3.0.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.2.0",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.2",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-highlight": "^7.0.1",
+    "shiki": "^1.24.1",
+    "taeo-hooks": "^1.1.2",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tanstack/react-table": "^8.20.5",
+    "@types/fabric": "^5.3.7",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vanilla-extract/esbuild-plugin": "^2.3.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "axios": "^1.6.8",
+    "css-loader": "^7.1.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "prop-types": "^15.8.1",
+    "react-router-dom": "^6.23.1",
+    "typescript": "^5.5.2",
+    "vite": "^5.2.0",
+    "vite-plugin-html": "^3.2.2",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  }
+}

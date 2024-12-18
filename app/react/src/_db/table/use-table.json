@@ -1,0 +1,92 @@
+{
+  "id": "1",
+  "type": "title",
+  "content": "useTable",
+  "tag": "h1",
+  "paragraphs": [
+    {
+      "id": "test",
+      "title": "start",
+      "tag": "h1",
+      "brief": "Getting started",
+      "direction": "row",
+      "contents": [
+        {
+          "type": "desc",
+          "title": "라이브러리 설치 방법",
+          "tag": "h4",
+          "desc": ["How should I use the useTable hook provided by @taeo/react-table? This is an explanation of how to use useTable. Please refer to the information below."],
+          "md": null,
+          "imgUrl": ""
+        }
+      ]
+    },
+
+    {
+      "id": "test",
+      "title": "When to use?",
+      "tag": "h3",
+      "brief": "When to use?",
+      "direction": "column",
+      "contents": [
+        {
+          "type": "code",
+          "title": "Import",
+          "tag": "h4",
+          "desc": ["1) Import source from taeopia/react-table"],
+          "md": {
+            "type": "javascript",
+            "code": "import { RowTable, TableManager, useTable, useTheme } from \"@taeopia/react-table;\""
+          },
+          "imgUrl": ""
+        },
+        {
+          "type": "code",
+          "title": "모듈 생성",
+          "tag": "h4",
+          "desc": ["2) Create TableManger Module"],
+          "md": {
+            "type": "javascript",
+            "code": "interface ExampleTable extends CreateTableColumns<5> {}\nconst exampleTable = new TableManager([\"id\", \"No.\", \"name\", \"dept\", \"phone\"]);"
+          },
+          "imgUrl": ""
+        },
+        {
+          "type": "code",
+          "title": "Get columns methods",
+          "tag": "h4",
+          "desc": ["3) Table columns are retrieved through tableManger’s getColumns() method."],
+          "md": {
+            "type": "javascript",
+            "code": "const columns = useMemo(() => exampleTable.getColumns(), []);"
+          },
+          "imgUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "title": "Code Description",
+      "tag": "h3",
+      "brief": "Code Description",
+      "direction": "column",
+      "contents": [
+        {
+          "type": "code",
+          "title": "사용방법",
+          "tag": "h4",
+          "desc": [
+            "The generic interface <TData, Data> flexibly handles table data types and column definition types.",
+            "TData defines the data of each table column, and Data defines the array type of data to be rendered in the table.",
+            "useTableOutSideClick: This hook handles detecting out-of-table clicks so you can execute a specific action. Use forwardedRef and tableRef to set up out-of-click detection, and pass the onClickOutSide function and refs to handle the action on out-of-table clicks."
+          ],
+          "md": {
+            "type": "javascript",
+            "code": "interface RowTableProps<TData, Data> extends ReturnType<typeof useTable> {\n  refs?: RefObject<HTMLElement & HTMLDivElement>[];\n  tableClass?: ClassName;\n  tableStyle?: CSSProperties;\n  columns: ColumnDef<TData, unknown>[];\n  data: Data[];\n}\n\nexport const RowTableComponent = <T, D>(\n  props: RowTableProps<T, D>,\n  forwardedRef: Ref<HTMLTableElement>\n) => {\n  const tableRef = useRef<HTMLTableElement>(null);\n  const { refs, columns, data, tableClass, tableStyle, ...tableInstance } = props;\n\n  const { caption, onClickOutSide } = tableInstance;\n\n  useTableOutSideClick((forwardedRef as RefObject<HTMLTableElement>) || tableRef, onClickOutSide, refs);\n  return (\n    <table {...{ className: tableClass, style: tableStyle }} ref={forwardedRef || tableRef} role=\"table\" aria-label=\"table\">\n      <caption className={caption?.blind ? \"blind\" : \"\"}>{caption?.text}</caption>\n      <RowTableHead {...tableInstance} />\n      <RowTableBody {...tableInstance} />\n    </table>\n  );\n};\n\nexport const RowTable = forwardRef(RowTableComponent) as <T, D>(\n  props: RowTableProps<T, D> & {\n    ref?: Ref<HTMLTableElement>;\n  }\n) => ReturnType<typeof RowTableComponent>;"
+          },
+          "imgUrl": ""
+        }
+      ]
+    }
+  ]
+}
