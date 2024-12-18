@@ -17,8 +17,8 @@ echo -e "${GREEN}Successfully cleaned node_modules.${RESET}"
 
 echo -e "${YELLOW}Recreating package-lock.json and reinstalling dependencies...${RESET}"
 
-# Re-Install npm
-npm install
+# Re-Install yarn
+yarn
 
 echo -e "${GREEN}Successfully reinstalled dependencies and recreated package-lock.json.${RESET}"
 
