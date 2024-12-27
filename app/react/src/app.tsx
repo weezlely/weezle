@@ -1,8 +1,8 @@
 import { RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
 
-import "./locales/i18";
-import { menuList } from "@/_db";
+import "@/app/locales/i18";
+import { menuList, menuListResponse } from "@/assets";
 import { routerConfig, styleConfig } from "@/app/configs";
 import { useUserStore } from "@/state";
 
@@ -14,6 +14,8 @@ export const App = () => {
   useEffect(() => {
     if (!userStores) return;
     userStores.setMenuList(menuList.table.list);
+
+    userStores.setMenuListResponse(menuListResponse);
   }, []);
 
   return <RouterProvider router={routerConfig} />;

@@ -1,0 +1,167 @@
+/* Font 장평 */
+.fs-condensed {
+  font-stretch: condensed;
+}
+
+.fs-expanded {
+  font-stretch: expanded;
+}
+
+.fs-ultra-condensed {
+  font-stretch: ultra-condensed;
+}
+
+.fs-ultra-expanded {
+  font-stretch: ultra-expanded;
+}
+
+.fs-50 {
+  font-stretch: 50%;
+}
+
+.fs-75 {
+  font-stretch: 75%;
+}
+
+.fs-100 {
+  font-stretch: 100%;
+}
+
+.fs-125 {
+  font-stretch: 125%;
+}
+
+.fs-150 {
+  font-stretch: 150%;
+}
+
+/* Font Weight */
+.fs_bold {
+  font-weight: 700 !important;
+}
+
+.fs_medium {
+  font-weight: 500;
+}
+
+/* Line Height */
+.lh-100 {
+  line-height: 1; /* 기본 줄 간격 (1) */
+}
+
+.lh-120 {
+  line-height: 1.2; /* 약간 조밀한 줄 간격 */
+}
+
+.lh-150 {
+  line-height: 1.5; /* 널찍한 줄 간격 */
+}
+
+.lh-200 {
+  line-height: 2; /* 더 넓은 줄 간격 */
+}
+
+.lh-250 {
+  line-height: 2.5; /* 매우 넓은 줄 간격 */
+}
+
+/* px 기반의 줄 간격 */
+.lh-20 {
+  line-height: 20px;
+}
+
+.lh-24 {
+  line-height: 24px;
+}
+
+.lh-32 {
+  line-height: 32px;
+}
+
+.lh-40 {
+  line-height: 40px;
+}
+
+.lh_28 {
+  line-height: 1.75rem !important;
+}
+
+.lh_21 {
+  line-height: 1.3125rem !important;
+}
+
+.lh_18 {
+  line-height: 1.125rem !important;
+}
+
+.lh_16 {
+  line-height: 16px !important;
+}
+
+.ls_3 {
+  letter-spacing: 0.1875rem;
+}
+
+/* Font Family */
+.special-text {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 700; /* 굵기 설정 */
+  font-size: 20px; /* 폰트 크기 설정 */
+}
+
+/* Font Style */
+.indent {
+  margin-left: 20px; /* 들여쓰기 */
+}
+.bold {
+  font-weight: bold; /* 굵게 */
+}
+
+.italic {
+  font-style: italic; /* 이탤릭 */
+}
+
+.underline {
+  text-decoration: underline; /* 밑줄 */
+}
+
+.strikethrough {
+  text-decoration: line-through; /* 취소선 */
+}
+
+.underline-italic {
+  text-decoration: underline; /* 밑줄 + 이탤릭 */
+  font-style: italic;
+}
+
+.highlight {
+  background-color: yellow; /* 텍스트 하이라이트 */
+}
+
+.caps-upper {
+  text-transform: uppercase; /* 대문자 변환 */
+}
+
+.caps-lower {
+  font-variant: small-caps; /* 스몰캡스 스타일 */
+}
+
+.text_shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 텍스트 그림자 */
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* 밑줄과 글자 사이 간격 */
+}
+
+.underline-4 {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* 밑줄과 글자 사이 간격 */
+}
+
+.underline-italic-4 {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* 밑줄 간격 */
+  font-style: italic;
+}

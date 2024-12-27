@@ -8,7 +8,7 @@ export function ExampleCanvasEditorToolbar() {
   const { addTextToCanvas } = useCanvasEditorHandler();
 
   return (
-    <Flex as="div" dir="row" style={{ flexWrap: "nowrap", marginBottom: "16px" }}>
+    <Flex as="div" dir="row" style={{ flexWrap: "wrap", marginBottom: "16px" }}>
       <Flex dir="row" gap={8}>
         <Button variant="secondary">사각형</Button>
         <Button variant="primary">원형</Button>

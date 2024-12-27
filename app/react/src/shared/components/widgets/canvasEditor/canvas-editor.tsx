@@ -6,7 +6,7 @@ export const ExampleCanvasEditor = () => {
     <canvas
       ref={canvasRef}
       style={{
-        // background: "red",
+        width: "400px",
         margin: "auto",
       }}
     />

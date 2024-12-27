@@ -1,48 +1,42 @@
-import { useTranslation } from "react-i18next";
-
 import { Linker, ThemeToggle } from "@/shared/components";
+import { useAppStore } from "@/state";
+import { useLocation } from "react-router-dom";
 
-interface HomeHeaderProps {
-  isDarkMode?: boolean;
-  toggleTheme?: () => void;
-}
+interface HomeHeaderProps {}
+
+const links = [
+  { href: "/docs", label: "Docs" },
+  { href: "/ui", label: "UI" },
+  { href: "/applications", label: "Applications" },
+  { href: "/posts", label: "Posts" },
+  { href: "/blog", label: "Blog" },
+];
+
 export const HomeHeader = (props: HomeHeaderProps) => {
-  const { t, i18n } = useTranslation();
-
+  const { isEntry } = useAppStore();
+  const { pathname } = useLocation();
+  const location = pathname.split("/")[1];
+  const changeTextColor = !isEntry ? "text_bk" : "text_wh";
   return (
     <header className="header header-single-line" aria-label="Main Header">
       <div className="header__inner">
         <div className="header__left">
-          <Linker href="/" className="header__logo">
-            taeopia
+          <Linker href="/" className={`header__logo ${changeTextColor}`}>
+            T A E O P I A
           </Linker>
-          <nav className="header__nav" aria-label="Primary Navigation">
+          <nav className="header__nav" aria-label="Home Navigation">
             <ul className="header__menu">
-              <li className="header__menu-item">
-                <Linker href="/" className="menu_link">
-                  {t("header.docs")}
-                </Linker>
-              </li>
-              <li className="header__menu-item">
-                <Linker href="/">UI</Linker>
-              </li>
-              <li className="header__menu-item">
-                <Linker href="/components">Components</Linker>
-              </li>
-
-              <li className="header__menu-item">
-                <Linker href="/applications">Applications</Linker>
-              </li>
+              {links.map((link) => (
+                <li key={link.href} className={`header__menu-item ${location === link.href.split("/")[1] ? "active" : ""}`}>
+                  <Linker href={link.href} className={`header__menu-item-link ${changeTextColor}`}>
+                    {link.label}
+                  </Linker>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
         <div className="header__right">
-          <button className="header__console-clear" onClick={() => console.clear()}>
-            콘솔 지우기
-          </button>
-          <button className="header__language-toggle" onClick={() => i18n.changeLanguage("ko")}>
-            언어 변경
-          </button>
           <div className="header__user-actions">
             <ThemeToggle />
           </div>

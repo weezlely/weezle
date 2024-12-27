@@ -1,12 +1,13 @@
+import { RefObject } from "react";
 import { create } from "zustand";
 
 import type { Refs } from "@/types";
 import { resetRefs, setContentRefs, setRefs } from "@/state";
-import { RefObject } from "react";
 
 export interface ContentsRef {
   ref: RefObject<HTMLElement & HTMLDivElement>;
   text?: string;
+  children?: ContentsRef;
 }
 
 export interface PageWrapperState {

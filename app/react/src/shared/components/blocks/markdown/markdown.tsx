@@ -13,26 +13,23 @@ interface Props {
 
 export const Markdown = (props: Props) => {
   return (
-    <div className="markdown-wrapper" style={{ fontFamily: "Arial, sans-serif" }}>
+    <div className="markdown__wrap" style={{ fontFamily: "Arial, sans-serif" }}>
       {props.header && (
         <Heading as="h4" fontColor="black" isUnderline>
           {props.header}
         </Heading>
       )}
 
-      <div className="mac-style">
-        <div className="mac-header-style">
-          <span className="dot-style red" />
-          <span className="dot-style yellow" />
-          <span className="dot-style green" />
+      <div className="mac">
+        <div className="mac__header">
+          <span className="mac__header-dot red" />
+          <span className="mac__header-dot yellow" />
+          <span className="mac__header-dot green" />
         </div>
-        <div className="code-container">
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]} className="markdown-code">
-            {`
-\`\`\`${props.content.type}
-${props.content.code || "console.log('Hello, world!');"}
-\`\`\`
-`}
+        <div className="code__container">
+          <ReactMarkdown className="markdown__code" rehypePlugins={[rehypeHighlight]}>
+            {`\`\`\`${props.content.type}
+${props.content.code || "console.log('Hello, world!');"}`}
           </ReactMarkdown>
         </div>
       </div>

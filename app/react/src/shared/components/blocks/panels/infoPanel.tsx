@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, HeadingAs } from "@taeopia/ui-with-css";
+import { HeadingAs } from "@taeopia/ui-with-css";
 
 interface InfoPanelProps {
   tag: HeadingAs;
@@ -7,14 +7,14 @@ interface InfoPanelProps {
 }
 
 export const InfoPanel = ({ tag, descriptions }: InfoPanelProps) => {
-  const baseStyle = { fontSize: "22px", marginBottom: "8px" };
-  const secondaryStyle = { paddingLeft: "20px" };
   return (
     <>
       {descriptions.map((desc, index) => (
-        <Heading className="text_bk_wh" key={index} as={tag as HeadingAs} style={index === 0 ? baseStyle : secondaryStyle}>
-          {desc}
-        </Heading>
+        <h3 className="indent text_bk_wh fs_20 fw_500 lh-150">{desc}</h3>
+
+        // <Heading className="text_bk_wh" key={index} as={tag as HeadingAs} style={index === 0 ? baseStyle : secondaryStyle}>
+        //   {desc}
+        // </Heading>
       ))}
     </>
   );

@@ -1,0 +1,6 @@
+.canvas__wrap {
+  width: 700px;
+  overflow: scroll;
+  /* background-color: red; */
+  margin: auto;
+}

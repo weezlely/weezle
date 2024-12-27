@@ -12,7 +12,7 @@ const AccordionWrapper = forwardRef<HTMLUListElement, AccordionWrapperProps>((pr
   const { style, children, ...rest } = props;
 
   return (
-    <ul className="accordion-wrapper" ref={forwardedRef} style={style} {...rest}>
+    <ul className="accordion__wrap" ref={forwardedRef} style={style} {...rest}>
       {children}
     </ul>
   );
@@ -46,7 +46,7 @@ const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>((props, forw
   }
 
   return (
-    <li ref={forwardedRef} style={style} className={`accordion-item ${isActive ? "active" : ""}`} {...rest}>
+    <li ref={forwardedRef} style={style} className={`accordion__item ${isActive ? "active" : ""}`} {...rest}>
       {content}
     </li>
   );

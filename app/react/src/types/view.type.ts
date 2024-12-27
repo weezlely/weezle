@@ -1,5 +1,5 @@
 import type { RefObject } from "react";
-import { GuidTemplateResponse } from "@/_db";
+import { GuidTemplateResponse } from "@/assets";
 
 export interface GuidViewProps {
   refs: RefObject<HTMLDivElement>[];

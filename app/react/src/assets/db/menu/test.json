@@ -1,0 +1,79 @@
+{
+  "title": "Guide",
+  "data": [
+    {
+      "depth": "1",
+      "upMenuId": "00000000",
+      "menuId": "02000000",
+      "href": "/ui",
+      "display": "UI",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "2",
+      "upMenuId": "02000000",
+      "menuId": "02010000",
+      "href": "/ui/getStarted",
+      "display": "Get Started",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "02000000",
+      "menuId": "02020000",
+      "href": "/ui/components",
+      "display": "Components",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "02000000",
+      "menuId": "02030000",
+      "href": "/ui/design",
+      "display": "Design",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "02010000",
+      "menuId": "02010100",
+      "href": "/ui/getStarted/overview",
+      "display": "OverView",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "02020000",
+      "menuId": "02020100",
+      "href": "/ui/components/accordion",
+      "display": "accordion",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "4",
+      "upMenuId": "01010100",
+      "menuId": "01010101",
+      "href": "/docs/getStarted/overview/installation",
+      "display": "Installation",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01010100",
+      "menuId": "01010102",
+      "href": "/docs/getStarted/overview/usage",
+      "display": "Usage",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010000",
+      "menuId": "02010101",
+      "href": "/ui/getStarted/overview/installation",
+      "display": "Installation",
+      "requiredPermission": ["admin", "manager", "default"]
+    }
+  ]
+}

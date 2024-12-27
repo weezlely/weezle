@@ -3,9 +3,9 @@ import { Flex, Heading, HeadingAs } from "@taeopia/ui-with-css";
 import { useTranslation } from "react-i18next";
 
 import type { FlexDirection } from "@/types";
-import { BaseCard, InfoPanel, Markdown } from "@/shared/components";
+import { BaseCard, CrumbTrail, InfoPanel, Markdown } from "@/shared/components";
 
-import { GuidTemplateResponse } from "@/_db";
+import { GuidTemplateResponse } from "@/assets";
 
 export interface GuidTemplateProps {
   refs: RefObject<HTMLDivElement>[];
@@ -20,26 +20,31 @@ export const GuideTemplate = (props: GuidTemplateProps) => {
   if (!responses) return <div>데이터가 없습니다..</div>;
 
   return (
-    <article className="content-wrapper">
+    <article className="layout__sub-content">
+      <CrumbTrail />
+
       {/* Title */}
       <section className="p-b-20 m-b-40 border-b">
-        <Heading className="text_bk_wh" as={responses?.tag as HeadingAs} style={{ fontSize: "48px" }}>
+        <h1 className="text_bk_wh fs_48">{responses.content}</h1>
+        {/* <Heading className="text_bk_wh fs_48" as={responses?.tag as HeadingAs}>
           {responses.content}
-        </Heading>
+        </Heading> */}
       </section>
       {/* Title */}
 
       {responses.paragraphs.map((paragraph, i) => {
         return (
           <section key={i} ref={refs[i]} className={`${i == 0 ? "m-b-40" : ""}`}>
-            <Flex align="center" gap={10}>
+            <div className="flex-row align_center gap_10">
               {i !== 0 && <span className="badge__docs">{i}</span>}
-              <Heading className="text_bk_wh" as={paragraph?.tag as HeadingAs} style={{ fontWeight: 700 }}>
-                {t(`paragraphs.${paragraph.title}`)}
-              </Heading>
-            </Flex>
+              <h3 className="text_bk_wh fs_32">{paragraph.title}</h3>
 
-            <Flex dir={paragraph.direction as FlexDirection} gap={8} style={{ padding: "8px" }}>
+              {/* <Heading className="text_bk_wh" as={paragraph?.tag as HeadingAs} style={{ fontWeight: 700, background: "red" }}>
+                {paragraph.title}
+              </Heading> */}
+            </div>
+
+            <div className={`${paragraph.direction === "row" ? "flex-row" : "flex-column"} gap_8 p-8`}>
               {paragraph.contents.map((content, j) => {
                 return (
                   <div key={`${i}-${j}`} className={`w-100 p-l-10 ${i !== 0 ? "border-l" : ""}`}>
@@ -65,7 +70,7 @@ export const GuideTemplate = (props: GuidTemplateProps) => {
                   </div>
                 );
               })}
-            </Flex>
+            </div>
           </section>
         );
       })}

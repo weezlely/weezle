@@ -1,0 +1,353 @@
+{
+  "title": "Guide",
+  "data": [
+    {
+      "depth": "1",
+      "upMenuId": "00000000",
+      "menuId": "01000000",
+      "href": "/docs",
+      "display": "Docs",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "1",
+      "upMenuId": "00000000",
+      "menuId": "02000000",
+      "href": "/ui",
+      "display": "UI",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "1",
+      "upMenuId": "00000000",
+      "menuId": "03000000",
+      "href": "/applications",
+      "display": "Applications",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "01000000",
+      "menuId": "01010000",
+      "href": "/docs/guide",
+      "display": "Get Started",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "01000000",
+      "menuId": "01020000",
+      "href": "/docs/usage",
+      "display": "Usage",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "02000000",
+      "menuId": "02010000",
+      "href": "/ui/guide",
+      "display": "Get Started",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "02000000",
+      "menuId": "02020000",
+      "href": "/ui/design",
+      "display": "Design",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "03000000",
+      "menuId": "03010000",
+      "href": "/applications/table",
+      "display": "Tabula",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "2",
+      "upMenuId": "03000000",
+      "menuId": "03020000",
+      "href": "/applications/canvas",
+      "display": "Sketcha",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "01010000",
+      "menuId": "01010100",
+      "href": "/docs/guide/overview",
+      "display": "OverView",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "01010000",
+      "menuId": "01010200",
+      "href": "/docs/guide/library",
+      "display": "Library",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "01010000",
+      "menuId": "01010300",
+      "href": "/docs/guide/frameworks",
+      "display": "Frameworks",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "01020000",
+      "menuId": "01020100",
+      "href": "/docs/usage/manual",
+      "display": "Manual",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "02010000",
+      "menuId": "02010100",
+      "href": "/ui/guide/overview",
+      "display": "OverView",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "02010000",
+      "menuId": "02010200",
+      "href": "/ui/guide/components",
+      "display": "Components",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "03010000",
+      "menuId": "03010100",
+      "href": "/applications/table/components",
+      "display": "Components",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "03010000",
+      "menuId": "03010200",
+      "href": "/applications/table/hooks",
+      "display": "Hooks",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "03010000",
+      "menuId": "03010300",
+      "href": "/applications/table/modules",
+      "display": "Module",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "3",
+      "upMenuId": "03020000",
+      "menuId": "03020100",
+      "href": "/applications/canvas/models",
+      "display": "Models",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01010100",
+      "menuId": "01010101",
+      "href": "/docs/guide/overview/introduction",
+      "display": "Introduction",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "4",
+      "upMenuId": "01010200",
+      "menuId": "01010202",
+      "href": "/docs/guide/library/ui",
+      "display": "UI",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01010200",
+      "menuId": "01010203",
+      "href": "/docs/guide/library/tabula",
+      "display": "Tabula",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01010200",
+      "menuId": "01010204",
+      "href": "/docs/guide/library/sketcha",
+      "display": "Sketcha",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01010200",
+      "menuId": "01010205",
+      "href": "/docs/guide/library/hooks",
+      "display": "hooks",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "4",
+      "upMenuId": "01010300",
+      "menuId": "01010301",
+      "href": "/docs/guide/frameworks/vite",
+      "display": "Vite",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "01020100",
+      "menuId": "01020101",
+      "href": "/docs/usage/manual/installation",
+      "display": "Installation",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "4",
+      "upMenuId": "02010100",
+      "menuId": "02010101",
+      "href": "/ui/guide/overview/usage",
+      "display": "Usage",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010201",
+      "href": "/ui/guide/components/accordion",
+      "display": "Accordion",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010202",
+      "href": "/ui/guide/components/animateButton",
+      "display": "Animation Button",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010203",
+      "href": "/ui/guide/components/bottomSheet",
+      "display": "Bottom Sheet",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010204",
+      "href": "/ui/guide/components/bottomSheet",
+      "display": "box",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010205",
+      "href": "/ui/guide/components/bottomSheet",
+      "display": "button",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "02010200",
+      "menuId": "02010206",
+      "href": "/ui/guide/components/checkbox",
+      "display": "checkbox",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+
+    {
+      "depth": "4",
+      "upMenuId": "03010100",
+      "menuId": "03010101",
+      "href": "/applications/table/components/rowTable",
+      "display": "RowTable",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03010200",
+      "menuId": "03010201",
+      "href": "/applications/table/hooks/useTable",
+      "display": "useTable",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03010200",
+      "menuId": "03010202",
+      "href": "/applications/table/hooks/useTableOutSideClick",
+      "display": "useTableOutSideClick",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03010200",
+      "menuId": "03010203",
+      "href": "/applications/table/hooks/useTheme",
+      "display": "useTheme",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03010300",
+      "menuId": "03010301",
+      "href": "/applications/table/modules/tableManager",
+      "display": "tableManager",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03020100",
+      "menuId": "03020101",
+      "href": "/applications/canvas/models/canvas",
+      "display": "Canvas Model",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03020100",
+      "menuId": "03020102",
+      "href": "/applications/canvas/models/text",
+      "display": "text Model",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03020100",
+      "menuId": "03020103",
+      "href": "/applications/canvas/models/textbox",
+      "display": "textBox Model",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03020100",
+      "menuId": "03020104",
+      "href": "/applications/canvas/models/image",
+      "display": "Image Model",
+      "requiredPermission": ["admin", "manager", "default"]
+    },
+    {
+      "depth": "4",
+      "upMenuId": "03020100",
+      "menuId": "03020105",
+      "href": "/applications/canvas/models/video",
+      "display": "Video Model",
+      "requiredPermission": ["admin", "manager", "default"]
+    }
+  ]
+}

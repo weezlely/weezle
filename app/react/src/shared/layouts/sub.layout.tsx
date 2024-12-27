@@ -1,21 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { useLocalStorage } from "taeo-hooks";
+import { useLocalStorage, useScrollTop } from "taeo-hooks";
 import { blueTheme } from "@taeopia/ui-with-css";
 
-import { PageHeader, LeftSidebar, ScrollSidebar } from "@/shared/components";
+import { PageHeader, LeftSidebar, ScrollSidebar, Drawer, DrawerSidebar } from "@/shared/components";
 
 export const SubLayout = () => {
-  const { read, save } = useLocalStorage("taeopia-theme", false, { initialSave: true });
-  const [isDarkMode, setIsDarkMode] = React.useState(() => read());
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      save(newMode);
-      return newMode;
-    });
-  };
+  useScrollTop(0, 0);
 
   return (
     <React.Suspense fallback={<div>로딩중</div>}>
@@ -23,18 +14,36 @@ export const SubLayout = () => {
       <PageHeader />
       {/* Header */}
 
-      <div className="body-wrapper">
-        <main className={`page-wrapper`}>
-          {/* ${isDarkMode ? blueTheme.dark : blueTheme.light} */}
+      <div className="h96"></div>
+
+      {/* Drawer */}
+      <Drawer position="left">
+        <DrawerSidebar />
+      </Drawer>
+      {/* Drawer */}
+
+      <main className="layout__sub">
+        <section className={`layout__sub-wrap`}>
           <LeftSidebar />
+
+          {/* ${isDarkMode ? blueTheme.dark : blueTheme.light} */}
 
           <Outlet />
 
           <ScrollSidebar />
-        </main>
-      </div>
+        </section>
+      </main>
 
       {/* <Footer /> */}
     </React.Suspense>
   );
 };
+// const { read, save } = useLocalStorage("taeopia-theme", false, { initialSave: true });
+// const [isDarkMode, setIsDarkMode] = React.useState(() => read());
+// const toggleTheme = () => {
+//   setIsDarkMode((prevMode) => {
+//     const newMode = !prevMode;
+//     save(newMode);
+//     return newMode;
+//   });
+// };

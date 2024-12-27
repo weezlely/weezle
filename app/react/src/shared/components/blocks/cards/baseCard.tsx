@@ -10,11 +10,16 @@ export interface BaseCardProps extends HTMLAttributes<HTMLElement> {
 
 export const BaseCard = ({ title, description, imageUrl, children, onClick, className, style }: BaseCardProps) => {
   return (
-    <div className={`base-card ${className}`} onClick={onClick} style={style}>
-      {imageUrl && <img src={imageUrl} alt={title} className="card-image" />}
-      {title && <h3 className="card-title">{title}</h3>}
-      {description && description.map((desc) => <p className="card-description">{desc}</p>)}
-      {children}
+    <div className={`card__base ${className || ""}`} onClick={onClick} style={style}>
+      {imageUrl && <img src={imageUrl} alt={title} className="card__base-image" />}
+      {title && <h3 className="card__base-title">{title}</h3>}
+      {description &&
+        description.map((desc, i) => (
+          <p key={`card--${i}`} className="card__base-description">
+            {desc}
+          </p>
+        ))}
+      <div className="card__base-footer">{children}</div>
     </div>
   );
 };

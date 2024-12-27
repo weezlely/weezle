@@ -1,0 +1,105 @@
+{
+  "results": {
+    "hero": {
+      "overlay": {
+        "title": "taeopia is a UI system that creates products at high speed.",
+        "subtitle": "Accessible React components for building high-quality web and design systems.",
+        "buttons": [
+          {
+            "text": "Get Started",
+            "type": "primary",
+            "size": "xl",
+            "action": "/docs",
+            "option": ""
+          },
+          {
+            "text": "Installation",
+            "type": "line",
+            "size": "xl",
+            "action": "",
+            "option": "pri"
+          }
+        ],
+        "image": {
+          "src": "main",
+          "alt": "메인",
+          "style": {
+            "width": "100%",
+            "height": "900px"
+          }
+        }
+      }
+    },
+    "description_first": {},
+    "description_seconds": {},
+    "description_thirds": {},
+
+    "descriptions": [
+      {
+        "id": "desc-1",
+        "theme": "",
+        "separate": 2,
+        "contents": [
+          {
+            "renderAs": "info",
+            "contentType": "desc",
+            "title": "Development",
+            "content": "TAEOPIA strives to provide users with a variety of developer experiences to reduce the time it takes to build products."
+          },
+          {
+            "renderAs": "visual",
+            "contentType": "code",
+            "title": "javascript",
+            "content": ""
+          }
+        ]
+      },
+      {
+        "id": "desc-2",
+        "theme": "bg_pri-05",
+        "separate": 1,
+        "contents": [
+          {
+            "renderAs": "card",
+            "contentType": "card",
+            "title": "Development",
+            "content": "TAEOPIA strives to provide users with a variety of developer experiences to reduce the time it takes to build products."
+          },
+          {
+            "renderAs": "card",
+            "contentType": "card",
+            "title": "javascript",
+            "content": ""
+          }
+        ]
+      },
+
+      {
+        "id": "components",
+        "title": "Components",
+        "type": "card",
+        "content": "Developed to simplify UI development and state management tasks in React-based projects...",
+        "cards": [
+          {
+            "title": "UI",
+            "description": "@taeopia/ui-with-css",
+            "link": "/ui/guide"
+          },
+          {
+            "title": "applications",
+            "description": "@taeopia/react-table",
+            "link": "/applications/table"
+          },
+          {
+            "title": "text-editor",
+            "description": "@taeopia/text-editor"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Taeopia 를 기반으로 디자인 시스템을 구축하세요.",
+      "subtitle": "Spend less time writing UI code and more time building a great experience for your customers."
+    }
+  }
+}

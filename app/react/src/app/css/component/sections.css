@@ -1,0 +1,14 @@
+.section__description-wrap {
+  padding: 4px;
+}
+.section__card-wrap {
+  padding: 4px;
+
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .section__card-wrap {
+    flex-direction: column;
+  }
+}

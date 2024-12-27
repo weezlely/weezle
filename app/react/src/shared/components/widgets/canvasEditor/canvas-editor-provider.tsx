@@ -42,9 +42,7 @@ const initializeCanvas = (canvasModel: CanvasModel) => {
 
   for (let sh = 1; sh < height!; sh++) {
     if (sh % 2 === 0) {
-      canvasModel.add(
-        new fabric.Text(String(sh * PIXEL), { left: 0, top: PIXEL * sh, fill: LINE_COLOR, fontSize: FONT_SIZE, selectable: false, excludeFromExport: true })
-      );
+      canvasModel.add(new fabric.Text(String(sh * PIXEL), { left: 0, top: PIXEL * sh, fill: LINE_COLOR, fontSize: FONT_SIZE, selectable: false, excludeFromExport: true }));
     }
 
     canvasModel.add(

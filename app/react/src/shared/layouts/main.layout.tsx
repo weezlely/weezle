@@ -1,9 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { useScrollTop } from "taeo-hooks";
 
-import { HomeHeader } from "@/shared/components";
+import { HomeFooter, HomeHeader } from "@/shared/components";
 
 export const MainLayout = () => {
+  useScrollTop(0, 0);
   return (
     <React.Suspense fallback={<div>로딩중</div>}>
       {/* Header */}
@@ -11,10 +13,12 @@ export const MainLayout = () => {
       {/* Header */}
 
       {/* Contents */}
-      <section className="main-layout">
+      <main className="layout__main">
         <Outlet />
-      </section>
+      </main>
       {/* Contents */}
+
+      <HomeFooter />
     </React.Suspense>
   );
 };
